@@ -12,16 +12,13 @@
             --border-color: rgba(0, 255, 255, 0.15);
         }
 
-        /* ضبط حجم الخط العام ليكون متوسطاً ومناسباً */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
         body { background-color: var(--bg-color); color: #ffffff; overflow-x: hidden; }
         
-        /* Navbar */
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: rgba(15, 13, 26, 0.98); border-bottom: 1px solid rgba(138, 43, 226, 0.2); position: fixed; width: 100%; top: 0; z-index: 1000; }
         .logo-area { display: flex; align-items: center; gap: 12px; }
         .logo { font-size: 22px; font-weight: bold; color: var(--primary-color); text-shadow: 0 0 10px var(--primary-color); }
         
-        /* Live Views Counter */
         .views-counter { display: flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.05); padding: 5px 12px; border-radius: 20px; font-size: 14px; color: #ccc; border: 1px solid rgba(255, 255, 255, 0.1); }
         .views-counter span { color: var(--primary-color); font-weight: bold; font-size: 14px; }
 
@@ -29,21 +26,21 @@
         nav ul li a { text-decoration: none; color: #bbb; font-size: 14px; cursor: pointer; transition: 0.3s; padding: 5px 8px; font-weight: 600; }
         nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow: 0 0 8px var(--primary-color); }
 
+        /* زر الهوست السري المميز في القائمة */
+        .host-link { color: #ff2a6d !important; text-shadow: 0 0 8px rgba(255, 42, 109, 0.5); }
+
         .support-btn { background-color: #ff2a6d; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(255, 42, 109, 0.5); transition: 0.3s; text-decoration: none; font-size: 14px; }
         .support-btn:hover { background-color: #ff1453; }
 
-        /* Pages */
         .page { display: none; margin-top: 100px; padding: 40px 20px; min-height: 80vh; }
         .page.active-page { display: block; }
 
-        /* Hero */
         .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero h1 { font-size: 50px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 20px var(--primary-color); }
         .hero p { font-size: 17px; color: #aaa; max-width: 750px; line-height: 1.7; margin-bottom: 30px; }
         .discord-btn { background-color: #5865F2; color: white; padding: 12px 30px; border-radius: 10px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 20px rgba(88, 101, 242, 0.6); transition: 0.3s; }
         .discord-btn:hover { background-color: #4752c4; }
 
-        /* Grid Cards */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; max-width: 1050px; margin: 30px auto; }
         .feature-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 25px; text-align: right; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: 0.3s; }
         .feature-card:hover { border-color: var(--primary-color); transform: translateY(-3px); }
@@ -51,7 +48,6 @@
         .feature-card h3 { color: #fff; margin-bottom: 10px; font-size: 18px; }
         .feature-card p { color: #aaa; font-size: 14px; line-height: 1.6; }
 
-        /* Streamers Grid */
         .streamer-section { max-width: 900px; margin: 40px auto; }
         .streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; justify-content: center; }
         
@@ -75,7 +71,6 @@
         .yt-btn { display: block; background-color: #ff0000; color: #ffffff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); transition: 0.3s; }
         .yt-btn:hover { background-color: #cc0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
 
-        /* Accordion Style */
         .page-content { max-width: 900px; margin: 0 auto; }
         .page-content h2 { color: var(--primary-color); font-size: 30px; margin-bottom: 25px; text-align: center; text-shadow: 0 0 10px var(--primary-color); }
         
@@ -85,11 +80,9 @@
         .accordion-arrow { color: var(--primary-color); transition: transform 0.3s; font-size: 14px; background: rgba(0,255,255,0.08); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         
         .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px; color: #ccc; font-size: 14px; line-height: 1.8; background: rgba(0,0,0,0.15); }
-        
         .accordion.active .accordion-body { max-height: 700px; padding: 20px 25px; border-top: 1px solid rgba(255,255,255,0.05); }
         .accordion.active .accordion-arrow { transform: rotate(180deg); }
 
-        /* Apply Buttons & Forms */
         .apply-btn { background-color: var(--primary-color); color: var(--bg-color); border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; margin-top: 15px; font-size: 14px; }
         .apply-btn:hover { opacity: 0.8; }
 
@@ -99,6 +92,15 @@
         .questions-container input, .questions-container textarea { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
         .questions-container textarea { resize: vertical; height: 75px; }
         .submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+
+        /* ستايل لوحة تحكم الهوست */
+        .host-panel { background: var(--box-bg); border: 2px solid #ff2a6d; border-radius: 15px; padding: 25px; margin-top: 20px; }
+        .app-item { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-bottom: 15px; }
+        .app-item h4 { color: var(--primary-color); margin-bottom: 8px; font-size: 16px; }
+        .app-item p { font-size: 13px; color: #ccc; margin-bottom: 5px; }
+        .host-actions { display: flex; gap: 10px; margin-top: 12px; }
+        .accept-btn { background-color: #28a745; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .reject-btn { background-color: #dc3545; color: white; border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -124,6 +126,8 @@
                 <li><a onclick="showPage('monitoring')" class="nav-link" id="link-monitoring">هيئة الرقابة</a></li>
                 <li><a onclick="showPage('quiz')" class="nav-link" id="link-quiz">الاختبار الشخصي</a></li>
                 <li><a onclick="showPage('streamer')" class="nav-link" id="link-streamer">البث المباشر</a></li>
+                <!-- زر الهوست السري المضاف -->
+                <li><a onclick="openHostPanel()" class="nav-link host-link" id="link-host">⚙️ لوحة الهوست</a></li>
             </ul>
         </nav>
         <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="support-btn">دعم السيرفر</a>
@@ -138,36 +142,9 @@
         </section>
 
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>منظومة ووظائف عميقة</h3>
-                <p>سواء كنت ترغب في ملاحقة الجريمة، إنقاذ المصابين، أو إدارة منشأتك الإجرامية، وفرنا لك كافة الأدوات.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💻</div>
-                <h3>سكريبتات حصرية وخاصة</h3>
-                <p>نأخذ محاكاة الواقعية إلى مستوى آخر تماماً بأكواد مخصصة ومطورة داخلياً لضمان سلاسة وأعلى معدل إطارات.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎧</div>
-                <h3>طاقم دعم متواجد دائماً</h3>
-                <p>راحتك وحل مشاكلك هي أولويتنا. إدارتنا متواجدة على مدار الساعة عبر نظام تذاكر سريع.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>مجتمع متفاعل وقوي</h3>
-                <p>ستكون جزءاً من نخبة اللاعبين وصناع القصص الذين يقدمون أعلى مستويات الـ Roleplay الاحترافي.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚖️</div>
-                <h3>تطبيق صارم للنظام</h3>
-                <p>لا وجود للمخربين أو اللعب العشوائي هنا، القوانين تطابق أعلى معايير الجدية والالتزام.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>استقرار وأمان كامل</h3>
-                <p>بياناتك وجهدك داخل السيرفر في أيدي أمينة وتحت حماية تقنية متكاملة ضد التخريب.</p>
-            </div>
+            <div class="feature-card"><div class="feature-icon">💼</div><h3>منظومة ووظائف عميقة</h3><p>سواء كنت ترغب في ملاحقة الجريمة أو إنقاذ المصابين، وفرنا لك الأدوات.</p></div>
+            <div class="feature-card"><div class="feature-icon">💻</div><h3>سكريبتات حصرية وخاصة</h3><p>أكواد مخصصة ومطورة داخلياً لضمان سلاسة وأعلى معدل إطارات.</p></div>
+            <div class="feature-card"><div class="feature-icon">🎧</div><h3>طاقم دعم متواجد دائماً</h3><p>إدارتنا متواجدة على مدار الساعة عبر نظام تذاكر سريع.</p></div>
         </div>
     </div>
 
@@ -175,70 +152,10 @@
     <div id="rules" class="page">
         <div class="page-content">
             <h2>قوانين وأنظمة LC CITY</h2>
-            
             <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>⚖️ القوانين العامة والأساسية في السيرفر</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body">
-                    1. يمنع منعاً باتاً الخروج عن الشخصية (OOC) ويجب الالتزام بالسيناريو الواقعي.<br>
-                    2. يحظر إطلاق النار على أي شخص بدون وجود سيناريو مسبق وسبب قوي (RDM).<br>
-                    3. يحظر استخدام المركبات لقتل أو صدم اللاعبين تعمداً بدون سبب درامي مقبول (VDM).<br>
-                    4. يجب عليك حماية حياتك ومحاكاة الخوف الحقيقي في حال تعرضت للتهديد بالسلاح (Fear RP).<br>
-                    5. يمنع استغلال الثغرات أو البقس للحصول على ميزة غير قانونية ويؤدي للحظر النهائي.
-                </div>
+                <div class="accordion-header" onclick="toggleAccordion(this)"><h3>⚖️ القوانين العامة والأساسية في السيرفر</h3><div class="accordion-arrow">▼</div></div>
+                <div class="accordion-body">1. يمنع منعاً باتاً الخروج عن الشخصية (OOC).<br>2. يحظر إطلاق النار بدون سيناريو مسبق (RDM).</div>
             </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>🎭 شروط وضوابط عمليات السطو والسرقة</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body">
-                    1. يمنع سرقة ممتلكات الخدمات الحكومية والشرطة بدون سيناريو مسبق ومبرر.<br>
-                    2. يجب ألا تزيد مدة احتجاز الرهينة عن الوقت المحدد في قوانين العصابات.<br>
-                    3. يمنع تماماً تنفيذ عمليات السطو في الأوقات التي يقل فيها عدد رجال الشرطة عن الحد الأدنى.<br>
-                    4. يحظر استخدام معلومات خارجية (Metagaming) لتحديد مواقع السرقة.
-                </div>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>💀 قوانين الإعدام والقتل الدرامي</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body">
-                    1. لا يُسمح بعمل Character Kill (قتل الشخصية نهائياً) إلا بموافقة الطرفين أو بقرار قضائي/إداري مبرر.<br>
-                    2. يجب توفر دليل قوي وموثق في حال المطالبة بإعدام شخصية داخل المحكمة.<br>
-                    3. يمنع قتل الرهائن بعد تلبية الشرطة لكافة الشروط والمطالب.
-                </div>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>🛡️ قوانين الحياة الواقعية والـ Roleplay</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body">
-                    1. يجب القيادة بواقعية وعدم القفز بالسيارات من الأماكن المرتفعة بشكل عبثي.<br>
-                    2. يمنع إخفاء الهوية بالكامل بالأقنعة في الأماكن العامة الحساسة دون مبرر إجرامي.<br>
-                    3. يمنع خروجك من اللعبة أثناء مطاردة أو سيناريو نشط لتفادي الاعتقال أو الموت (Combat Logging).
-                </div>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>💬 قوانين منصة ديسكورد والمجتمع</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body">
-                    1. يمنع منعاً باتاً السب والشتم بألفاظ نابية أو مسنية بالكرامة الشخصية للأعضاء.<br>
-                    2. يمنع نشر الروابط الخارجية أو الإعلانات الخاصة بسيرفرات أخرى.<br>
-                    3. يجب احترام قرارات الإدارة والمشرفين وعدم إثارة المشاكل داخل قنوات الدعم.
-                </div>
-            </div>
-
         </div>
     </div>
 
@@ -247,29 +164,15 @@
         <div class="page-content">
             <h2>قطاع الشرطة</h2>
             <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>👮 انضم إلى سلك الشرطة</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
+                <div class="accordion-header" onclick="toggleAccordion(this)"><h3>👮 انضم إلى سلك الشرطة</h3><div class="accordion-arrow">▼</div></div>
                 <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">تسهر المديرية العامة للأمن في LC CITY على حماية المواطنين وحفظ النظام وتطبيق القانون بصرامة.</p>
-                    <button class="apply-btn" onclick="toggleApplyForm('police-form')">فتح استمارة التقديم (12 سؤالاً)</button>
-                    
+                    <p style="margin-bottom: 15px; color:#aaa;">انضم إلى المديرية العامة للأمن وحفظ النظام.</p>
+                    <button class="apply-btn" onclick="toggleApplyForm('police-form')">فتح استمارة التقديم</button>
                     <div id="police-form" class="questions-container">
-                        <h3>استمارة التقديم لقطاع الشرطة (12 سؤالاً)</h3>
-                        <p>1. ما هو اسمك الحقيقي وعمرك؟</p><input type="text" placeholder="اكتب إجابتك هنا...">
-                        <p>2. ما هي خبرتك السابقة في الـ Roleplay وقطاعات الأمن؟</p><textarea placeholder="اكتب تفاصيل خبرتك..."></textarea>
-                        <p>3. كيف ستتعامل مع مجرم يقوم باستفزازك أثناء التحقيق؟</p><textarea placeholder="اشرح ردة فعل شخصيتك..."></textarea>
-                        <p>4. هل أنت مستعد للالتزام بالدوام والأوامر الصادرة من رتب أعلى؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>5. ما هي الإجراءات المتبعة عند القبض على مشتبه فيه يحمل سلاحاً نارياً؟</p><textarea placeholder="اكتب الإجراءات..."></textarea>
-                        <p>6. ماذا تفعل إذا تلقيت بلاغاً عن سرقة بنك وأنت في دورية فردية؟</p><textarea placeholder="اشرح خطة تصرفك..."></textarea>
-                        <p>7. هل تدرك أهمية استخدام القوة المناسبة وعدم تجاوز الصلاحيات؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>8. كيف تتصرف إذا شاهدت شرطياً آخر يتلقى رشوة من عصابة؟</p><textarea placeholder="اشرح تصرفك..."></textarea>
-                        <p>9. ما هي شروط فتح النار على مركبة هاربة؟</p><textarea placeholder="اكتب الشروط..."></textarea>
-                        <p>10. هل يمكنك العمل تحت ضغط عالٍ وتحت إجهاد السيناريوهات الطويلة؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>11. اشرح باختصار مفهوم "قيمة الحياة" من منظور رجل أمن.</p><textarea placeholder="اكتب الشرح..."></textarea>
-                        <p>12. لماذا برأيك يجب أن يتم قبولك في صفوف الشرطة دون غيرك؟</p><textarea placeholder="اكتب سبب اختيارك..."></textarea>
-                        <button class="submit-app" onclick="alert('تم إرسال طلب الشرطة بنجاح!')">إرسال الطلب نهائياً</button>
+                        <h3>استمارة التقديم لقطاع الشرطة</h3>
+                        <p>اسمك الثلاثي / الديسكورد:</p><input type="text" id="p-name" placeholder="اكتب اسمك...">
+                        <p>لماذا تريد الانضمام للشرطة؟</p><textarea id="p-reason" placeholder="اكتب السبب..."></textarea>
+                        <button class="submit-app" onclick="submitApp('قطاع الشرطة', 'p-name', 'p-reason')">إرسال الطلب نهائياً</button>
                     </div>
                 </div>
             </div>
@@ -281,29 +184,14 @@
         <div class="page-content">
             <h2>قسم الاستخبارات والأمن</h2>
             <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>🕵️ مهام الاستطلاع والمراقبة</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
+                <div class="accordion-header" onclick="toggleAccordion(this)"><h3>🕵️ مهام الاستطلاع والمراقبة</h3><div class="accordion-arrow">▼</div></div>
                 <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">قسم حساس يتطلب كفاءة عالية في جمع المعلومات ومراقبة الجريمة المنظمة في LC CITY.</p>
-                    <button class="apply-btn" onclick="toggleApplyForm('intel-form')">فتح استمارة التقديم (12 سؤالاً)</button>
-                    
+                    <button class="apply-btn" onclick="toggleApplyForm('intel-form')">فتح استمارة التقديم</button>
                     <div id="intel-form" class="questions-container">
-                        <h3>استمارة التقديم للاستخبارات (12 سؤالاً)</h3>
-                        <p>1. ما هو عمرك الحقيقي؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>2. لماذا ترى أنك مناسب للعمل في قسم الاستخبارات السري؟</p><textarea placeholder="اكتب إجابتك..."></textarea>
-                        <p>3. اذكر سيناريو كيف تتعامل مع تسريب معلومات أمنية حساسة.</p><textarea placeholder="اشرح السيناريو..."></textarea>
-                        <p>4. هل تمتلك القدرة على التخفي وجمع الأدلة دون لفت الانتباه؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>5. كيف تتصرف إذا تم كشف هويتك السرية من قبل عصابة مسلحة؟</p><textarea placeholder="اشرح خطة الهرب..."></textarea>
-                        <p>6. ما هي أهم صفات رجل الاستخبارات الناجح؟</p><textarea placeholder="اكتب الصفات..."></textarea>
-                        <p>7. هل تحترم سرية المهنة ولا تفشي الأسرار لأقرب الناس؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>8. كيف تتعامل مع الضغوط النفسية أثناء المراقبة الطويلة؟</p><textarea placeholder="اكتب الطريقة..."></textarea>
-                        <p>9. هل لديك خبرة سابقة في التحقيق الجنائي السري؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>10. ماذا تفعل إذا تلقيت أمراً سرياً يتعارض مع تقديرك الشخصي؟</p><textarea placeholder="اكتب تصرفك..."></textarea>
-                        <p>11. هل تلتزم بالتعليمات الصارمة لرئيس القسم دون نقاش؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>12. ما الذي يجعلك تتفوق على باقي المتقدمين لهذا القسم؟</p><textarea placeholder="اكتب السبب..."></textarea>
-                        <button class="submit-app" onclick="alert('تم إرسال طلب الاستخبارات بنجاح!')">إرسال الطلب نهائياً</button>
+                        <h3>استمارة الاستخبارات</h3>
+                        <p>اسمك / الديسكورد:</p><input type="text" id="i-name" placeholder="اكتب اسمك...">
+                        <p>ما هي خبرتك في العمل السري؟</p><textarea id="i-reason" placeholder="اكتب خبرتك..."></textarea>
+                        <button class="submit-app" onclick="submitApp('الاستخبارات', 'i-name', 'i-reason')">إرسال الطلب نهائياً</button>
                     </div>
                 </div>
             </div>
@@ -312,211 +200,174 @@
 
     <!-- صفحة EMS -->
     <div id="ems" class="page">
-        <div class="page-content">
-            <h2>وزارة الصحة (EMS)</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>🚑 قسم الإسعاف والطوارئ</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">فريق المسعفين مسؤول عن إسعاف المصابين وإنقاذ الأرواح في الأوقات الحرجة.</p>
-                    <button class="apply-btn" onclick="toggleApplyForm('ems-form')">فتح استمارة التقديم (12 سؤالاً)</button>
-                    
-                    <div id="ems-form" class="questions-container">
-                        <h3>استمارة التقديم لـ EMS (12 سؤالاً)</h3>
-                        <p>1. ما هو عمرك وخبرتك في الـ Roleplay الطبي؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>2. ما هي أسباب رغبتك في الانضمام لطاقم الإسعاف؟</p><textarea placeholder="اكتب أسبابك..."></textarea>
-                        <p>3. ماذا تفعل إذا تلقيت بلاغين مصابين في مناطق مختلفة بنفس الوقت؟</p><textarea placeholder="اشرح خطة التصرف..."></textarea>
-                        <p>4. كيف تتعامل مع مصاب يقوم بشتمك أو الاعتداء عليك لفظياً أثناء الإسعاف؟</p><textarea placeholder="اشرح ردة فعل شخصيتك..."></textarea>
-                        <p>5. هل أنت مستعد للعمل في ساعات متأخرة وبأقصى طاقة؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>6. ما هي الإجراءات الأولية لإسعاف شخص فاقد للوعي جراء حادث سير؟</p><textarea placeholder="اكتب الخطوات الطبية..."></textarea>
-                        <p>7. هل تحترم حيادك الطبي ولا تفرق بين شرطي أو مجرم؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>8. ماذا تفعل إذا دخلت منطقة إطلاق نار لإنقاذ مصاب؟</p><textarea placeholder="اشرح كيف تحمي حياتك..."></textarea>
-                        <p>9. هل تمتلك القدرة على قيادة سيارة الإسعاف باحترافية وسرعة؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>10. كيف تتصرف في حال وفاة المصاب بين يديك رغم محاولات الإنقاذ؟</p><textarea placeholder="اشرح السيناريو..."></textarea>
-                        <p>11. هل تلتزم بقوانين المستشفى والزي الرسمي بدقة؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>12. لماذا يجب قبولك في طاقم وزارة الصحة؟</p><textarea placeholder="اكتب إجابتك..."></textarea>
-                        <button class="submit-app" onclick="alert('تم إرسال طلب EMS بنجاح!')">إرسال الطلب نهائياً</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>وزارة الصحة (EMS)</h2></div>
     </div>
 
     <!-- صفحة وزارة العدل -->
     <div id="justice" class="page">
-        <div class="page-content">
-            <h2>وزارة العدل والقضاء</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>⚖️ السلك القضائي والمحاماة</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">إدارة المحاكم والدفاع عن الحقوق وتطبيق العدالة بحياد تام.</p>
-                    <button class="apply-btn" onclick="toggleApplyForm('justice-form')">فتح استمارة التقديم (12 سؤالاً)</button>
-                    
-                    <div id="justice-form" class="questions-container">
-                        <h3>استمارة التقديم القضائي (12 سؤالاً)</h3>
-                        <p>1. ما هو عمرك الحقيقي وهل لديك خلفية قانونية؟</p><input type="text" placeholder="اكتب إجابتك...">
-                        <p>2. ما مدى إلمامك بالقوانين الجنائية والمدنية داخل السيرفر؟</p><textarea placeholder="اكتب تفاصيل إلمامك بالقوانين..."></textarea>
-                        <p>3. كيف تتعامل مع متهم يحاول تزييف الحقائق أثناء المحاكمة؟</p><textarea placeholder="اشرح تصرفك القانوني..."></textarea>
-                        <p>4. هل تضمن النزاهة التامة وعدم الانحياز لأي طرف مهما كانت القرابة؟</p><input type="text" placeholder="نعم / لا مع التوضيح...">
-                        <p>5. ما هي الإجراءات المتبعة لفتح جلسة محاكمة رسمية؟</p><textarea placeholder="اكتب الإجراءات..."></textarea>
-                        <p>6. كيف تدير قاعة المحكمة في حال حدوث فوضى أو إزعاج؟</p><textarea placeholder="اشرح طريقة الإدارة..."></textarea>
-                        <p>7. ما هو دور المحامي المدافع في القضايا الجنائية الكبرى؟</p><textarea placeholder="اكتب الدور..."></textarea>
-                        <p>8. هل تستطيع كتابة مذكرات قانونية واضحة ومفصلة؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>9. كيف تتعامل مع ضغوطات الشرطة أو العصابات أثناء الحكم؟</p><textarea placeholder="اشرح تعاملك بحياد..."></textarea>
-                        <p>10. ما هي عقوبة ثبوت تهمة الرشوة على مسؤول قضائي؟</p><textarea placeholder="اكتب العقوبة..."></textarea>
-                        <p>11. هل تلتزم بحضور الجلسات في مواعيدها المحددة بدقة؟</p><input type="text" placeholder="نعم / لا...">
-                        <p>12. لماذا ترغب في تمثيل السلك القضائي في السيرفر؟</p><textarea placeholder="اكتب السبب..."></textarea>
-                        <button class="submit-app" onclick="alert('تم إرسال الطلب القضائي بنجاح!')">إرسال الطلب نهائياً</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>وزارة العدل والقضاء</h2></div>
     </div>
 
     <!-- صفحة العصابات -->
     <div id="gangs" class="page">
-        <div class="page-content">
-            <h2>العصابات والمنظمات</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>🏴 تسجيل العصابات والسيطرة</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="color:#aaa;">إدارة الصراعات والحروب بين العصابات في LC CITY وفق قواعد صارمة تضمن المتعة والتنافس العادل.</p>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>العصابات والمنظمات</h2></div>
     </div>
 
     <!-- صفحة الإدارة العليا -->
     <div id="staff" class="page">
-        <div class="page-content">
-            <h2>الإدارة العليا</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>👑 فريق الإشراف والتطوير</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="color:#aaa;">المسؤولون عن إدارة السيرفر وتطوير السكريبتات وحل مشاكل اللاعبين على مدار الساعة.</p>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>الإدارة العليا</h2></div>
     </div>
 
     <!-- صفحة هيئة الرقابة -->
     <div id="monitoring" class="page">
-        <div class="page-content">
-            <h2>هيئة الرقابة</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>👁️ مراقبة الأداء والتقييم</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="color:#aaa;">متابعة التجاوزات وضمان التزام الجميع بالقوانين العامة وعدم استغلال الصلاحيات بأي شكل من الأشكال.</p>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>هيئة الرقابة</h2></div>
     </div>
 
     <!-- صفحة الاختبار الشخصي -->
     <div id="quiz" class="page">
-        <div class="page-content">
-            <h2>الاختبار الشخصي للقبول</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <h3>📝 اختبار تقييم مستوى الـ Roleplay (12 سؤالاً)</h3>
-                    <div class="accordion-arrow">▼</div>
-                </div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">أجب عن الأسئلة بدقة تامة للقبول النهائي في LC CITY:</p>
-                    <p>1. ما هو الفرق الأساسي بين Hard RP و Normal RP؟</p><textarea placeholder="اكتب إجابتك..."></textarea>
-                    <p>2. ماذا تعني مصطلحات: Metagaming و Powergaming؟</p><textarea placeholder="اشرح المصطلحات..."></textarea>
-                    <p>3. كيف تتصرف إذا تعرضت للسرقة وأنت مهدد بسلاح حاد؟</p><textarea placeholder="اشرح تصرفك بناءً على قيمة الحياة..."></textarea>
-                    <p>4. ما هو مفهوم الـ RDM وماهي عقوبته؟</p><textarea placeholder="اكتب الشرح..."></textarea>
-                    <p>5. هل يُسمح بالتحدث بأمور الحياة الحقيقية داخل اللعبة (OOC)؟</p><input type="text" placeholder="اكتب إجابتك...">
-                    <p>6. ماذا تعني كلمة Fear RP وكيف تطبقها عملياً؟</p><textarea placeholder="اشرح التطبيق..."></textarea>
-                    <p>7. كيف تتصرف إذا واجهت خطأ برمجياً (Bug) أثناء اللعب؟</p><textarea placeholder="اكتب تصرفك..."></textarea>
-                    <p>8. هل يُسمح بالهروب من السيناريو عبر الخروج من اللعبة (Combat Logging)؟</p><input type="text" placeholder="نعم / لا مع التوضيح...">
-                    <p>9. ما هي القواعد الخاصة بمناطق الأمان (Safe Zones)؟</p><textarea placeholder="اكتب القواعد..."></textarea>
-                    <p>10. كيف تظهر احترامك التام لقرارات الإدارة والمشرفين؟</p><textarea placeholder="اكتب إجابتك..."></textarea>
-                    <p>11. اشرح سيناريو واقعياً لاختطاف ناجح دون مخالفة القوانين.</p><textarea placeholder="اكتب السيناريو..."></textarea>
-                    <p>12. لماذا أنت مهتم بالانضمام إلى مجتمعنا وكيف ستساهم في تطويره؟</p><textarea placeholder="اكتب إجابتك النهائية..."></textarea>
-                    <button class="submit-app" onclick="alert('تم إرسال اختبار القبول بـ 12 سؤالاً بنجاح!')" style="margin-top:15px;">إنهاء وإرسال الاختبار</button>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>الاختبار الشخصي للقبول</h2></div>
     </div>
 
     <!-- صفحة البث المباشر -->
     <div id="streamer" class="page">
         <div class="streamer-section">
             <div class="streamers-grid">
-                
-                <!-- بطاقة Kick (mehdicfw) -->
                 <div class="kick-card">
-                    <div class="kick-avatar-container">
-                        👤
-                    </div>
+                    <div class="kick-avatar-container">👤</div>
                     <div class="kick-username">mehdicfw</div>
                     <div class="kick-badge">صانع محتوى</div>
-                    <div class="platform-badge-container">
-                        <span class="platform-tag kick">Kick</span>
-                    </div>
-                    <p class="kick-desc">تابع البثوث المباشرة، كواليس التطوير، والمشاريع البرمجية المثيرة لسيرفر LC CITY مباشرة عبر منصة كيك</p>
+                    <div class="platform-badge-container"><span class="platform-tag kick">Kick</span></div>
+                    <p class="kick-desc">تابع البثوث المباشرة وكواليس التطوير عبر منصة كيك</p>
                     <a href="https://kick.com/cfwmehdi" target="_blank" class="kick-btn">مشاهدة البث على Kick</a>
                 </div>
-
-                <!-- بطاقة YouTube (ahmed) -->
                 <div class="yt-card">
-                    <div class="yt-avatar-container">
-                        📺
-                    </div>
+                    <div class="yt-avatar-container">📺</div>
                     <div class="yt-username">ahmed</div>
                     <div class="yt-badge">صانع محتوى</div>
-                    <div class="platform-badge-container">
-                        <span class="platform-tag youtube">YouTube</span>
-                    </div>
-                    <p class="yt-desc">تابع البثوث المباشرة، كواليس التطوير، والمشاريع البرمجية المثيرة لسيرفر LC CITY مباشرة عبر يوتيوب</p>
+                    <div class="platform-badge-container"><span class="platform-tag youtube">YouTube</span></div>
+                    <p class="yt-desc">تابع البثوث المباشرة وكواليس التطوير عبر يوتيوب</p>
                     <a href="https://www.youtube.com/watch?v=T8v0dqQXtQ8" target="_blank" class="yt-btn">مشاهدة البث على YouTube</a>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- JavaScript للتحكم في الصفحات والـ Accordions والعداد العشوائي -->
+    <!-- 🔒 صفحة لوحة الهوست السرية الخاصة بك وحدك -->
+    <div id="host-panel-page" class="page">
+        <div class="page-content">
+            <h2>لوحة تحكم الهوست (خاصة بك وحدك)</h2>
+            <div class="host-panel">
+                <p style="color:#aaa; margin-bottom:15px;">من هنا يمكنك الاطلاع على جميع الطلبات التي أرسلها المستخدمون، وقبولها أو حذفها:</p>
+                <div id="applications-list">
+                    <!-- سيتم تعبئة الطلبات تلقائياً هنا -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript للتحكم والتحقق من الهوست -->
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active-page'));
-
             const links = document.querySelectorAll('.nav-link');
             links.forEach(link => link.classList.remove('active'));
 
             document.getElementById(pageId).classList.add('active-page');
-            document.getElementById('link-' + pageId).classList.add('active');
+            if(document.getElementById('link-' + pageId)) {
+                document.getElementById('link-' + pageId).classList.add('active');
+            }
         }
 
         function toggleAccordion(header) {
-            const accordion = header.parentElement;
-            accordion.classList.toggle('active');
+            header.parentElement.classList.toggle('active');
         }
 
         function toggleApplyForm(formId) {
             const form = document.getElementById(formId);
-            if (form.style.display === 'block') {
-                form.style.display = 'none';
-            } else {
-                form.style.display = 'block';
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // دالة إرسال الطلب وحفظه مؤقتاً في المتصفح
+        function submitApp(sectionName, nameInputId, reasonInputId) {
+            const userName = document.getElementById(nameInputId).value;
+            const userReason = document.getElementById(reasonInputId).value;
+
+            if(!userName || !userReason) {
+                alert('المرجو ملء جميع الخانات قبل الإرسال!');
+                return;
             }
+
+            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
+            
+            const newApp = {
+                id: Date.now(),
+                section: sectionName,
+                name: userName,
+                reason: userReason,
+                date: new Date().toLocaleDateString()
+            };
+
+            applications.push(newApp);
+            localStorage.setItem('lc_applications', JSON.stringify(applications));
+
+            alert('تم إرسال طلبك بنجاح وسيتم مراجعته من طرف الإدارة!');
+            document.getElementById(nameInputId).value = '';
+            document.getElementById(reasonInputId).value = '';
+        }
+
+        // دالة حماية لوحة الهوست بكلمة مرور لا يعرفها غيرك
+        function openHostPanel() {
+            let password = prompt("أدخل كلمة مرور الهوست السرية:");
+            // كلمة المرور الافتراضية هنا هي "mehdi2026" (يمكنك تغييرها بالكلمة التي تريد)
+            if (password === "mehdi2026") {
+                showPage('host-panel-page');
+                loadApplications();
+            } else if (password !== null) {
+                alert("كلمة المرور غير صحيحة! هذه اللوحة مخصصة للهوست فقط.");
+            }
+        }
+
+        // تحميل الطلبات داخل لوحة الهوست الخاصة بك
+        function loadApplications() {
+            const container = document.getElementById('applications-list');
+            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
+
+            if (applications.length === 0) {
+                container.innerHTML = '<p style="color:#888; text-align:center;">لا توجد أي طلبات جديدة حتى الآن.</p>';
+                return;
+            }
+
+            container.innerHTML = '';
+            applications.forEach(app => {
+                const div = document.createElement('div');
+                div.className = 'app-item';
+                div.innerHTML = `
+                    <h4>القسم: ${app.section}</h4>
+                    <p><strong>المتقدم:</strong> ${app.name}</p>
+                    <p><strong>الإجابة / التفاصيل:</strong> ${app.reason}</p>
+                    <p style="font-size:11px; color:#888;">تاريخ الإرسال: ${app.date}</p>
+                    <div class="host-actions">
+                        <button class="accept-btn" onclick="acceptApp(${app.id}, '${app.name}')">✅ قبول الطلب</button>
+                        <button class="reject-btn" onclick="deleteApp(${app.id})">❌ حذف الطلب</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // قبول الطلب
+        function acceptApp(id, name) {
+            alert(`تم قبول طلب المتقدم (${name}) بنجاح!`);
+            deleteApp(id);
+        }
+
+        // حذف أو إزالة الطلب من القائمة
+        function deleteApp(id) {
+            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
+            applications = applications.filter(app => app.id !== id);
+            localStorage.setItem('lc_applications', JSON.stringify(applications));
+            loadApplications();
         }
 
         function updateRandomViews() {
@@ -527,6 +378,5 @@
 
         setInterval(updateRandomViews, 4000);
     </script>
-
 </body>
 </html>
