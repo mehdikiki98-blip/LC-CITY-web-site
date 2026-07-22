@@ -61,9 +61,126 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .questions-container { display: none; background: rgba(15, 13, 26, 0.98); border: 1px solid var(--primary-color); border-radius: 12px; padding: 25px; text-align: right; margin-top: 15px; }
 .questions-container h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 12px; }
 .questions-container p { font-size: 14px; font-weight: bold; color: #fff; margin-top: 12px; }
-.questions-container input, .questions-container textarea, .questions-container select { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
+.questions-container input, .questions-container textarea { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
 .questions-container textarea { resize: vertical; height: 75px; }
 .submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; margin-top: 10px; }
+
+/* Streamers Grid Style */
+.streamer-section { max-width: 900px; margin: 40px auto; }
+.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; justify-content: center; }
+
+.streamer-card {
+  background: #131022;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s;
+}
+
+.kick-card {
+  border: 1px solid #53fc18;
+  box-shadow: 0 0 20px rgba(83, 252, 24, 0.15);
+}
+.kick-card:hover {
+  box-shadow: 0 0 35px rgba(83, 252, 24, 0.3);
+  transform: translateY(-3px);
+}
+
+.yt-card {
+  border: 1px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
+}
+.yt-card:hover {
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.avatar-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kick-avatar {
+  border: 2px solid #53fc18;
+  background: rgba(83, 252, 24, 0.05);
+  box-shadow: 0 0 15px rgba(83, 252, 24, 0.2);
+}
+
+.yt-avatar {
+  border: 2px solid #ff0000;
+  background: rgba(255, 0, 0, 0.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+.streamer-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.streamer-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.kick-badge {
+  background: rgba(83, 252, 24, 0.15);
+  color: #53fc18;
+  border: 1px solid rgba(83, 252, 24, 0.3);
+}
+
+.yt-badge {
+  background: rgba(255, 0, 0, 0.15);
+  color: #ff0000;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.streamer-desc {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.kick-btn {
+  background-color: #53fc18;
+  color: #0b0914;
+  box-shadow: 0 0 15px rgba(83, 252, 24, 0.4);
+}
+.kick-btn:hover { background-color: #45d612; }
+
+.yt-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+.yt-btn:hover { background-color: #cc0000; }
 
 /* Admin Submissions */
 .sub-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px; margin-bottom: 15px; text-align: right; }
@@ -78,7 +195,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 </head>
 <body>
 
-<!-- Navigation Header -->
+<!-- Header -->
 <header>
   <div class="logo-area">
     <div class="logo">LC CITY</div>
@@ -248,12 +365,59 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
+<!-- Streamers Page (البث المباشر) -->
+<div id="streamer" class="page">
+  <div class="page-content">
+    <h2>البث المباشر والستريمرز</h2>
+    <div class="streamer-section">
+      <div class="streamers-grid">
+        
+        <!-- Kick Card -->
+        <div class="streamer-card kick-card">
+          <div class="avatar-container kick-avatar">
+            <!-- Kick SVG Icon -->
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="#53fc18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/>
+            </svg>
+          </div>
+          <div class="streamer-name">mehdicfw</div>
+          <div class="streamer-badge kick-badge">صانع محتوى</div>
+          <div class="streamer-desc">
+            تابع البثوث المباشرة، كواليس التطوير، والمشاريع البرمجية المثيرة لسيرفر LC CITY مباشرة عبر منصة كيك
+          </div>
+          <a href="https://kick.com/cfwmehdi" target="_blank" class="action-btn kick-btn">
+            مشاهدة البث على Kick ➔
+          </a>
+        </div>
+
+        <!-- YouTube Card -->
+        <div class="streamer-card yt-card">
+          <div class="avatar-container yt-avatar">
+            <!-- YouTube SVG Icon -->
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="#ff0000" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="streamer-name">ahmed</div>
+          <div class="streamer-badge yt-badge">صانع محتوى</div>
+          <div class="streamer-desc">
+            اشترك في القناة لمشاهدة ملخصات الرول بلاي، مقاطع الفيديو المتميزة، وأحدث تغطيات الأحداث داخل السيرفر
+          </div>
+          <a href="https://www.youtube.com/@1tbu0" target="_blank" class="action-btn yt-btn">
+            زيارة القناة على YouTube ➔
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Host Admin Panel Page -->
 <div id="host" class="page">
   <div class="page-content">
     <h2 style="color: #ff0055; text-shadow: 0 0 10px #ff0055;">⚙️ لوحة تحكم الهوست</h2>
     <p style="text-align: center; color: #aaa; margin-bottom: 30px;">مراجعة وقبول أو رفض التقديمات الواردة من جميع الأقسام.</p>
-    
     <h3 style="color: var(--primary-color); margin-bottom: 15px;">📥 التقديمات والطلبات الواردة:</h3>
     <div id="submissions-list">
       <p style="color: #888;" id="no-subs">لا توجد تقديمات حتى الآن.</p>
@@ -263,9 +427,6 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
 <!-- Staff Page -->
 <div id="staff" class="page"><div class="page-content"><h2>الإدارة العليا</h2><p>قائمة بطاقم إدارة سيرفر LC CITY.</p></div></div>
-
-<!-- Streamer Page -->
-<div id="streamer" class="page"><div class="page-content"><h2>البث المباشر والستريمرز</h2></div></div>
 
 <!-- JavaScript Logic -->
 <script>
