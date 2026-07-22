@@ -26,7 +26,6 @@
         nav ul li a { text-decoration: none; color: #bbb; font-size: 14px; cursor: pointer; transition: 0.3s; padding: 5px 8px; font-weight: 600; }
         nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow: 0 0 8px var(--primary-color); }
 
-        /* زر الهوست السري المميز في القائمة */
         .host-link { color: #ff2a6d !important; text-shadow: 0 0 8px rgba(255, 42, 109, 0.5); }
 
         .support-btn { background-color: #ff2a6d; color: white; border: none; padding: 8px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(255, 42, 109, 0.5); transition: 0.3s; text-decoration: none; font-size: 14px; }
@@ -83,17 +82,6 @@
         .accordion.active .accordion-body { max-height: 700px; padding: 20px 25px; border-top: 1px solid rgba(255,255,255,0.05); }
         .accordion.active .accordion-arrow { transform: rotate(180deg); }
 
-        .apply-btn { background-color: var(--primary-color); color: var(--bg-color); border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; margin-top: 15px; font-size: 14px; }
-        .apply-btn:hover { opacity: 0.8; }
-
-        .questions-container { display: none; background: rgba(15, 13, 26, 0.98); border: 1px solid var(--primary-color); border-radius: 12px; padding: 25px; text-align: right; margin-top: 15px; }
-        .questions-container h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 12px; }
-        .questions-container p { font-size: 14px; font-weight: bold; color: #fff; margin-top: 12px; }
-        .questions-container input, .questions-container textarea { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
-        .questions-container textarea { resize: vertical; height: 75px; }
-        .submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
-
-        /* ستايل لوحة تحكم الهوست */
         .host-panel { background: var(--box-bg); border: 2px solid #ff2a6d; border-radius: 15px; padding: 25px; margin-top: 20px; }
         .app-item { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-bottom: 15px; }
         .app-item h4 { color: var(--primary-color); margin-bottom: 8px; font-size: 16px; }
@@ -105,7 +93,6 @@
 </head>
 <body>
 
-    <!-- القائمة الرئيسية -->
     <header>
         <div class="logo-area">
             <div class="logo">LC CITY</div>
@@ -115,7 +102,6 @@
         </div>
         <nav>
             <ul>
-                <li><a onclick="showPage('home')" class="nav-link active" id="link-home">الرئيسية</a></li>
                 <li><a onclick="showPage('rules')" class="nav-link" id="link-rules">القوانين</a></li>
                 <li><a onclick="showPage('police')" class="nav-link" id="link-police">الشرطة</a></li>
                 <li><a onclick="showPage('intelligence')" class="nav-link" id="link-intelligence">الاستخبارات</a></li>
@@ -133,69 +119,25 @@
         <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="support-btn">دعم السيرفر</a>
     </header>
 
-    <!-- الصفحة الرئيسية -->
-    <div id="home" class="page active-page">
-        <section class="hero">
-            <h1>LC CITY</h1>
-            <p>مرحباً بك في مدينة LC CITY، حيث نصنع الواقعية الكاملة بمحاكاة متطورة، مدعومة بأنظمة أمنية وقضائية وعسكرية تضمن لك بيئة لعب قوية ومستقرة.</p>
-            <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="discord-btn">دخول عبر ديسكورد</a>
-        </section>
-
-        <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon">💼</div><h3>منظومة ووظائف عميقة</h3><p>سواء كنت ترغب في ملاحقة الجريمة أو إنقاذ المصابين، وفرنا لك الأدوات.</p></div>
-            <div class="feature-card"><div class="feature-icon">💻</div><h3>سكريبتات حصرية وخاصة</h3><p>أكواد مخصصة ومطورة داخلياً لضمان سلاسة وأعلى معدل إطارات.</p></div>
-            <div class="feature-card"><div class="feature-icon">🎧</div><h3>طاقم دعم متواجد دائماً</h3><p>إدارتنا متواجدة على مدار الساعة عبر نظام تذاكر سريع.</p></div>
-        </div>
-    </div>
-
     <!-- صفحة القوانين -->
-    <div id="rules" class="page">
+    <div id="rules" class="page active-page">
         <div class="page-content">
             <h2>قوانين وأنظمة LC CITY</h2>
             <div class="accordion">
                 <div class="accordion-header" onclick="toggleAccordion(this)"><h3>⚖️ القوانين العامة والأساسية في السيرفر</h3><div class="accordion-arrow">▼</div></div>
-                <div class="accordion-body">1. يمنع منعاً باتاً الخروج عن الشخصية (OOC).<br>2. يحظر إطلاق النار بدون سيناريو مسبق (RDM).</div>
+                <div class="accordion-body">1. يمنع منعاً باتاً الخروج عن الشخصية (OOC).<br>2. يحظر إطلاق النار بدون سيناريو مسبق (RDM).<br><span style="color: #ff2a6d; font-weight: bold;">tfou 3lik</span></div>
             </div>
         </div>
     </div>
 
     <!-- صفحة الشرطة -->
     <div id="police" class="page">
-        <div class="page-content">
-            <h2>قطاع الشرطة</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)"><h3>👮 انضم إلى سلك الشرطة</h3><div class="accordion-arrow">▼</div></div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <p style="margin-bottom: 15px; color:#aaa;">انضم إلى المديرية العامة للأمن وحفظ النظام.</p>
-                    <button class="apply-btn" onclick="toggleApplyForm('police-form')">فتح استمارة التقديم</button>
-                    <div id="police-form" class="questions-container">
-                        <h3>استمارة التقديم لقطاع الشرطة</h3>
-                        <p>اسمك الثلاثي / الديسكورد:</p><input type="text" id="p-name" placeholder="اكتب اسمك...">
-                        <p>لماذا تريد الانضمام للشرطة؟</p><textarea id="p-reason" placeholder="اكتب السبب..."></textarea>
-                        <button class="submit-app" onclick="submitApp('قطاع الشرطة', 'p-name', 'p-reason')">إرسال الطلب نهائياً</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>قطاع الشرطة</h2></div>
     </div>
 
     <!-- صفحة الاستخبارات -->
     <div id="intelligence" class="page">
-        <div class="page-content">
-            <h2>قسم الاستخبارات والأمن</h2>
-            <div class="accordion active" style="margin-top:20px;">
-                <div class="accordion-header" onclick="toggleAccordion(this)"><h3>🕵️ مهام الاستطلاع والمراقبة</h3><div class="accordion-arrow">▼</div></div>
-                <div class="accordion-body" style="max-height: none; padding: 20px 25px;">
-                    <button class="apply-btn" onclick="toggleApplyForm('intel-form')">فتح استمارة التقديم</button>
-                    <div id="intel-form" class="questions-container">
-                        <h3>استمارة الاستخبارات</h3>
-                        <p>اسمك / الديسكورد:</p><input type="text" id="i-name" placeholder="اكتب اسمك...">
-                        <p>ما هي خبرتك في العمل السري؟</p><textarea id="i-reason" placeholder="اكتب خبرتك..."></textarea>
-                        <button class="submit-app" onclick="submitApp('الاستخبارات', 'i-name', 'i-reason')">إرسال الطلب نهائياً</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="page-content"><h2>قسم الاستخبارات والأمن</h2></div>
     </div>
 
     <!-- صفحة EMS -->
@@ -252,20 +194,19 @@
         </div>
     </div>
 
-    <!-- 🔒 صفحة لوحة الهوست السرية الخاصة بك وحدك -->
+    <!-- 🔒 صفحة لوحة الهوست السرية -->
     <div id="host-panel-page" class="page">
         <div class="page-content">
             <h2>لوحة تحكم الهوست (خاصة بك وحدك)</h2>
             <div class="host-panel">
-                <p style="color:#aaa; margin-bottom:15px;">من هنا يمكنك الاطلاع على جميع الطلبات التي أرسلها المستخدمون، وقبولها أو حذفها:</p>
+                <p style="color:#aaa; margin-bottom:15px;">من هنا يمكنك الاطلاع على جميع الطلبات:</p>
                 <div id="applications-list">
-                    <!-- سيتم تعبئة الطلبات تلقائياً هنا -->
+                    <p style="color:#888; text-align:center;">لا توجد أي طلبات جديدة حتى الآن.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript للتحكم والتحقق من الهوست -->
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
@@ -283,91 +224,13 @@
             header.parentElement.classList.toggle('active');
         }
 
-        function toggleApplyForm(formId) {
-            const form = document.getElementById(formId);
-            form.style.display = form.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // دالة إرسال الطلب وحفظه مؤقتاً في المتصفح
-        function submitApp(sectionName, nameInputId, reasonInputId) {
-            const userName = document.getElementById(nameInputId).value;
-            const userReason = document.getElementById(reasonInputId).value;
-
-            if(!userName || !userReason) {
-                alert('المرجو ملء جميع الخانات قبل الإرسال!');
-                return;
-            }
-
-            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
-            
-            const newApp = {
-                id: Date.now(),
-                section: sectionName,
-                name: userName,
-                reason: userReason,
-                date: new Date().toLocaleDateString()
-            };
-
-            applications.push(newApp);
-            localStorage.setItem('lc_applications', JSON.stringify(applications));
-
-            alert('تم إرسال طلبك بنجاح وسيتم مراجعته من طرف الإدارة!');
-            document.getElementById(nameInputId).value = '';
-            document.getElementById(reasonInputId).value = '';
-        }
-
-        // دالة حماية لوحة الهوست بكلمة مرور لا يعرفها غيرك
         function openHostPanel() {
             let password = prompt("أدخل كلمة مرور الهوست السرية:");
-            // كلمة المرور الافتراضية هنا هي "mehdi2026" (يمكنك تغييرها بالكلمة التي تريد)
             if (password === "mehdi2026") {
                 showPage('host-panel-page');
-                loadApplications();
             } else if (password !== null) {
-                alert("كلمة المرور غير صحيحة! هذه اللوحة مخصصة للهوست فقط.");
+                alert("كلمة المرور غير صحيحة!");
             }
-        }
-
-        // تحميل الطلبات داخل لوحة الهوست الخاصة بك
-        function loadApplications() {
-            const container = document.getElementById('applications-list');
-            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
-
-            if (applications.length === 0) {
-                container.innerHTML = '<p style="color:#888; text-align:center;">لا توجد أي طلبات جديدة حتى الآن.</p>';
-                return;
-            }
-
-            container.innerHTML = '';
-            applications.forEach(app => {
-                const div = document.createElement('div');
-                div.className = 'app-item';
-                div.innerHTML = `
-                    <h4>القسم: ${app.section}</h4>
-                    <p><strong>المتقدم:</strong> ${app.name}</p>
-                    <p><strong>الإجابة / التفاصيل:</strong> ${app.reason}</p>
-                    <p style="font-size:11px; color:#888;">تاريخ الإرسال: ${app.date}</p>
-                    <div class="host-actions">
-                        <button class="accept-btn" onclick="acceptApp(${app.id}, '${app.name}')">✅ قبول الطلب</button>
-                        <button class="reject-btn" onclick="deleteApp(${app.id})">❌ حذف الطلب</button>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        // قبول الطلب
-        function acceptApp(id, name) {
-            alert(`تم قبول طلب المتقدم (${name}) بنجاح!`);
-            deleteApp(id);
-        }
-
-        // حذف أو إزالة الطلب من القائمة
-        function deleteApp(id) {
-            let applications = JSON.parse(localStorage.getItem('lc_applications')) || [];
-            applications = applications.filter(app => app.id !== id);
-            localStorage.setItem('lc_applications', JSON.stringify(applications));
-            loadApplications();
         }
 
         function updateRandomViews() {
