@@ -39,78 +39,50 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .hero h1 { font-size: 50px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 20px var(--primary-color); }
 .hero p { font-size: 17px; color: #aaa; max-width: 750px; line-height: 1.7; margin-bottom: 30px; }
 .discord-btn { background-color: #5865F2; color: white; padding: 12px 30px; border-radius: 10px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 20px rgba(88, 101, 242, 0.6); transition: 0.3s; }
-.discord-btn:hover { background-color: #4752c4; }
 
 /* Grid Cards */
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; max-width: 1050px; margin: 30px auto; }
 .feature-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 25px; text-align: right; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: 0.3s; }
-.feature-card:hover { border-color: var(--primary-color); transform: translateY(-3px); }
 .feature-icon { background: rgba(0, 255, 255, 0.08); width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 15px; color: var(--primary-color); }
-.feature-card h3 { color: #fff; margin-bottom: 10px; font-size: 18px; }
-.feature-card p { color: #aaa; font-size: 14px; line-height: 1.6; }
 
-/* Streamers Grid */
-.streamer-section { max-width: 900px; margin: 40px auto; }
-.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; justify-content: center; }
-
-.kick-card { background: #131022; border: 1px solid rgba(0, 255, 128, 0.3); border-radius: 16px; padding: 25px; text-align: center; width: 100%; box-shadow: 0 0 30px rgba(0, 255, 128, 0.1); position: relative; }
-.kick-avatar-container { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #00ff80; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 128, 0.05); box-shadow: 0 0 15px rgba(0, 255, 128, 0.3); color: #00ff80; font-size: 32px; }
-.kick-username { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 6px; }
-.kick-badge { display: inline-block; background: rgba(0, 255, 128, 0.15); color: #00ff80; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; border: 1px solid rgba(0, 255, 128, 0.3); }
-.kick-desc { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-.kick-btn { display: block; background-color: #00ff80; color: #0b0914; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; box-shadow: 0 0 15px rgba(0, 255, 128, 0.4); transition: 0.3s; }
-
-.yt-card { background: #131022; border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 16px; padding: 25px; text-align: center; width: 100%; box-shadow: 0 0 30px rgba(255, 0, 0, 0.1); position: relative; }
-.yt-avatar-container { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ff0000; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; background: rgba(255, 0, 0, 0.05); box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); color: #ff0000; font-size: 32px; }
-.yt-username { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 6px; }
-.yt-badge { display: inline-block; background: rgba(255, 0, 0, 0.15); color: #ff0000; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; border: 1px solid rgba(255, 0, 0, 0.3); }
-.yt-desc { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-.yt-btn { display: block; background-color: #ff0000; color: #ffffff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); transition: 0.3s; }
-
-/* Accordion Style */
+/* Accordion */
 .page-content { max-width: 900px; margin: 0 auto; }
 .page-content h2 { color: var(--primary-color); font-size: 30px; margin-bottom: 25px; text-align: center; text-shadow: 0 0 10px var(--primary-color); }
 
 .accordion { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 15px; overflow: hidden; transition: 0.3s; }
 .accordion-header { padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
-.accordion-header h3 { font-size: 16px; color: #fff; display: flex; align-items: center; gap: 12px; font-weight: bold; }
 .accordion-arrow { color: var(--primary-color); transition: transform 0.3s; font-size: 14px; background: rgba(0,255,255,0.08); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px; color: #ccc; font-size: 14px; line-height: 1.8; background: rgba(0,0,0,0.15); }
 .accordion.active .accordion-body { max-height: 700px; padding: 20px 25px; border-top: 1px solid rgba(255,255,255,0.05); }
 .accordion.active .accordion-arrow { transform: rotate(180deg); }
 
 /* Apply Buttons & Forms */
 .apply-btn { background-color: var(--primary-color); color: var(--bg-color); border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; text-decoration: none; margin-top: 15px; font-size: 14px; }
-.apply-btn:hover { opacity: 0.8; }
-
 .questions-container { display: none; background: rgba(15, 13, 26, 0.98); border: 1px solid var(--primary-color); border-radius: 12px; padding: 25px; text-align: right; margin-top: 15px; }
 .questions-container h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 12px; }
 .questions-container p { font-size: 14px; font-weight: bold; color: #fff; margin-top: 12px; }
-.questions-container input, .questions-container textarea { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
+.questions-container input, .questions-container textarea, .questions-container select { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
 .questions-container textarea { resize: vertical; height: 75px; }
-.submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+.submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; margin-top: 10px; }
 
-/* Admin Panel Submissions Table */
-.sub-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
-.sub-card header { position: static; background: none; padding: 0; border: none; margin-bottom: 10px; }
+/* Admin Submissions */
+.sub-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px; margin-bottom: 15px; text-align: right; }
 .btn-accept { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 5px; font-weight: bold; }
 .btn-reject { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; }
 .status-badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
 .status-pending { background: #ffc107; color: #000; }
 .status-accepted { background: #28a745; color: #fff; }
 .status-rejected { background: #dc3545; color: #fff; }
+.sub-ans { color: #aaa; white-space: pre-line; margin-bottom: 8px; font-size: 13px; }
 </style>
 </head>
 <body>
 
-<!-- القائمة الرئيسية -->
+<!-- Navigation Header -->
 <header>
   <div class="logo-area">
     <div class="logo">LC CITY</div>
-    <div class="views-counter">
-      👁️ <span id="viewCount">27</span>
-    </div>
+    <div class="views-counter">👁️ <span id="viewCount">27</span></div>
   </div>
   <nav>
     <ul>
@@ -131,47 +103,35 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="support-btn">دعم السيرفر</a>
 </header>
 
-<!-- الصفحة الرئيسية -->
+<!-- Home Page -->
 <div id="home" class="page active-page">
   <section class="hero">
     <h1>LC CITY</h1>
-    <p>حيث نصنع الواقعية الكاملة بمحاكاة متطورة، مدعومة بأنظمة أمنية وقضائية وعسكرية تضمن لك بيئة لعب قوية ومستقرة. مرحباً بك في مدينة LC CITY.</p>
+    <p>حيث نصنع الواقعية الكاملة بمحاكاة متطورة، مدعومة بأنظمة أمنية وقضائية وعسكرية تضمن لك بيئة لعب قوية ومستقرة.</p>
     <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="discord-btn">دخول عبر ديسكورد</a>
   </section>
-
   <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">💼</div>
-      <h3>وظائف وأدوار متنوعة</h3>
-      <p>اختر مسارك في المدينة سواء كشرطي، طبيب، محامي، أو رجل أعمال.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛡️</div>
-      <h3>نظام حماية قوي</h3>
-      <p>بيئة لعب آمنة وعادلة تضمن تجربة رول بلاي واقعية وممتعة للجميع.</p>
-    </div>
+    <div class="feature-card"><div class="feature-icon">💼</div><h3>وظائف وأدوار متنوعة</h3><p>اختر مسارك في المدينة كشرطي، طبيب، محامي، أو رجل أعمال.</p></div>
+    <div class="feature-card"><div class="feature-icon">🛡️</div><h3>نظام حماية قوي</h3><p>بيئة لعب آمنة وعادلة تضمن تجربة رول بلاي واقعية وممتعة.</p></div>
   </div>
 </div>
 
-<!-- صفحة القوانين -->
+<!-- Rules Page -->
 <div id="rules" class="page">
   <div class="page-content">
     <h2>قوانين سيرفر LC CITY</h2>
     <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3>📜 القوانين العامة</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
+      <div class="accordion-header" onclick="toggleAccordion(this)"><h3>📜 القوانين العامة</h3><span class="accordion-arrow">▼</span></div>
       <div class="accordion-body">
-        <p>1. يمنع منعا كليا الخروج عن نطاق الرول بلاي (Fail RP).</p>
-        <p>2. احترام جميع اللاعبين والإداريين داخل وخارج اللعبة.</p>
-        <p>3. يمنع استعمال الثغرات أو البرامج المساعدة (Cheating/Exploiting).</p>
+        <p>1. يمنع الخروج عن نطاق الرول بلاي (Fail RP).</p>
+        <p>2. احترام جميع اللاعبين والإداريين.</p>
+        <p>3. يمنع استعمال الثغرات والبرامج المساعدة.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- صفحة الشرطة -->
+<!-- Police Page -->
 <div id="police" class="page">
   <div class="page-content">
     <h2>وزارة الداخلية والشرطة</h2>
@@ -179,24 +139,36 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('police-form')">تقديم طلب انضمام</button>
     <div id="police-form" class="questions-container">
       <h3>استمارة التقديم - الشرطة</h3>
-      <p>الاسم الكامل داخل اللعبة:</p>
-      <input type="text" id="police-name" placeholder="اكتب اسمك هنا...">
-      <p>سبب الرغبة في الانضمام:</p>
-      <textarea id="police-reason" placeholder="اكتب سبب انضمامك..."></textarea>
-      <button class="submit-app" onclick="submitApplication('الشرطة', 'police-name', 'police-reason')">إرسال الطلب</button>
+      <p>الاسم الكامل داخل اللعبة:</p><input type="text" class="pol-field" placeholder="اسمك الكامل...">
+      <p>اليوزر ديسكورد + ID:</p><input type="text" class="pol-field" placeholder="user#0000 / ID...">
+      <p>العمر الحقيقي / العمر ف اللعبة:</p><input type="text" class="pol-field" placeholder="مثال: 18 / 25...">
+      <p>الخبرة السابقة في قطاع الشرطة:</p><textarea class="pol-field" placeholder="اذكر السيرفرات والرتب السابقة..."></textarea>
+      <p>كيف تتصرف إذا أطلق عليك مجرم النار أثنـاء مطاردة؟</p><textarea class="pol-field" placeholder="اشرح ردة فعلك والإجراءات القانونية..."></textarea>
+      <p>ما هو مفهوم (Fear RP) بالنسبة لشرطي؟</p><textarea class="pol-field" placeholder="شرح مبسط..."></textarea>
+      <button class="submit-app" onclick="submitMultiForm('الشرطة', 'pol-field')">إرسال الطلب</button>
     </div>
   </div>
 </div>
 
-<!-- صفحة الاستخبارات -->
+<!-- Intelligence Page -->
 <div id="intelligence" class="page">
   <div class="page-content">
     <h2>جهاز الاستخبارات</h2>
     <p>للعمليات الخاصة والتحريات السرية.</p>
+    <button class="apply-btn" onclick="toggleForm('intel-form')">تقديم طلب انضمام</button>
+    <div id="intel-form" class="questions-container">
+      <h3>استمارة التقديم - جهاز الاستخبارات</h3>
+      <p>الاسم الكامل في اللعبة:</p><input type="text" class="intel-field" placeholder="اسم الشخصية...">
+      <p>حساب ديسكورد:</p><input type="text" class="intel-field" placeholder="Discord User...">
+      <p>هل لديك خبرة في التحريات والتخفي؟</p><textarea class="intel-field" placeholder="اشرح خبرتك..."></textarea>
+      <p>كيف سيتصرف العميل إذا تم كشف هويته السرية؟</p><textarea class="intel-field" placeholder="سيناريو التعامل..."></textarea>
+      <p>التعهد بالحفاظ على سرية العمليات والبيانات:</p><input type="text" class="intel-field" placeholder="اكتب (أتعهد بالسرية التامة)...">
+      <button class="submit-app" onclick="submitMultiForm('الاستخبارات', 'intel-field')">إرسال الطلب</button>
+    </div>
   </div>
 </div>
 
-<!-- صفحة EMS -->
+<!-- EMS Page -->
 <div id="ems" class="page">
   <div class="page-content">
     <h2>وزارة الصحة (EMS)</h2>
@@ -204,24 +176,35 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('ems-form')">تقديم طلب انضمام</button>
     <div id="ems-form" class="questions-container">
       <h3>استمارة التقديم - وزارة الصحة</h3>
-      <p>الاسم الكامل داخل اللعبة:</p>
-      <input type="text" id="ems-name" placeholder="اكتب اسمك هنا...">
-      <p>الخبرات السابقة فـ EMS:</p>
-      <textarea id="ems-reason" placeholder="اذكر خبراتك..."></textarea>
-      <button class="submit-app" onclick="submitApplication('وزارة الصحة', 'ems-name', 'ems-reason')">إرسال الطلب</button>
+      <p>الاسم الكامل داخل اللعبة:</p><input type="text" class="ems-field" placeholder="اسمك...">
+      <p>حساب ديسكورد:</p><input type="text" class="ems-field" placeholder="Discord Tag...">
+      <p>الخبرة السابقة فـ EMS:</p><textarea class="ems-field" placeholder="السيرفرات السابقة..."></textarea>
+      <p>كيف تتعامل مع مصاب في حالة خطرة وسط إطلاق نار؟</p><textarea class="ems-field" placeholder="خطواتك لحماية نفسك والمريض..."></textarea>
+      <p>ما هي ساعات التواجد اليومية الممكنة؟</p><input type="text" class="ems-field" placeholder="مثال: 4 ساعات مسائية...">
+      <button class="submit-app" onclick="submitMultiForm('وزارة الصحة (EMS)', 'ems-field')">إرسال الطلب</button>
     </div>
   </div>
 </div>
 
-<!-- صفحة وزارة العدل -->
+<!-- Justice Page -->
 <div id="justice" class="page">
   <div class="page-content">
     <h2>وزارة العدل</h2>
     <p>لإدارة الشؤون القانونية والمحاكمات والعدالة داخل المدينة.</p>
+    <button class="apply-btn" onclick="toggleForm('justice-form')">تقديم طلب انضمام (محامي / قاضي)</button>
+    <div id="justice-form" class="questions-container">
+      <h3>استمارة التقديم - وزارة العدل</h3>
+      <p>الاسم الكامل فـ اللعبة:</p><input type="text" class="just-field" placeholder="الاسم...">
+      <p>حساب الديسكورد:</p><input type="text" class="just-field" placeholder="User...">
+      <p>الرغبة (محامي / قاضي / مدعي عام):</p><input type="text" class="just-field" placeholder="حدد المنصب...">
+      <p>مدى حفظك لقوانين السيرفر والجنايات:</p><textarea class="just-field" placeholder="شرح مهاراتك القانونية..."></textarea>
+      <p>كيف تدافع عن متهم ودلائل الإدانة ضده قوية؟</p><textarea class="just-field" placeholder="طريقتك في بناء الدفاع..."></textarea>
+      <button class="submit-app" onclick="submitMultiForm('وزارة العدل', 'just-field')">إرسال الطلب</button>
+    </div>
   </div>
 </div>
 
-<!-- صفحة العصابات -->
+<!-- Gangs Page -->
 <div id="gangs" class="page">
   <div class="page-content">
     <h2>العصابات والأنشطة الإجرامية</h2>
@@ -229,69 +212,62 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
-<!-- صفحة لوحة الهوست -->
+<!-- Monitoring Page -->
+<div id="monitoring" class="page">
+  <div class="page-content">
+    <h2>هيئة الرقابة والإدارة</h2>
+    <p>لمتابعة الشكاوى والحرص على تطبيق القوانين بين الأعضاء والإدارة.</p>
+    <button class="apply-btn" onclick="toggleForm('mon-form')">تقديم طلب انضمام لطاقم الرقابة</button>
+    <div id="mon-form" class="questions-container">
+      <h3>استمارة التقديم - هيئة الرقابة</h3>
+      <p>اسمك الحقيقي واسم شخصيتك:</p><input type="text" class="mon-field" placeholder="الاسم...">
+      <p>حساب ديسكورد + العمر:</p><input type="text" class="mon-field" placeholder="User / Age...">
+      <p>خبرتك السابقة في الإدارة أو الموديريشن:</p><textarea class="mon-field" placeholder="اذكر تجاربك..."></textarea>
+      <p>كيف تتعامل مع مشكلة بين لاعبين اثنين كل منهما يتهم الآخر بالخطأ؟</p><textarea class="mon-field" placeholder="طريقة التحقيق والحل..."></textarea>
+      <p>هل تستطيع التواجد وتوثيق المخالفات بالدلايل (Record/Screenshots)؟</p><input type="text" class="mon-field" placeholder="نعم / لا والتفاصيل...">
+      <button class="submit-app" onclick="submitMultiForm('هيئة الرقابة', 'mon-field')">إرسال الطلب</button>
+    </div>
+  </div>
+</div>
+
+<!-- Quiz Page -->
+<div id="quiz" class="page">
+  <div class="page-content">
+    <h2>الاختبار الشخصي (Quiz)</h2>
+    <p>اختبار معلوماتك في القوانين الأساسية للرول بلاي قبل الانضمام.</p>
+    <button class="apply-btn" onclick="toggleForm('quiz-form')">بدء الاختبار الشخصي</button>
+    <div id="quiz-form" class="questions-container">
+      <h3>الاختبار الشخصي - Roleplay Test</h3>
+      <p>الاسم فـ اللعبة + حساب الديسكورد:</p><input type="text" class="quiz-field" placeholder="اسمك + ديسكورد...">
+      <p>1. ما هو تعريف الـ RDM و VDM؟</p><textarea class="quiz-field" placeholder="اكتب الشرح..."></textarea>
+      <p>2. ما هو الفرق بين IC و OOC؟</p><textarea class="quiz-field" placeholder="اكتب الشرح..."></textarea>
+      <p>3. ماذا تفعل إذا حدث معك غليتش أو ثغرة فـ اللعبة؟</p><textarea class="quiz-field" placeholder="الإجراء المناسب..."></textarea>
+      <p>4. ما هو قانون Powergaming؟ أعط مثالاً.</p><textarea class="quiz-field" placeholder="المفهوم والمثال..."></textarea>
+      <button class="submit-app" onclick="submitMultiForm('الاختبار الشخصي (Quiz)', 'quiz-field')">إرسال الإجابات للهوست</button>
+    </div>
+  </div>
+</div>
+
+<!-- Host Admin Panel Page -->
 <div id="host" class="page">
   <div class="page-content">
     <h2 style="color: #ff0055; text-shadow: 0 0 10px #ff0055;">⚙️ لوحة تحكم الهوست</h2>
-    <p style="text-align: center; color: #aaa; margin-bottom: 30px;">مرحباً بك في لوحة الإدارة. هنا يمكنك مراجعة وقبول أو رفض طلبات التقديم.</p>
+    <p style="text-align: center; color: #aaa; margin-bottom: 30px;">مراجعة وقبول أو رفض التقديمات الواردة من جميع الأقسام.</p>
     
-    <h3 style="color: var(--primary-color); margin-bottom: 15px;">📥 التقديمات الواردة:</h3>
+    <h3 style="color: var(--primary-color); margin-bottom: 15px;">📥 التقديمات والطلبات الواردة:</h3>
     <div id="submissions-list">
       <p style="color: #888;" id="no-subs">لا توجد تقديمات حتى الآن.</p>
     </div>
   </div>
 </div>
 
-<!-- صفحة الإدارة العليا -->
-<div id="staff" class="page">
-  <div class="page-content">
-    <h2>الإدارة العليا</h2>
-    <p>قائمة بطاقم إدارة سيرفر LC CITY.</p>
-  </div>
-</div>
+<!-- Staff Page -->
+<div id="staff" class="page"><div class="page-content"><h2>الإدارة العليا</h2><p>قائمة بطاقم إدارة سيرفر LC CITY.</p></div></div>
 
-<!-- صفحة هيئة الرقابة -->
-<div id="monitoring" class="page">
-  <div class="page-content">
-    <h2>هيئة الرقابة</h2>
-    <p>لمتابعة الشكاوى والحرص على تطبيق القوانين بين الأعضاء والإدارة.</p>
-  </div>
-</div>
+<!-- Streamer Page -->
+<div id="streamer" class="page"><div class="page-content"><h2>البث المباشر والستريمرز</h2></div></div>
 
-<!-- صفحة الاختبار الشخصي -->
-<div id="quiz" class="page">
-  <div class="page-content">
-    <h2>الاختبار الشخصي (Quiz)</h2>
-    <p>اختبار معلوماتك في القوانين الأساسية للرول بلاي قبل الانضمام.</p>
-  </div>
-</div>
-
-<!-- صفحة البث المباشر -->
-<div id="streamer" class="page">
-  <div class="page-content">
-    <h2>البث المباشر والستريمرز</h2>
-    <div class="streamer-section">
-      <div class="streamers-grid">
-        <div class="kick-card">
-          <div class="kick-avatar-container">🎮</div>
-          <div class="kick-username">Kick Streamer</div>
-          <div class="kick-badge">مباشر الآن</div>
-          <div class="kick-desc">شاهد بث السيرفر المباشر عبر منصة Kick.</div>
-          <a href="#" class="kick-btn">متابعة البث</a>
-        </div>
-        <div class="yt-card">
-          <div class="yt-avatar-container">▶️</div>
-          <div class="yt-username">YouTube Streamer</div>
-          <div class="yt-badge">قناة السيرفر</div>
-          <div class="yt-desc">اشترك فـ القناة لمشاهدة المقاطع والملخصات.</div>
-          <a href="#" class="yt-btn">زيارة القناة</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript -->
+<!-- JavaScript Logic -->
 <script>
   let applications = [];
 
@@ -317,38 +293,38 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   }
 
   function toggleAccordion(header) {
-    const item = header.parentElement;
-    item.classList.toggle('active');
+    header.parentElement.classList.toggle('active');
   }
 
   function toggleForm(formId) {
     const form = document.getElementById(formId);
-    if(form.style.display === 'block') {
-      form.style.display = 'none';
-    } else {
-      form.style.display = 'block';
-    }
+    form.style.display = (form.style.display === 'block') ? 'none' : 'block';
   }
 
-  function submitApplication(type, nameId, reasonId) {
-    const name = document.getElementById(nameId).value.trim();
-    const reason = document.getElementById(reasonId).value.trim();
+  function submitMultiForm(deptName, fieldClass) {
+    const inputs = document.querySelectorAll('.' + fieldClass);
+    let fullAnswers = "";
+    let empty = false;
 
-    if(!name || !reason) {
-      alert("الرجاء ملء جميع الحقول!");
+    inputs.forEach((input) => {
+      if(!input.value.trim()) empty = true;
+      const qTitle = input.previousElementSibling ? input.previousElementSibling.innerText : "سؤال";
+      fullAnswers += `• ${qTitle}\n  الجواب: ${input.value.trim()}\n\n`;
+    });
+
+    if(empty) {
+      alert("المرجو ملء جميع الأسئلة فـ الاستمارة!");
       return;
     }
 
     applications.push({
       id: Date.now(),
-      type: type,
-      name: name,
-      reason: reason,
+      type: deptName,
+      details: fullAnswers,
       status: 'قيد الانتظار'
     });
 
-    document.getElementById(nameId).value = '';
-    document.getElementById(reasonId).value = '';
+    inputs.forEach(input => input.value = '');
     alert("تم إرسال طلبك بنجاح للهوست!");
   }
 
@@ -361,10 +337,9 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
     list.innerHTML = applications.map((app) => `
       <div class="sub-card">
-        <h4 style="color: var(--primary-color);">القسم: ${app.type}</h4>
-        <p><strong>الاسم:</strong> ${app.name}</p>
-        <p><strong>التفاصيل:</strong> ${app.reason}</p>
-        <p style="margin-top: 8px;"><strong>الحالة:</strong> 
+        <h4 style="color: var(--primary-color); font-size: 16px;">القسم: ${app.type}</h4>
+        <div class="sub-ans">${app.details}</div>
+        <p><strong>الحالة:</strong> 
           <span class="status-badge ${app.status === 'مقبول' ? 'status-accepted' : app.status === 'مرفوض' ? 'status-rejected' : 'status-pending'}">
             ${app.status}
           </span>
