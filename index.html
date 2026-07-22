@@ -14,10 +14,12 @@
   --border-color: rgba(0, 255, 255, 0.2);
   --accent-pink: #ff0055;
   --accent-purple: #8a2be2;
+  --military-color: #4b5320;
+  --military-glow: #708238;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
-body { background-color: var(--bg-color); color: #ffffff; overflow-x: hidden; }
+body { background-color: var(--bg-color); color: #ffffff; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
 
 /* Header & Navbar */
 header { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: rgba(12, 10, 24, 0.95); border-bottom: 1px solid var(--border-color); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,255,255,0.05); }
@@ -35,7 +37,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .support-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 25px rgba(255, 0, 85, 0.7); }
 
 /* Pages System */
-.page { display: none; margin-top: 100px; padding: 40px 20px; min-height: 80vh; }
+.page { display: none; margin-top: 100px; padding: 40px 20px; flex: 1; }
 .page.active-page { display: block; animation: fadeIn 0.4s ease-in-out; }
 
 @keyframes fadeIn {
@@ -43,104 +45,47 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero Section */
-.hero { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.hero h1 { font-size: 60px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 30px var(--primary-color); font-weight: 900; }
-.hero p { font-size: 18px; color: #aaa; max-width: 750px; line-height: 1.8; margin-bottom: 30px; }
-.discord-btn { background: #5865F2; color: white; padding: 14px 36px; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 20px rgba(88, 101, 242, 0.5); transition: all 0.3s ease; display: inline-block; }
-.discord-btn:hover { background: #4752c4; transform: translateY(-4px) scale(1.03); box-shadow: 0 0 30px rgba(88, 101, 242, 0.8); }
-
-/* About Us Card (من نحن) */
-.about-card { background: rgba(18, 16, 38, 0.8); border: 1px solid var(--border-color); border-radius: 18px; padding: 40px; max-width: 1100px; margin: 20px auto 40px auto; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; }
-.about-card h2 { font-size: 30px; color: var(--primary-color); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 10px; text-shadow: 0 0 15px var(--primary-color); font-weight: 800; }
-.about-card p { color: #d0d0e0; font-size: 16px; line-height: 1.9; margin-bottom: 20px; max-width: 950px; margin-left: auto; margin-right: auto; }
-.about-footer { color: var(--primary-color); font-weight: 800; font-size: 18px; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0, 255, 255, 0.1); text-shadow: 0 0 10px var(--primary-color); }
-
-/* Feature Cards Grid (الفرعيات) */
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1100px; margin: 30px auto; }
-.feature-card { background: rgba(18, 16, 38, 0.7); border: 1px solid var(--border-color); border-radius: 18px; padding: 30px; text-align: right; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: flex-start; }
-.feature-card:hover { border-color: var(--primary-color); transform: translateY(-6px); box-shadow: 0 0 25px rgba(0, 255, 255, 0.25); background: rgba(22, 19, 48, 0.9); }
-.feature-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-.feature-icon { background: rgba(0, 255, 255, 0.08); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--primary-color); border: 1px solid rgba(0, 255, 255, 0.2); }
-.feature-card h3 { font-size: 20px; color: #fff; font-weight: 800; margin-top: 10px; }
-.feature-card p { color: #aaa; line-height: 1.7; font-size: 14px; }
-
 /* Page Content Formatting */
 .page-content { max-width: 950px; margin: 0 auto; }
 .page-title { color: var(--primary-color); font-size: 32px; margin-bottom: 10px; text-shadow: 0 0 15px var(--primary-color); font-weight: 800; text-align: center; }
 .page-subtitle { color: #bbb; font-size: 15px; line-height: 1.7; margin-bottom: 35px; text-align: center; }
 
-/* Accordions */
-.accordion { background: rgba(18, 16, 36, 0.85); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; margin-bottom: 15px; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-.accordion:hover { border-color: rgba(0, 255, 255, 0.4); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 255, 255, 0.1); }
-.accordion-header { padding: 22px 25px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
-.accordion-header h3 { font-size: 18px; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 12px; }
-.accordion-arrow { color: #fff; background: rgba(255, 255, 255, 0.08); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: transform 0.3s ease, background 0.3s ease; }
-.accordion:hover .accordion-arrow { background: var(--primary-color); color: #000; }
-.accordion.active .accordion-arrow { transform: rotate(180deg); background: var(--primary-color); color: #000; }
-.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease; padding: 0 25px; color: #ccc; font-size: 15px; line-height: 1.8; background: rgba(0, 0, 0, 0.25); }
-.accordion.active .accordion-body { max-height: 1200px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-
+/* Buttons & Forms */
 .apply-btn { background-color: #00ffff; color: #000000; border: none; padding: 14px 40px; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; margin: 20px auto; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
 .apply-btn:hover { background-color: #33ffff; transform: translateY(-4px) scale(1.04); box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); }
 
-/* Forms */
+.military-btn { background: linear-gradient(135deg, #708238, #4b5320); color: #fff; box-shadow: 0 0 20px rgba(112, 130, 56, 0.5); }
+.military-btn:hover { background: linear-gradient(135deg, #8ba446, #5c6728); box-shadow: 0 0 30px rgba(112, 130, 56, 0.8); }
+
 .questions-container { display: none; background: var(--card-bg); border: 1px solid var(--primary-color); border-radius: 18px; padding: 35px; text-align: right; margin-top: 25px; box-shadow: 0 0 35px rgba(0, 255, 255, 0.15); animation: fadeIn 0.3s ease; }
 .questions-container h3 { font-size: 22px; color: var(--primary-color); margin-bottom: 20px; border-bottom: 1px solid rgba(0, 255, 255, 0.2); padding-bottom: 12px; text-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
 .q-group { margin-bottom: 18px; }
 .q-group label { display: block; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.q-group input, .q-group textarea { width: 100%; padding: 12px 16px; background: #0b0914; border: 1px solid #2d284a; color: #fff; border-radius: 10px; font-size: 14px; transition: all 0.3s ease; }
-.q-group input:focus, .q-group textarea:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); background: #0f0c1d; }
+.q-group input, .q-group textarea, .q-group select { width: 100%; padding: 12px 16px; background: #0b0914; border: 1px solid #2d284a; color: #fff; border-radius: 10px; font-size: 14px; transition: all 0.3s ease; }
+.q-group input:focus, .q-group textarea:focus, .q-group select:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); background: #0f0c1d; }
 
 .submit-app { background: linear-gradient(135deg, #00ff88, #00b359); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; margin-top: 15px; transition: all 0.3s ease; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
 .submit-app:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); }
 
-/* Staff / Management Cards */
-.staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 30px; justify-content: center; }
-.staff-card { background: #0e0c1f; border: 1px solid rgba(0, 255, 255, 0.25); border-radius: 18px; padding: 35px 20px 25px 20px; text-align: center; position: relative; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-.staff-card:hover { border-color: var(--primary-color); transform: translateY(-6px); box-shadow: 0 0 30px rgba(0, 255, 255, 0.25); }
+/* FOOTER STYLES */
+.site-footer { background-color: #040308; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 50px 30px 30px 30px; color: #ffffff; margin-top: 80px; width: 100%; }
+.footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; align-items: start; }
+.footer-col h3 { font-size: 18px; font-weight: 800; color: #ffffff; margin-bottom: 20px; }
+.footer-col p { color: #8a8a9e; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { color: #8a8a9e; text-decoration: none; font-size: 14px; cursor: pointer; transition: all 0.3s ease; }
+.footer-col ul li a:hover { color: var(--primary-color); padding-right: 5px; }
 
-.crown-circle { width: 85px; height: 85px; border-radius: 50%; border: 2px solid var(--primary-color); margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 255, 0.03); box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.1); }
-.crown-icon { font-size: 38px; color: var(--primary-color); filter: drop-shadow(0 0 8px var(--primary-color)); }
+.footer-discord-btn { background: #5865F2; color: #ffffff; padding: 12px 22px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 15px rgba(88, 101, 242, 0.4); transition: all 0.3s ease; }
+.footer-discord-btn:hover { background: #4752c4; transform: translateY(-3px); box-shadow: 0 0 25px rgba(88, 101, 242, 0.7); }
 
-.staff-name { font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 20px; letter-spacing: 0.5px; }
-.staff-role-badge { background: rgba(0, 255, 255, 0.06); border: 1px solid rgba(0, 255, 255, 0.4); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; display: block; width: 100%; transition: all 0.3s ease; }
-.staff-card:hover .staff-role-badge { background: rgba(0, 255, 255, 0.15); box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); }
-
-/* Streamer Cards */
-.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 25px; }
-.streamer-card { background: var(--card-bg); border-radius: 18px; padding: 30px 22px; text-align: center; position: relative; transition: all 0.3s ease; }
-.kick-card { border: 1px solid #53fc18; box-shadow: 0 0 20px rgba(83, 252, 24, 0.15); }
-.kick-card:hover { box-shadow: 0 0 35px rgba(83, 252, 24, 0.35); transform: translateY(-6px); }
-.yt-card { border: 1px solid #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.15); }
-.yt-card:hover { box-shadow: 0 0 35px rgba(255, 0, 0, 0.35); transform: translateY(-6px); }
-
-.avatar-container { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; }
-.kick-avatar { border: 2px solid #53fc18; background: rgba(83, 252, 24, 0.05); }
-.yt-avatar { border: 2px solid #ff0000; background: rgba(255, 0, 0, 0.05); }
-
-.streamer-name { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 8px; }
-.streamer-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 15px; }
-.kick-badge { background: rgba(83, 252, 24, 0.15); color: #53fc18; border: 1px solid rgba(83, 252, 24, 0.3); }
-.yt-badge { background: rgba(255, 0, 0, 0.15); color: #ff0000; border: 1px solid rgba(255, 0, 0, 0.3); }
-.action-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: bold; transition: all 0.3s ease; }
-.kick-btn { background-color: #53fc18; color: #0b0914; box-shadow: 0 0 15px rgba(83, 252, 24, 0.4); }
-.kick-btn:hover { background-color: #45d612; transform: translateY(-3px); box-shadow: 0 0 25px rgba(83, 252, 24, 0.7); }
-.yt-btn { background-color: #ff0000; color: #ffffff; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
-.yt-btn:hover { background-color: #cc0000; transform: translateY(-3px); box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
-
-/* Host Submissions Cards */
-.sub-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 22px; margin-bottom: 20px; text-align: right; transition: all 0.3s ease; }
-.sub-card:hover { border-color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 0 20px rgba(0,255,255,0.15); }
-.btn-accept { background: #28a745; color: white; border: none; padding: 8px 18px; border-radius: 8px; cursor: pointer; margin-left: 8px; font-weight: bold; transition: 0.2s; }
-.btn-accept:hover { background: #218838; transform: scale(1.05); }
-.btn-reject { background: #dc3545; color: white; border: none; padding: 8px 18px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-.btn-reject:hover { background: #c82333; transform: scale(1.05); }
-.status-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 12px; }
-.status-pending { background: #ffc107; color: #000; }
-.status-accepted { background: #28a745; color: #fff; }
-.status-rejected { background: #dc3545; color: #fff; }
-.sub-ans { color: #aaa; white-space: pre-line; margin-bottom: 12px; font-size: 14px; line-height: 1.7; background: #0b0914; padding: 15px; border-radius: 10px; border: 1px solid #221f3b; }
+.brand-col { text-align: right; }
+.footer-logo { font-size: 28px; font-weight: 900; color: #ffffff; margin-bottom: 15px; text-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
+.brand-desc { color: #8a8a9e; font-size: 14px; line-height: 1.8; margin-bottom: 25px; }
+.social-icons { display: flex; gap: 12px; }
+.social-icon-btn { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #a0a0b5; text-decoration: none; transition: all 0.3s ease; }
+.social-icon-btn:hover { background: rgba(0, 255, 255, 0.1); border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); }
 </style>
 </head>
 <body>
@@ -156,8 +101,9 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
       <li><a onclick="showPage('home')" class="nav-link active" id="link-home">الرئيسية</a></li>
       <li><a onclick="showPage('rules')" class="nav-link" id="link-rules">القوانين</a></li>
       <li><a onclick="showPage('police')" class="nav-link" id="link-police">الشرطة</a></li>
-      <li><a onclick="showPage('intelligence')" class="nav-link" id="link-intelligence">الاستخبارات</a></li>
+      <li><a onclick="showPage('defense')" class="nav-link" id="link-defense" style="color: #8ba446;">وزارة الدفاع</a></li>
       <li><a onclick="showPage('ems')" class="nav-link" id="link-ems">EMS</a></li>
+      <li><a onclick="showPage('intelligence')" class="nav-link" id="link-intelligence">الاستخبارات</a></li>
       <li><a onclick="showPage('justice')" class="nav-link" id="link-justice">وزارة العدل</a></li>
       <li><a onclick="showPage('gangs')" class="nav-link" id="link-gangs">العصابات</a></li>
       <li><a onclick="openHostPanel()" class="nav-link" id="link-host" style="color: var(--accent-pink); font-weight: bold;">⚙️ لوحة الهوست</a></li>
@@ -170,140 +116,11 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="support-btn">دعم السيرفر</a>
 </header>
 
-<!-- Home Page (الرئيسية) -->
+<!-- Home Page -->
 <div id="home" class="page active-page">
-  <section class="hero">
-    <h1>LC CITY</h1>
-    <p>حيث نصنع الواقعية الكاملة بمحاكاة متطورة، مدعومة بأنظمة أمنية وقضائية وعسكرية تضمن لك بيئة لعب قوية ومستقرة.</p>
-    <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="discord-btn">دخول عبر ديسكورد</a>
-  </section>
-
-  <!-- بطاقة من نحن؟ (الصورة الأولى) -->
-  <div class="about-card">
-    <h2>من نحن؟ <span>★</span></h2>
-    <p>تأسس السيرفر برؤية واضحة وهدف أساسي: تقديم بيئة تفاعلية حقيقية تجمع عشاق الـ Roleplay. لم يكن التطور بالنسبة لنا مجرد إضافة سكربتات، بل بناء مجتمع متكامل يعتمد على القيادة المنظمة، والعدالة المشتركة، والسيناريوهات الملحمية.</p>
-    <p>نفتح أمامك اليوم تجربة مغايرة تماماً، بإدارة محترفة تسهر على تطبيق النظام، وتضمن لكل لاعب أخذ حقه الكامل للاستمتاع بلعب أدوار حقيقي وخالٍ من العشوائية.</p>
-    <div class="about-footer">مرحباً بك في عالمك الجديد هنا تبدأ قصتك</div>
-  </div>
-
-  <!-- البطاقات الستة (الصورة الثانية) -->
-  <div class="features-grid">
-    
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">🎧</div>
-      </div>
-      <h3>طاقم دعم متواجد دائماً</h3>
-      <p>راحتك وحل مشاكلك هي أولويتنا. إدارتنا متواجدة على مدار الساعة عبر نظام تذاكر سريع لضمان إنهاء أي عائق يواجهك في اللعب.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">️&lt;/&gt;</div>
-      </div>
-      <h3>سكربتات حصرية وخاصة</h3>
-      <p>نأخذ محاكاة الواقعية إلى مستوى آخر تماماً بأكواد مخصصة ومطورة داخلياً، مما يضمن لك سلاسة تقنية وأعلى معدل إطارات (FPS).</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">💼</div>
-      </div>
-      <h3>منظومة وظائف عميقة</h3>
-      <p>سواء كنت ترغب في ملاحقة الجريمة، إنقاذ المصابين، أو حتى إدارة منشأتك الإجرامية الخاصة، وفرنا لك كافة الأدوات لسيناريو متكامل.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">🛡️</div>
-      </div>
-      <h3>استقرار وأمان كامل</h3>
-      <p>بياناتك وجهدك داخل السيرفر في أيدي أمينة بفضل الحماية والنسخ الاحتياطي المتطور.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">⚖️</div>
-      </div>
-      <h3>تطبيق صارم للنظام</h3>
-      <p>لا وجود للمخربين أو اللعب العشوائي هنا. القوانين تطبق على الجميع بالتساوي للحفاظ على جودة الرول بلاي.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-header">
-        <div class="feature-icon">👥</div>
-      </div>
-      <h3>مجتمع متفاعل وقوي</h3>
-      <p>ستكون جزءاً من نخبة اللاعبين وصناع القصص الذين يشاركونك نفس الشغف والتنافس الراقِ.</p>
-    </div>
-
-  </div>
-</div>
-
-<!-- Rules Page -->
-<div id="rules" class="page">
   <div class="page-content">
-    <h2 class="page-title">قوانين سيرفر LC CITY</h2>
-    <p class="page-subtitle">يرجى قراءة كافة القوانين بعناية لتجنب العقوبات والمحافظة على جودة الرول بلاي.</p>
-    
-    <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>🔨</span> القوانين العامة والأساسية في السيرفر</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
-      <div class="accordion-body">
-        <p>1. يمنع الخروج عن نطاق الشخصية (OOC) داخل اللعبة بتاتاً.</p>
-        <p>2. يمنع استعمال الثغرات أو البرامج المساعدة (Hacks/Glitches) وتؤدي للتحذير النهائي أو الباند.</p>
-        <p>3. يمنع القتل العشوائي (RDM) أو الدهس العشوائي (VDM).</p>
-        <p>4. احترام جميع الأعضاء والطاقم الإداري واجب على الجميع.</p>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>🎭</span> شروط وضوابط عمليات السطو والسرقة</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
-      <div class="accordion-body">
-        <p>1. يجب تواجد عدد أدنى من عناصر الشرطة (مثلاً 3 رجال شرطة على الأقل لسرقة البنك).</p>
-        <p>2. يمنع التفاوض الوهمي ويجب الالتزام بشروط رهائن واقعية.</p>
-        <p>3. يمنع السطو المتكرر على نفس المكان خلال أقل من 45 دقيقة.</p>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>💀</span> قوانين الإعدام والقتال (CK & PK)</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
-      <div class="accordion-body">
-        <p>1. القتل النهائي لشخصية (CK) يتطلب موافقة رسمية من إدارة السيرفر وسبب رول بلاي قوي جداً.</p>
-        <p>2. عند تعرضك للإغماء والنعش (PK) تفقد ذاكرة السيناريو الأخير بالكامل ولا يمكنك العودة لمكان الواقعة.</p>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>👤</span> قوانين الحياة الواقعية (Fear RP & Fail RP)</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
-      <div class="accordion-body">
-        <p>1. يجب الخوف على حياتك عند توجيه السلاح نحو رأسك (Fear RP).</p>
-        <p>2. يمنع القيادة بمركبات متضررة جداً أو القيام بفقزات غير واقعية (Fail RP).</p>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>👾</span> قوانين الديسكورد والتواصل</h3>
-        <span class="accordion-arrow">▼</span>
-      </div>
-      <div class="accordion-body">
-        <p>1. يمنع الشتم، السب، أو نشر الإعلانات داخل شات الديسكورد.</p>
-        <p>2. يمنع استخدام الميكروفون المزعج أو برامج تغيير الصوت غير الواقعية داخل روم الصوت.</p>
-      </div>
-    </div>
-
+    <h1 class="page-title">مرحباً بك في LC CITY</h1>
+    <p class="page-subtitle">اختر القسم الذي تريد التصفح أو التقديم عليه من القائمة العلوية.</p>
   </div>
 </div>
 
@@ -311,40 +128,52 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 <div id="police" class="page">
   <div class="page-content">
     <h2 class="page-title">وزارة الداخلية والشرطة</h2>
-    <p class="page-subtitle">انضم للقطاع الأمني لحفظ السلام وحماية المواطنين وتنفيذ القانون.</p>
-    <button class="apply-btn" onclick="toggleForm('police-form')">تقديم طلب انضمام</button>
+    <p class="page-subtitle">انضم للقطاع الأمني لحفظ السلام وحماية المواطنين وتنفيذ القانون داخل المدينة.</p>
+    <button class="apply-btn" onclick="toggleForm('police-form')">تقديم طلب انضمام للشرطة</button>
     
     <div id="police-form" class="questions-container">
-      <h3>طلب الالتحاق بقطاع الشرطة</h3>
-      <div class="q-group"><label>الاسم الكامل داخل اللعبة:</label><input type="text" class="pol-field" placeholder="مثال: أحمد العبدالله"></div>
-      <div class="q-group"><label>اسم حساب ديسكورد + ID:</label><input type="text" class="pol-field" placeholder="user#0000 / 12345678"></div>
-      <div class="q-group"><label>العمر الحقيقي / العمر في اللعبة:</label><input type="text" class="pol-field" placeholder="مثال: 19 سنة / 26 سنة"></div>
-      <div class="q-group"><label>الخبرات السابقة فـ قطاع الشرطة والسيرفرات:</label><textarea class="pol-field" placeholder="اذكر السيرفرات والرتب السابقة بالتفصيل..."></textarea></div>
-      <div class="q-group"><label>ما الفرق بين التوقيف الاحتياطي والاعتقال النهائي؟</label><textarea class="pol-field" placeholder="اشرح مفهومك القانوني..."></textarea></div>
-      <div class="q-group"><label>كيف تتعامل إذا قام المشتبه به بإطلاق النار وسط المدنيين؟</label><textarea class="pol-field" placeholder="خطوات التعامل وتقييم الخطر..."></textarea></div>
-      <div class="q-group"><label>ما المفهوم الصحيح لـ (Fear RP) كشرطي أثناء وجود رهينة؟</label><textarea class="pol-field" placeholder="التصرف الصحيح للحفاظ على حياة الرهينة..."></textarea></div>
-      <div class="q-group"><label>ما هي أوقات تواجدك اليومية بالساعات؟</label><input type="text" class="pol-field" placeholder="مثال: من 6 مساءً إلى 11 مساءً"></div>
-      <button class="submit-app" onclick="submitMultiForm('الشرطة', 'pol-field')">إرسال الطلب النهائي</button>
+      <h3>استمارة التقديم على سلك الشرطة</h3>
+      <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
+        <div class="q-group"><label>الاسم الكامل داخل اللعبة (RP Name):</label><input type="text" required placeholder="مثال: Ahmed_Mansour"></div>
+        <div class="q-group"><label>اسم حسابك في الديسكورد (Discord Username):</label><input type="text" required placeholder="مثال: user#0000"></div>
+        <div class="q-group"><label>العمر الحقيقي:</label><input type="number" required placeholder="مثال: 18"></div>
+        <div class="q-group"><label>عدد ساعات لعبك في سيرفرات الـ RP بشكل عام:</label><input type="text" required placeholder="مثال: 500 ساعة"></div>
+        <div class="q-group"><label>ما هي الرتبة أو الخبرات السابقة لك في قطاعات الشرطة؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>سيناريو: رأيت زميلاً لك في الشرطة يأخذ رشوة من مجرم، كيف تتصرف؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">إرسال الاستمارة</button>
+      </form>
     </div>
   </div>
 </div>
 
-<!-- Intelligence Page -->
-<div id="intelligence" class="page">
+<!-- Defense Page (وزارة الدفاع) -->
+<div id="defense" class="page">
   <div class="page-content">
-    <h2 class="page-title">جهاز الاستخبارات والأمن الوطني</h2>
-    <p class="page-subtitle">نخبة العمليات السرية، التحريات، ومكافحة الجريمة المنظمة.</p>
-    <button class="apply-btn" onclick="toggleForm('intel-form')">تقديم طلب انضمام</button>
-    
-    <div id="intel-form" class="questions-container">
-      <h3>استمارة التقديم - جهاز الاستخبارات</h3>
-      <div class="q-group"><label>الاسم الكامل في اللعبة:</label><input type="text" class="intel-field" placeholder="الاسم..."></div>
-      <div class="q-group"><label>حساب ديسكورد:</label><input type="text" class="intel-field" placeholder="Discord Tag..."></div>
-      <div class="q-group"><label>خبرتك في العمل السرّي والمراقبة والتجسس:</label><textarea class="intel-field" placeholder="تفاصيل الخبرات السابقة..."></textarea></div>
-      <div class="q-group"><label>كيف تتعامل إذا تم التعرف على هويتك السرية أثناء عملية اختراق لعصابة؟</label><textarea class="intel-field" placeholder="سيناريو الخروج والتعامل مع الموقف..."></textarea></div>
-      <div class="q-group"><label>ما هي الأساليب التي تستخدمها لجمع الأدلة دون كشف نفسك؟</label><textarea class="intel-field" placeholder="طرق التوثيق والتتبع..."></textarea></div>
-      <div class="q-group"><label>التعهد بالحفاظ على سرية المعلومات العسكرية والعمليات:</label><input type="text" class="intel-field" placeholder="اكتب: (أتعهد بالالتزام بالسرية التامة والتنفيذ)"></div>
-      <button class="submit-app" onclick="submitMultiForm('الاستخبارات', 'intel-field')">إرسال الطلب</button>
+    <h2 class="page-title" style="color: #8ba446; text-shadow: 0 0 15px #708238;">🎖️ وزارة الدفاع والقوات المسلحة</h2>
+    <p class="page-subtitle">انضم للجيش والقوات الخاصة لحماية حدود المدينة، التعامل مع التهديدات الكبرى، وإرساء النظام العسكري.</p>
+    <button class="apply-btn military-btn" onclick="toggleForm('defense-form')">تقديم طلب انضمام لوزارة الدفاع</button>
+
+    <div id="defense-form" class="questions-container" style="border-color: #708238;">
+      <h3 style="color: #8ba446;">استمارة التجنيد العسكري - وزارة الدفاع</h3>
+      <form onsubmit="alert('تم إرسال طلب التجنيد بنجاح!'); return false;">
+        <div class="q-group"><label>الاسم الثلاثي للشخصية (In-Game Name):</label><input type="text" required placeholder="مثال: Youssef_Al_Otaibi"></div>
+        <div class="q-group"><label>معرف الديسكورد (Discord ID / Username):</label><input type="text" required placeholder="مثال: soldier_01"></div>
+        <div class="q-group"><label>العمر الحقيقي (شرط +16):</label><input type="number" min="16" required></div>
+        <div class="q-group"><label>ما هو التخصص العسكري الذي ترغب في الانضمام إليه؟</label>
+          <select required>
+            <option value="">اختر التخصص...</option>
+            <option value="infantry">المشاة والقوات البرية</option>
+            <option value="special-forces">القوات الخاصة (S.O.F)</option>
+            <option value="air-force">سلاح الجو والطيران العسكري</option>
+            <option value="logistics">الدعم اللوجستي والإمداد</option>
+          </select>
+        </div>
+        <div class="q-group"><label>ما الفرق بين التعامل العسكري (وزارة الدفاع) والتعامل الشرطي (الشرطة) فسيناريوهات الـ RP؟</label><textarea rows="3" required placeholder="اشرح مفهوم الضوابط العسكرية مقارنة بالقوانين المدنية..."></textarea></div>
+        <div class="q-group"><label>ما هي مدى جديتك والتزامك بالأوامر العسكرية الصارمة وتسلسل القيادة؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>سيناريو: تلقيت أمراً من ضابطك المباشر بالانسحاب، لكن زميلك مصاب تحت النار، كيف تتصرف طبقاً للرول بلاي العسكري؟</label><textarea rows="4" required></textarea></div>
+        <div class="q-group"><label>هل لديك أي سوابق إجرامية أو عقوبات إدارية سابقة بالسيرفر؟</label><textarea rows="2" required></textarea></div>
+        <button type="submit" class="submit-app" style="background: linear-gradient(135deg, #708238, #4b5320); color: white;">تقديم طلب التجنيد</button>
+      </form>
     </div>
   </div>
 </div>
@@ -353,179 +182,91 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 <div id="ems" class="page">
   <div class="page-content">
     <h2 class="page-title">وزارة الصحة والإسعاف (EMS)</h2>
-    <p class="page-subtitle">إنقاذ الأرواح وتقديم العناية الطبية الطارئة لكل سكان المدينة.</p>
-    <button class="apply-btn" onclick="toggleForm('ems-form')">تقديم طلب انضمام</button>
-    
+    <p class="page-subtitle">كن البطل الذي ينقذ الأرواح ويدير العمليات الطبية في أوقات الطوارئ.</p>
+    <button class="apply-btn" onclick="toggleForm('ems-form')">تقديم طلب انضمام لـ EMS</button>
+
     <div id="ems-form" class="questions-container">
-      <h3>استمارة التقديم - قطاع الطب والإسعاف</h3>
-      <div class="q-group"><label>الاسم داخل اللعبة:</label><input type="text" class="ems-field" placeholder="اسم الشخصية..."></div>
-      <div class="q-group"><label>حساب ديسكورد:</label><input type="text" class="ems-field" placeholder="Discord User..."></div>
-      <div class="q-group"><label>العمر الحقيقي:</label><input type="text" class="ems-field" placeholder="العمر..."></div>
-      <div class="q-group"><label>هل لديك خبرة سابقة في مصطلحات الرول بلاي الطبي (Me / Do)؟</label><textarea class="ems-field" placeholder="اعط أمثلة لاستخدام me و do في العلاج..."></textarea></div>
-      <div class="q-group"><label>ما هو الإجراء الطبي والأساسي عند وصولك لمصاب ب طلق ناري؟</label><textarea class="ems-field" placeholder="خطوات الإسعاف الأولية..."></textarea></div>
-      <div class="q-group"><label>كيف تتعامل مع مريض يرفض العلاج أو يهاجم الطاقم الطبي؟</label><textarea class="ems-field" placeholder="التصرف القانوني والطبي..."></textarea></div>
-      <button class="submit-app" onclick="submitMultiForm('وزارة الصحة (EMS)', 'ems-field')">إرسال الطلب</button>
+      <h3>استمارة التقديم على القطاع الطبي</h3>
+      <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
+        <div class="q-group"><label>الاسم الكامل داخل اللعبة:</label><input type="text" required></div>
+        <div class="q-group"><label>اسم حسابك في الديسكورد:</label><input type="text" required></div>
+        <div class="q-group"><label>العمر الحقيقي:</label><input type="number" required></div>
+        <div class="q-group"><label>هل لديك مصطلحات طبية أساسية للرول بلاي (مثل CPR / الضغط / الإسعافات)؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>سيناريو: وصلك بلاغ عن إطلاق نار محتدم، هل تتدخل فوراً أم تنتظر تأمين الشرطة؟ ولماذا؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">إرسال الاستمارة</button>
+      </form>
     </div>
   </div>
 </div>
 
-<!-- Justice Page -->
-<div id="justice" class="page">
-  <div class="page-content">
-    <h2 class="page-title">وزارة العدل والقضاء</h2>
-    <p class="page-subtitle">حماية الحقوق، إدارة المحاكمات، وصياغة العقوبات القانونية.</p>
-    <button class="apply-btn" onclick="toggleForm('justice-form')">تقديم طلب انضمام</button>
+<!-- Rest of pages (Other pages) -->
+<div id="rules" class="page"><div class="page-content"><h2 class="page-title">قوانين السيرفر</h2></div></div>
+<div id="intelligence" class="page"><div class="page-content"><h2 class="page-title">جهاز الاستخبارات</h2></div></div>
+<div id="justice" class="page"><div class="page-content"><h2 class="page-title">وزارة العدل</h2></div></div>
+<div id="gangs" class="page"><div class="page-content"><h2 class="page-title">العصابات</h2></div></div>
+<div id="monitoring" class="page"><div class="page-content"><h2 class="page-title">هيئة الرقابة</h2></div></div>
+<div id="quiz" class="page"><div class="page-content"><h2 class="page-title">الاختبار الشخصي</h2></div></div>
+<div id="streamer" class="page"><div class="page-content"><h2 class="page-title">البث المباشر</h2></div></div>
+<div id="staff" class="page"><div class="page-content"><h2 class="page-title">الإدارة العليا</h2></div></div>
+<div id="host" class="page"><div class="page-content"><h2 class="page-title">⚙️ لوحة الهوست</h2></div></div>
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-container">
     
-    <div id="justice-form" class="questions-container">
-      <h3>استمارة التقديم - السلك القضائي والخدمات القانونية</h3>
-      <div class="q-group"><label>الاسم الكامل فـ اللعبة:</label><input type="text" class="just-field" placeholder="الاسم..."></div>
-      <div class="q-group"><label>حساب الديسكورد:</label><input type="text" class="just-field" placeholder="Discord Tag..."></div>
-      <div class="q-group"><label>المنصب المطلوب (محامي دفاع / قاضي / مدعي عام):</label><input type="text" class="just-field" placeholder="حدد المنصب المرغوب..."></div>
-      <div class="q-group"><label>مدى معرفتك بقوانين العقوبات والجنايات بالسيرفر:</label><textarea class="just-field" placeholder="شرح لخبرتك القانونية..."></textarea></div>
-      <div class="q-group"><label>كيف تتصرف إذا اكتشفت خرقاً للإجراءات القانونية من رجل شرطة أثناء القبض؟</label><textarea class="just-field" placeholder="خطوات الطعن أو الدفاع..."></textarea></div>
-      <div class="q-group"><label>أذكر 3 شروط أساسية لبطلان التهمة في المحكمة:</label><textarea class="just-field" placeholder="الأسباب والشروط..."></textarea></div>
-      <button class="submit-app" onclick="submitMultiForm('وزارة العدل', 'just-field')">إرسال الطلب</button>
+    <!-- Column 1: Join Us -->
+    <div class="footer-col">
+      <h3>انضم إلينا</h3>
+      <p>انضم إلى سيرفر الديسكورد الخاص بنا وكن جزءاً من التجربة</p>
+      <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="footer-discord-btn">
+        <span>انضم للديسكورد</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.009c.12.098.245.195.372.288a.077.077 0 0 1-.006.128c-.598.344-1.22.642-1.873.891a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+        </svg>
+      </a>
     </div>
-  </div>
-</div>
 
-<!-- Gangs Page -->
-<div id="gangs" class="page">
-  <div class="page-content">
-    <h2 class="page-title">العصابات والأنشطة الإجرامية</h2>
-    <p class="page-subtitle">أنظمة المنظمات الإجرامية وشروط الحروب والسيطرة.</p>
-  </div>
-</div>
-
-<!-- Monitoring Page -->
-<div id="monitoring" class="page">
-  <div class="page-content">
-    <h2 class="page-title">هيئة الرقابة والتدقيق</h2>
-    <p class="page-subtitle">ضمان سير الرول بلاي بشكل عادل ومراقبة تطبيق القوانين.</p>
-    <button class="apply-btn" onclick="toggleForm('mon-form')">تقديم طلب انضمام</button>
-    
-    <div id="mon-form" class="questions-container">
-      <h3>استمارة التقديم - هيئة الرقابة الإدارية</h3>
-      <div class="q-group"><label>اسمك الحقيقي واسم شخصيتك:</label><input type="text" class="mon-field" placeholder="الاسم..."></div>
-      <div class="q-group"><label>حساب ديسكورد + العمر:</label><input type="text" class="mon-field" placeholder="User / Age..."></div>
-      <div class="q-group"><label>خبرتك السابقة في الموديريشن والرقابة:</label><textarea class="mon-field" placeholder="السيرفرات والمهام السابقة..."></textarea></div>
-      <div class="q-group"><label>كيف تنهي خلاف حاد بين طرفين في روم التذكرة (Ticket) بأسلوب محايد؟</label><textarea class="mon-field" placeholder="خطوات فض النزاع..."></textarea></div>
-      <div class="q-group"><label>ما التصرف المناسب إذا رأيت إداري آخر يخالف القوانين؟</label><textarea class="mon-field" placeholder="إجراءات التبليغ الإداري..."></textarea></div>
-      <div class="q-group"><label>هل تملك برامج تصوير وتوثيق مستمر للعب؟</label><input type="text" class="mon-field" placeholder="نعم / لا واسم البرنامج..."></div>
-      <button class="submit-app" onclick="submitMultiForm('هيئة الرقابة', 'mon-field')">إرسال الطلب</button>
+    <!-- Column 2: Submissions -->
+    <div class="footer-col">
+      <h3>التقديمات</h3>
+      <ul>
+        <li><a onclick="showPage('police')">تقديم الشرطة</a></li>
+        <li><a onclick="showPage('defense')">تقديم وزارة الدفاع</a></li>
+        <li><a onclick="showPage('ems')">تقديم الإسعاف EMS</a></li>
+        <li><a onclick="showPage('monitoring')">تقديم هيئة الرقابة</a></li>
+      </ul>
     </div>
-  </div>
-</div>
 
-<!-- Quiz Page -->
-<div id="quiz" class="page">
-  <div class="page-content">
-    <h2 class="page-title">الاختبار الشخصي (Roleplay Quiz)</h2>
-    <p class="page-subtitle">اختبر مدى فهمك واستيعابك لقواعد ومصطلحات الرول بلاي.</p>
-    <button class="apply-btn" onclick="toggleForm('quiz-form')">بدء الاختبار الشخصي</button>
-    
-    <div id="quiz-form" class="questions-container">
-      <h3>اختبار مفاهيم الرول بلاي الأساسية</h3>
-      <div class="q-group"><label>الاسم في اللعبة + ديسكورد:</label><input type="text" class="quiz-field" placeholder="اسمك + Discord..."></div>
-      <div class="q-group"><label>1. اشرح الفرق بالتفصيل بين RDM و VDM مع إعطاء مثال لكل منهما؟</label><textarea class="quiz-field" placeholder="الشرح والمثال..."></textarea></div>
-      <div class="q-group"><label>2. ما معنى مصطلح Metagaming؟ وكيف تتجنبه أثناء البث أو التواصل؟</label><textarea class="quiz-field" placeholder="المفهوم والتجنب..."></textarea></div>
-      <div class="q-group"><label>3. ماذا يعني Powergaming؟ أعط مثالاً يسرد تخطي حدود الواقعية.</label><textarea class="quiz-field" placeholder="الشرح والمثال..."></textarea></div>
-      <div class="q-group"><label>4. ما هو الفرق بين IC (In Character) و OOC (Out Of Character)؟</label><textarea class="quiz-field" placeholder="التوضيح..."></textarea></div>
-      <div class="q-group"><label>5. كيف تتصرف في حال تعرضت لـ Glitch تسبب في خسارتك لأدواتك؟</label><textarea class="quiz-field" placeholder="التصرف الصحيح داخل الرول بلاي..."></textarea></div>
-      <button class="submit-app" onclick="submitMultiForm('الاختبار الشخصي (Quiz)', 'quiz-field')">إرسال الإجابات للهوست</button>
+    <!-- Column 3: Browse -->
+    <div class="footer-col">
+      <h3>تصفح</h3>
+      <ul>
+        <li><a onclick="showPage('home')">الرئيسية</a></li>
+        <li><a onclick="showPage('rules')">القوانين العامة</a></li>
+        <li><a onclick="showPage('monitoring')">هيئة الرقابة</a></li>
+        <li><a onclick="showPage('staff')">الإدارة العليا</a></li>
+      </ul>
     </div>
-  </div>
-</div>
 
-<!-- Streamers Page -->
-<div id="streamer" class="page">
-  <div class="page-content">
-    <h2 class="page-title">البث المباشر وصناع المحتوى</h2>
-    <p class="page-subtitle">تابع أفضل البثوث المباشرة والتغطيات الخاصة بسيرفر LC CITY.</p>
-    <div class="streamers-grid">
+    <!-- Column 4: Brand & Socials -->
+    <div class="footer-col brand-col">
+      <div class="footer-logo">LC CITY</div>
+      <p class="brand-desc">مجتمع حياة واقعية عربي على Roblox شخصيات متعمقة، قصص مترابطة، ومجتمع ناطق بالحياة ينتظرك</p>
       
-      <!-- Kick Card -->
-      <div class="streamer-card kick-card">
-        <div class="avatar-container kick-avatar">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="#53fc18"><path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/></svg>
-        </div>
-        <div class="streamer-name">mehdicfw</div>
-        <div class="streamer-badge kick-badge">صانع محتوى</div>
-        <p style="color:#aaa; font-size:13px; line-height:1.6; margin-bottom:20px;">تابع البثوث المباشرة، كواليس التطوير، والمشاريع البرمجية المثيرة لسيرفر LC CITY عبر منصة كيك.</p>
-        <a href="https://kick.com/cfwmehdi" target="_blank" class="action-btn kick-btn">مشاهدة البث على Kick ➔</a>
+      <div class="social-icons">
+        <a href="https://kick.com/cfwmehdi" target="_blank" class="social-icon-btn" title="Kick Stream">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/></svg>
+        </a>
+        <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="social-icon-btn" title="Discord Community">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.009c.12.098.245.195.372.288a.077.077 0 0 1-.006.128c-.598.344-1.22.642-1.873.891a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
       </div>
-
-      <!-- YouTube Card -->
-      <div class="streamer-card yt-card">
-        <div class="avatar-container yt-avatar">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </div>
-        <div class="streamer-name">ahmed</div>
-        <div class="streamer-badge yt-badge">صانع محتوى</div>
-        <p style="color:#aaa; font-size:13px; line-height:1.6; margin-bottom:20px;">اشترك في القناة لمشاهدة ملخصات الرول بلاي ومقاطع الفيديو المتميزة وأحدث تغطيات الأحداث.</p>
-        <a href="https://www.youtube.com/@1tbu0" target="_blank" class="action-btn yt-btn">زيارة القناة على YouTube ➔</a>
-      </div>
-
     </div>
+
   </div>
-</div>
+</footer>
 
-<!-- Staff Page -->
-<div id="staff" class="page">
-  <div class="page-content">
-    <h2 class="page-title">👑 طاقم الإدارة العليا</h2>
-    <p class="page-subtitle">الهيكل القيادي والمسؤولون عن تشغيل، تطوير، واستقرار LC CITY</p>
-    
-    <div class="staff-grid">
-      
-      <!-- Ahmed -->
-      <div class="staff-card">
-        <div class="crown-circle">
-          <span class="crown-icon">👑</span>
-        </div>
-        <div class="staff-name">ahmed</div>
-        <div class="staff-role-badge">Owner</div>
-      </div>
-
-      <!-- Mehdi -->
-      <div class="staff-card">
-        <div class="crown-circle">
-          <span class="crown-icon">👑</span>
-        </div>
-        <div class="staff-name">mehdi</div>
-        <div class="staff-role-badge">Co-Owner</div>
-      </div>
-
-      <!-- Abujabber -->
-      <div class="staff-card">
-        <div class="crown-circle">
-          <span class="crown-icon">👑</span>
-        </div>
-        <div class="staff-name">abujabber</div>
-        <div class="staff-role-badge">مسؤول السيرفر</div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Host Admin Panel Page -->
-<div id="host" class="page">
-  <div class="page-content">
-    <h2 class="page-title" style="color: var(--accent-pink); text-shadow: 0 0 15px var(--accent-pink);">⚙️ لوحة تحكم الهوست</h2>
-    <p class="page-subtitle">مراجعة وتقييم جميع الطلبات والتقديمات الواردة من أعضاء السيرفر.</p>
-
-    <h3 style="color: var(--primary-color); margin-bottom: 20px; text-align: right;">📥 الطلبات الواردة حديثاً:</h3>
-    <div id="submissions-list">
-      <p style="color: #888; text-align: center;" id="no-subs">لا توجد تقديمات حتى الآن.</p>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript Core -->
 <script>
-  let applications = [];
-
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
@@ -539,89 +280,17 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  function toggleForm(formId) {
+    const form = document.getElementById(formId);
+    if(form) form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
+
   function openHostPanel() {
     const code = prompt("أدخل كود الدخول للوحة الهوست:");
     if (code === "mehdilccity") {
-      renderSubmissions();
       showPage('host');
     } else if (code !== null) {
-      alert("الكود خاطئ! ليس لديك صلاحية الوصول.");
-    }
-  }
-
-  function toggleAccordion(header) {
-    const accordion = header.parentElement;
-    accordion.classList.toggle('active');
-  }
-
-  function toggleForm(formId) {
-    const form = document.getElementById(formId);
-    if (form.style.display === 'block') {
-      form.style.display = 'none';
-    } else {
-      form.style.display = 'block';
-      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  function submitMultiForm(deptName, fieldClass) {
-    const inputs = document.querySelectorAll('.' + fieldClass);
-    let fullAnswers = "";
-    let empty = false;
-
-    inputs.forEach((input) => {
-      if(!input.value.trim()) empty = true;
-      const qTitle = input.previousElementSibling ? input.previousElementSibling.innerText : "سؤال";
-      fullAnswers += `• ${qTitle}\n  الجواب: ${input.value.trim()}\n\n`;
-    });
-
-    if(empty) {
-      alert("المرجو ملء جميع الأسئلة والإجابات المطلوبة قبل الإرسال!");
-      return;
-    }
-
-    applications.push({
-      id: Date.now(),
-      type: deptName,
-      details: fullAnswers,
-      status: 'قيد الانتظار'
-    });
-
-    inputs.forEach(input => input.value = '');
-    alert("تم إرسال طلبك بنجاح للهوست لمراجعته!");
-  }
-
-  function renderSubmissions() {
-    const list = document.getElementById('submissions-list');
-    if (applications.length === 0) {
-      list.innerHTML = '<p style="color: #888; text-align: center;" id="no-subs">لا توجد تقديمات حتى الآن.</p>';
-      return;
-    }
-
-    list.innerHTML = applications.map((app) => `
-      <div class="sub-card">
-        <h4 style="color: var(--primary-color); font-size: 17px; margin-bottom: 10px;">القسم: ${app.type}</h4>
-        <div class="sub-ans">${app.details}</div>
-        <p style="margin-top: 10px;"><strong>الحالة الحالية:</strong> 
-          <span class="status-badge ${app.status === 'مقبول' ? 'status-accepted' : app.status === 'مرفوض' ? 'status-rejected' : 'status-pending'}">
-            ${app.status}
-          </span>
-        </p>
-        ${app.status === 'قيد الانتظار' ? `
-          <div style="margin-top: 15px;">
-            <button class="btn-accept" onclick="updateStatus(${app.id}, 'مقبول')">قبول الطلب</button>
-            <button class="btn-reject" onclick="updateStatus(${app.id}, 'مرفوض')">رفض الطلب</button>
-          </div>
-        ` : ''}
-      </div>
-    `).join('');
-  }
-
-  function updateStatus(id, newStatus) {
-    const app = applications.find(a => a.id === id);
-    if(app) {
-      app.status = newStatus;
-      renderSubmissions();
+      alert("الكود خاطئ!");
     }
   }
 </script>
