@@ -16,6 +16,8 @@
   --accent-purple: #8a2be2;
   --military-color: #708238;
   --youtube-red: #ff0000;
+  --success-color: #00ff88;
+  --danger-color: #ff3366;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
@@ -87,7 +89,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .accordion:hover .accordion-arrow { background: var(--primary-color); color: #000; }
 .accordion.active .accordion-arrow { transform: rotate(180deg); background: var(--primary-color); color: #000; }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease; padding: 0 25px; color: #ccc; font-size: 15px; line-height: 1.8; background: rgba(0, 0, 0, 0.25); }
-.accordion.active .accordion-body { max-height: 1500px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.accordion.active .accordion-body { max-height: 2500px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
 /* Buttons & Forms */
 .apply-btn { background-color: #00ffff; color: #000000; border: none; padding: 14px 40px; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; margin: 20px auto; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
@@ -105,6 +107,18 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
 .submit-app { background: linear-gradient(135deg, #00ff88, #00b359); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; margin-top: 20px; transition: all 0.3s ease; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
 .submit-app:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); }
+
+/* Host Panel Styles */
+.app-card { background: #0b0914; border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 15px; text-align: right; position: relative; }
+.app-card h4 { color: var(--primary-color); font-size: 18px; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+.app-card p { margin-bottom: 6px; font-size: 14px; color: #ddd; }
+.app-actions { display: flex; gap: 10px; margin-top: 15px; }
+.btn-accept { background: var(--success-color); color: #000; border: none; padding: 8px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-reject { background: var(--danger-color); color: #fff; border: none; padding: 8px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.status-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+.status-pending { background: rgba(255, 200, 0, 0.2); color: #ffc800; border: 1px solid #ffc800; }
+.status-accepted { background: rgba(0, 255, 136, 0.2); color: #00ff88; border: 1px solid #00ff88; }
+.status-rejected { background: rgba(255, 51, 102, 0.2); color: #ff3366; border: 1px solid #ff3366; }
 
 /* Staff / Management Cards */
 .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 30px; justify-content: center; }
@@ -254,25 +268,28 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
-<!-- Rules Page -->
+<!-- Rules Page (تم توسيع القوانين بشكل كبير) -->
 <div id="rules" class="page">
   <div class="page-content">
-    <h2 class="page-title">قوانين سيرفر LC CITY</h2>
+    <h2 class="page-title">قوانين سيرفر LC CITY الشاملة</h2>
     <p class="page-subtitle">يرجى قراءة كافة القوانين بعناية لتجنب العقوبات والمحافظة على جودة الرول بلاي.</p>
     
     <div class="accordion">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><span>🔨</span> القوانين العامة والأساسية (General Rules)</h3>
+        <h3><span>🔨</span> القوانين العامة والأساسية (General RP Rules)</h3>
         <span class="accordion-arrow">▼</span>
       </div>
       <div class="accordion-body">
-        <p>1. <b>احترام الجميع:</b> يمنع السب أو الشتم بأي لفظ خارج الرول بلاي (OOC).</p>
-        <p>2. <b>RDM (Random Deathmatch):</b> يمنع قتل أي لاعب بدون وجود سبب سيناريو واضح ومسبق.</p>
-        <p>3. <b>VDM (Vehicle Deathmatch):</b> يمنع دهس اللاعبين بالمركبات باستعمالها كسلاح.</p>
-        <p>4. <b>NLR (New Life Rule):</b> عند موتك وإسعافك في المستشفى، تنسى تفاصيل السيناريو الذي أدى لموتك.</p>
-        <p>5. <b>Fear RP:</b> يجب عليك إظهار الخوف على حياتك عند التهديد بالسلاح من قبل كثرة عددية.</p>
-        <p>6. <b>Powergaming:</b> يمنع القيام بأفعال غير منطقية أو غير واقعية في الحياة الحقيقية.</p>
-        <p>7. <b>Metagaming:</b> يمنع استخدام معلومات حصلت عليها خارج اللعبة (من بث المباشر أو الديسكورد) داخل اللعبة.</p>
+        <p>1. <b>احترام الجميع:</b> يمنع السب أو الشتم أو التنمر بأي لفظ خارج الرول بلاي (OOC).</p>
+        <p>2. <b>RDM (Random Deathmatch):</b> يمنع قتل أي لاعب بدون وجود سبب سيناريو واضح ومبرر مسبقاً.</p>
+        <p>3. <b>VDM (Vehicle Deathmatch):</b> يمنع دهس اللاعبين بالمركبات أو صدم سياراتهم باستعمال مركبتك كسلاح.</p>
+        <p>4. <b>NLR (New Life Rule):</b> عند موتك وإسعافك فالمستشفى، تنسى تفاصيل السيناريو الذي أدى لموتك تماماً ولا تعود لنفس المكان إلا بعد 15 دقيقة.</p>
+        <p>5. <b>Fear RP:</b> يجب عليك إظهار الخوف على حياتك عند التهديد بالسلاح من قبل كثرة عدادية أو تهديد مباشر.</p>
+        <p>6. <b>Powergaming:</b> يمنع القيام بأفعال غير منطقية أو غير واقعية (مثل القفز بسيارة من مكان مرتفع والمتابعة بدون أضرار).</p>
+        <p>7. <b>Metagaming:</b> يمنع استخدام معلومات حصلت عليها خارج اللعبة (من البث المباشر أو ديسكورد) داخل اللعبة.</p>
+        <p>8. <b>Combat Logging:</b> يمنع الخروج من اللعبة (Alt+F4) أثناء سيناريو جاري أو ملاحقة أمنية.</p>
+        <p>9. <b>Fail RP:</b> يمنع الخروج عن تصرفات الشخصية أو التحدث بلغة خارج الرول بلاي أثناء اللعب.</p>
+        <p>10. <b>Value Your Life:</b> حياتك هي أثمن ما تملك في اللعبة، عدم المبالاة بها يوقعك فالمخالفة.</p>
       </div>
     </div>
 
@@ -283,9 +300,39 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
       </div>
       <div class="accordion-body">
         <p>1. التزام تام بالتسلسل القيادي والأوامر الصادرة من الرتب العليا.</p>
-        <p>2. يمنع استعمال الأسلحة الثقيلة إلا بإذن رسمي من قيادة العمليات.</p>
-        <p>3. احترام المدنيين وعدم استغلال السلطة خارج نطاق القانون.</p>
-        <p>4. يمنع منعا باتا تسريب معلومات الشرطة أو الجيش لأي أطراف خارجية.</p>
+        <p>2. يمنع استعمال الأسلحة الثقيلة إلا بإذن رسمي من قيادة العمليات وفي الحالات القصوى.</p>
+        <p>3. احترام المدنيين وعدم استغلال السلطة أو الصلاحيات خارج نطاق القانون.</p>
+        <p>4. يمنع منعا باتا تسريب معلومات الشرطة أو الجيش لأي أطراف خارجية أو عصابات.</p>
+        <p>5. يجب توثيق جميع الاعتقالات والتحقيقات بمقاطع فيديو (Clipping).</p>
+        <p>6. يمنع تفتيش أي مدني بدون سبب جنائي واضح أو إذن قضائي.</p>
+        <p>7. التزام صارم ببروتوكولات إطلاق النار والبدء دائماً بالتحذير والتسلسل بالأسلحة غير القاتلة (Taser).</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span>💣</span> قوانين العصابات والسرقات والسطو</h3>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p>1. يجب ألا يتجاوز عدد المشاركين في عمليات السطو المسلح الحد المسموح به لكل سيناريو.</p>
+        <p>2. يمنع السطو على البنوك أو المحلات قبل التأكد من تواجد عدد كافٍ من عناصر الشرطة.</p>
+        <p>3. الرهائن يجب معاملتهم بشرعية وعدم قتلهم إذا استجابت الشرطة للمطالب.</p>
+        <p>4. يمنع الخطف والتفاوض داخل المناطق الآمنة (Safe Zones).</p>
+        <p>5. يمنع إقامة حروب شوارع بين العصابات بدون تقديم طلب وتغطية إدارية للسيناريو.</p>
+        <p>6. يمنع استخدام سيارات الوظائف الخدمية (مثل الإسعاف) في العمليات الإجرامية.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span>🟢</span> قوانين المناطق الآمنة (Safe Zones)</h3>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p>1. تشمل المناطق الآمنة: المراكز الأمنية، المستشفيات، المحكمة، ومناطق رسبون اللاعبين الجدد.</p>
+        <p>2. يمنع منعاً باتاً الجريمة بكل أنواعها (قتل، خطف، سرقة، تهديد) داخل المناطق الآمنة.</p>
+        <p>3. يمنع الهروب إلى المنطقة الآمنة أثناء مطاردة قائمة (Safe Zone Camping).</p>
       </div>
     </div>
   </div>
@@ -299,21 +346,21 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('police-form')">تقديم طلب انضمام للشرطة</button>
 
     <div id="police-form" class="questions-container">
-      <h3>استمارة التقديم الشاملة على سلك الشرطة (12 سؤالاً)</h3>
-      <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
-        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة (RP Name):</label><input type="text" required placeholder="مثال: Ahmed_Mansour"></div>
-        <div class="q-group"><label>2. اسم حسابك في الديسكورد (Discord Username):</label><input type="text" required placeholder="مثال: user#0000"></div>
-        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required placeholder="مثال: 18"></div>
-        <div class="q-group"><label>4. عدد ساعات لعبك في سيرفرات الـ RP بشكل عام:</label><input type="text" required placeholder="مثال: 500 ساعة"></div>
-        <div class="q-group"><label>5. ما هي خبراتك السابقة في قطاعات الشرطة أو الأمن؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>6. اشرح مفهوم الـ 10-Codes الأساسية وكيف توظفها في التردد الصوتي (Radio):</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. سيناريو: رأيت زميلاً لك في الشرطة يأخذ رشوة من مجرم، كيف تتصرف طبقاً للنظام؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>8. سيناريو: مطاردة عالية السرعة دخلت منطقة مدنية مزدحمة، ما هي الإجراءات والتدابير المتبعة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>9. ما هي القواعد الأساسية لإستخدام السلاح الناري واستخدام الصاعق الكهربائي (Taser)؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>10. سيناريو: قام شخص بشتمك وسحبت سلاحك عليه مباشرة بدون تحذير، هل يعتبر ذلك صحيحاً ولماذا؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>11. كيف تتعامل مع تجمهر مدني غير مسلح يعطل حركة المرور أمام المركز؟</label><textarea rows="3" required></textarea></div>
+      <h3>استمارة التقديم الشاملة على سلك الشرطة</h3>
+      <form onsubmit="submitApplication(event, 'الشرطة')">
+        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة (RP Name):</label><input type="text" id="pol_name" required placeholder="مثال: Ahmed_Mansour"></div>
+        <div class="q-group"><label>2. اسم حسابك في الديسكورد (Discord Username):</label><input type="text" id="pol_discord" required placeholder="مثال: user#0000"></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" id="pol_age" required placeholder="مثال: 18"></div>
+        <div class="q-group"><label>4. عدد ساعات لعبك في سيرفرات الـ RP بشكل عام:</label><input type="text" id="pol_hours" required placeholder="مثال: 500 ساعة"></div>
+        <div class="q-group"><label>5. ما هي خبراتك السابقة في قطاعات الشرطة أو الأمن؟</label><textarea id="pol_exp" rows="3" required></textarea></div>
+        <div class="q-group"><label>6. اشرح مفهوم الـ 10-Codes الأساسية وكيف توظفها في التردد الصوتي (Radio):</label><textarea id="pol_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. سيناريو: رأيت زميلاً لك في الشرطة يأخذ رشوة من مجرم، كيف تتصرف طبقاً للنظام؟</label><textarea id="pol_q7" rows="3" required></textarea></div>
+        <div class="q-group"><label>8. سيناريو: مطاردة عالية السرعة دخلت منطقة مدنية مزدحمة، ما هي الإجراءات والتدابير المتبعة؟</label><textarea id="pol_q8" rows="3" required></textarea></div>
+        <div class="q-group"><label>9. ما هي القواعد الأساسية لإستخدام السلاح الناري واستخدام الصاعق الكهربائي (Taser)؟</label><textarea id="pol_q9" rows="3" required></textarea></div>
+        <div class="q-group"><label>10. سيناريو: قام شخص بشتمك وسحبت سلاحك عليه مباشرة بدون تحذير، هل يعتبر ذلك صحيحاً ولماذا؟</label><textarea id="pol_q10" rows="3" required></textarea></div>
+        <div class="q-group"><label>11. كيف تتعامل مع تجمهر مدني غير مسلح يعطل حركة المرور أمام المركز؟</label><textarea id="pol_q11" rows="3" required></textarea></div>
         <div class="q-group"><label>12. هل تتعهد بالحضور في الشفتات والتواجد الصارم أثناء الأزمات الأمنية؟</label>
-          <select required><option value="yes">نعم أتعهد</option><option value="no">لا</option></select>
+          <select id="pol_q12" required><option value="نعم أتعهد">نعم أتعهد</option><option value="لا">لا</option></select>
         </div>
         <button type="submit" class="submit-app">إرسال استمارة الشرطة</button>
       </form>
@@ -329,29 +376,29 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn military-btn" onclick="toggleForm('defense-form')">تقديم طلب انضمام لوزارة الدفاع</button>
 
     <div id="defense-form" class="questions-container" style="border-color: #708238;">
-      <h3 style="color: #8ba446;">استمارة التجنيد العسكري - وزارة الدفاع (10 أسئلة)</h3>
-      <form onsubmit="alert('تم إرسال طلب التجنيد بنجاح!'); return false;">
-        <div class="q-group"><label>1. الاسم الثلاثي للشخصية (In-Game Name):</label><input type="text" required placeholder="مثال: Youssef_Al_Otaibi"></div>
-        <div class="q-group"><label>2. معرف الديسكورد (Discord Username / ID):</label><input type="text" required placeholder="مثال: soldier_01"></div>
-        <div class="q-group"><label>3. العمر الحقيقي (شرط +16):</label><input type="number" min="16" required></div>
+      <h3 style="color: #8ba446;">استمارة التجنيد العسكري - وزارة الدفاع</h3>
+      <form onsubmit="submitApplication(event, 'وزارة الدفاع')">
+        <div class="q-group"><label>1. الاسم الثلاثي للشخصية (In-Game Name):</label><input type="text" id="def_name" required placeholder="مثال: Youssef_Al_Otaibi"></div>
+        <div class="q-group"><label>2. معرف الديسكورد (Discord Username / ID):</label><input type="text" id="def_discord" required placeholder="مثال: soldier_01"></div>
+        <div class="q-group"><label>3. العمر الحقيقي (شرط +16):</label><input type="number" id="def_age" min="16" required></div>
         <div class="q-group"><label>4. ما هو التخصص العسكري الذي ترغب في الانضمام إليه؟</label>
-          <select required>
+          <select id="def_spec" required>
             <option value="">اختر التخصص...</option>
-            <option value="infantry">المشاة والقوات البرية</option>
-            <option value="special-forces">القوات الخاصة (S.O.F)</option>
-            <option value="air-force">سلاح الجو والطيران العسكري</option>
-            <option value="logistics">الدعم اللوجستي والإمداد</option>
+            <option value="المشاة والقوات البرية">المشاة والقوات البرية</option>
+            <option value="القوات الخاصة (S.O.F)">القوات الخاصة (S.O.F)</option>
+            <option value="سلاح الجو والطيران العسكري">سلاح الجو والطيران العسكري</option>
+            <option value="الدعم اللوجستي والإمداد">الدعم اللوجستي والإمداد</option>
           </select>
         </div>
-        <div class="q-group"><label>5. ما الفرق بين التعامل العسكري (وزارة الدفاع) والتعامل الشرطي (الشرطة) في سيناريوهات الـ RP؟</label><textarea rows="3" required placeholder="اشرح مفهوم الضوابط العسكرية مقارنة بالقوانين المدنية..."></textarea></div>
-        <div class="q-group"><label>6. كيف تتصرف في حالة إعلان حالة الطوارئ القصوى (DEFCON 1) في المدينة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. سيناريو: تلقيت أمراً من ضابطك المباشر بالانسحاب، لكن زميلك مصاب تحت النار، كيف تتصرف طبقاً للرول بلاي العسكري؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>8. سيناريو: تم اقتحام ثكنة عسكرية من قبل جماعة مسلحة، ما هي خطوات التأمين الشاملة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>9. ما هي القواعد الصارمة لإطلاق النار فورا (ROE - Rules of Engagement) بالنسبة للمناطق العسكرية؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>5. ما الفرق بين التعامل العسكري (وزارة الدفاع) والتعامل الشرطي (الشرطة) في سيناريوهات الـ RP؟</label><textarea id="def_q5" rows="3" required placeholder="اشرح مفهوم الضوابط العسكرية مقارنة بالقوانين المدنية..."></textarea></div>
+        <div class="q-group"><label>6. كيف تتصرف في حالة إعلان حالة الطوارئ القصوى (DEFCON 1) في المدينة؟</label><textarea id="def_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. سيناريو: تلقيت أمراً من ضابطك المباشر بالانسحاب، لكن زميلك مصاب تحت النار، كيف تتصرف طبقاً للرول بلاي العسكري؟</label><textarea id="def_q7" rows="3" required></textarea></div>
+        <div class="q-group"><label>8. سيناريو: تم اقتحام ثكنة عسكرية من قبل جماعة مسلحة، ما هي خطوات التأمين الشاملة؟</label><textarea id="def_q8" rows="3" required></textarea></div>
+        <div class="q-group"><label>9. ما هي القواعد الصارمة لإطلاق النار فورا (ROE - Rules of Engagement) بالنسبة للمناطق العسكرية؟</label><textarea id="def_q9" rows="3" required></textarea></div>
         <div class="q-group"><label>10. هل تتعهد بالالتزام الصارم بالأوامر وعدم الانضباط يُعرّضك للمحاكمة العسكرية؟</label>
-          <select required>
-            <option value="yes">نعم، أتعهد بالتزام تام بالدستور العسكري</option>
-            <option value="no">لا</option>
+          <select id="def_q10" required>
+            <option value="نعم أتعهد بالتزام تام">نعم، أتعهد بالتزام تام بالدستور العسكري</option>
+            <option value="لا">لا</option>
           </select>
         </div>
         <button type="submit" class="submit-app" style="background: linear-gradient(135deg, #708238, #4b5320); color: white;">تقديم طلب التجنيد</button>
@@ -368,18 +415,18 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('ems-form')">تقديم طلب انضمام لـ EMS</button>
 
     <div id="ems-form" class="questions-container">
-      <h3>استمارة التقديم على القطاع الطبي الشاملة (9 أسئلة)</h3>
-      <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
-        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة:</label><input type="text" required></div>
-        <div class="q-group"><label>2. اسم حسابك في الديسكورد:</label><input type="text" required></div>
-        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required></div>
-        <div class="q-group"><label>4. أذكر 3 مصطلحات طبية أساسية تستخدمها أثناء التشخيص الإسعافي (مثل CPR / الضغط / الصدمات الكهربائية):</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>5. سيناريو: وصلك بلاغ عن إطلاق نار محتدم، هل تتدخل فوراً أم تنتظر تأمين الشرطة؟ ولماذا؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>6. سيناريو: لديك مصابان واحد من الشرطة وواحد من العصابة، كلاهما حرج، كيف تحدد الأولوية في العلاج؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. كيف تتصرف إذا حاول مصاب مريض الهرب أثناء تلقيه العلاج داخل المستشفى؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>8. شرح الخطوات الدقيقة لإسعاف شخص تعرض لطلق ناري بالصدر حسب سيناريو الـ /me و /do:</label><textarea rows="3" required></textarea></div>
+      <h3>استمارة التقديم على القطاع الطبي الشاملة</h3>
+      <form onsubmit="submitApplication(event, 'EMS الإسعاف')">
+        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة:</label><input type="text" id="ems_name" required></div>
+        <div class="q-group"><label>2. اسم حسابك في الديسكورد:</label><input type="text" id="ems_discord" required></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" id="ems_age" required></div>
+        <div class="q-group"><label>4. أذكر 3 مصطلحات طبية أساسية تستخدمها أثناء التشخيص الإسعافي (مثل CPR / الضغط / الصدمات الكهربائية):</label><textarea id="ems_q4" rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: وصلك بلاغ عن إطلاق نار محتدم، هل تتدخل فوراً أم تنتظر تأمين الشرطة؟ ولماذا؟</label><textarea id="ems_q5" rows="3" required></textarea></div>
+        <div class="q-group"><label>6. سيناريو: لديك مصابان واحد من الشرطة وواحد من العصابة، كلاهما حرج، كيف تحدد الأولوية في العلاج؟</label><textarea id="ems_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. كيف تتصرف إذا حاول مصاب مريض الهرب أثناء تلقيه العلاج داخل المستشفى؟</label><textarea id="ems_q7" rows="3" required></textarea></div>
+        <div class="q-group"><label>8. شرح الخطوات الدقيقة لإسعاف شخص تعرض لطلق ناري بالصدر حسب سيناريو الـ /me و /do:</label><textarea id="ems_q8" rows="3" required></textarea></div>
         <div class="q-group"><label>9. هل تلتزم بالعمل تحت كافة الظروف وأصعب الأزمات بالمدينة؟</label>
-          <select required><option value="yes">نعم ألتزم</option><option value="no">لا</option></select>
+          <select id="ems_q9" required><option value="نعم ألتزم">نعم ألتزم</option><option value="لا">لا</option></select>
         </div>
         <button type="submit" class="submit-app">إرسال الاستمارة الطبية</button>
       </form>
@@ -395,17 +442,17 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('intel-form')">تقديم طلب انضمام للاستخبارات</button>
 
     <div id="intel-form" class="questions-container">
-      <h3>استمارة التقديم الخاصة بجهاز الاستخبارات (8 أسئلة)</h3>
-      <form onsubmit="alert('تم إرسال طلبك بنجاح للجهات المختصة!'); return false;">
-        <div class="q-group"><label>1. الاسم السري للشخصية:</label><input type="text" required></div>
-        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" required></div>
-        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required></div>
-        <div class="q-group"><label>4. كيف تتعامل مع جمع المعلومات السرية بدون كشف هويتك أو اختراق الـ RP؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>5. سيناريو: تم انكشاف أمرك أثناء عملية اختراق لمنظمة إجرامية، كيف تتصرف لحماية حياتك والمعلومات؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>6. ما هي الوسائل المتبعة لمراقبة المشتبه بهم دون كشف التواجد الميداني؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. كيف ترفع تقريراً أمنياً استخباراتياً موجزاً للإدارة العليا؟</label><textarea rows="3" required></textarea></div>
+      <h3>استمارة التقديم الخاصة بجهاز الاستخبارات</h3>
+      <form onsubmit="submitApplication(event, 'الاستخبارات')">
+        <div class="q-group"><label>1. الاسم السري للشخصية:</label><input type="text" id="intel_name" required></div>
+        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" id="intel_discord" required></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" id="intel_age" required></div>
+        <div class="q-group"><label>4. كيف تتعامل مع جمع المعلومات السرية بدون كشف هويتك أو اختراق الـ RP؟</label><textarea id="intel_q4" rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: تم انكشاف أمرك أثناء عملية اختراق لمنظمة إجرامية، كيف تتصرف لحماية حياتك والمعلومات؟</label><textarea id="intel_q5" rows="3" required></textarea></div>
+        <div class="q-group"><label>6. ما هي الوسائل المتبعة لمراقبة المشتبه بهم دون كشف التواجد الميداني؟</label><textarea id="intel_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. كيف ترفع تقريراً أمنياً استخباراتياً موجزاً للإدارة العليا؟</label><textarea id="intel_q7" rows="3" required></textarea></div>
         <div class="q-group"><label>8. هل تتعهد بالحفاظ على سرية العمليات وعدم إفشاء أي معلومة تحت أي ظرف؟</label>
-          <select required><option value="yes">نعم أتعهد كلياً</option><option value="no">لا</option></select>
+          <select id="intel_q8" required><option value="نعم أتعهد كلياً">نعم أتعهد كلياً</option><option value="لا">لا</option></select>
         </div>
         <button type="submit" class="submit-app">إرسال الاستمارة السرية</button>
       </form>
@@ -421,23 +468,23 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('justice-form')">تقديم طلب سلك القضاء أو المحاماة</button>
 
     <div id="justice-form" class="questions-container">
-      <h3>استمارة انضمام لوزارة العدل (8 أسئلة)</h3>
-      <form onsubmit="alert('تم تقديم طلبك بنجاح!'); return false;">
-        <div class="q-group"><label>1. الاسم الثلاثي لشخصيتك:</label><input type="text" required></div>
-        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" required></div>
+      <h3>استمارة انضمام لوزارة العدل</h3>
+      <form onsubmit="submitApplication(event, 'وزارة العدل')">
+        <div class="q-group"><label>1. الاسم الثلاثي لشخصيتك:</label><input type="text" id="just_name" required></div>
+        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" id="just_discord" required></div>
         <div class="q-group"><label>3. الوظيفة المطلوبة:</label>
-          <select required>
+          <select id="just_role" required>
             <option value="">اختر المسمى الوظيفي...</option>
-            <option value="judge">قاضي محكمة</option>
-            <option value="prosecutor">مدعي عام</option>
-            <option value="lawyer">محامي دفاع معتمد</option>
+            <option value="قاضي محكمة">قاضي محكمة</option>
+            <option value="مدعي عام">مدعي عام</option>
+            <option value="محامي دفاع معتمد">محامي دفاع معتمد</option>
           </select>
         </div>
-        <div class="q-group"><label>4. شرح مختصر لمدى معرفتك بالقوانين والدستور الخاص بالسيرفر:</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>5. سيناريو: قدم محامي أدلة ثبوتية تم الحصول عليها بطريقة غير قانونية، كيف يتعامل القضاء معها؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>6. ما هي إجراءات إصدار مذكرة إحضار أو تفتيش قضائية ضد شخصية مرموقة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. كيف تضمن نزاهة الجلسات وعدم الانحياز لأي طرف في القضية؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>8. هل سبق لك ممارسة القضاء أو المحاماة في سيرفرات هارد رول بلاي أخرى؟</label><textarea rows="2" required></textarea></div>
+        <div class="q-group"><label>4. شرح مختصر لمدى معرفتك بالقوانين والدستور الخاص بالسيرفر:</label><textarea id="just_q4" rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: قدم محامي أدلة ثبوتية تم الحصول عليها بطريقة غير قانونية، كيف يتعامل القضاء معها؟</label><textarea id="just_q5" rows="3" required></textarea></div>
+        <div class="q-group"><label>6. ما هي إجراءات إصدار مذكرة إحضار أو تفتيش قضائية ضد شخصية مرموقة؟</label><textarea id="just_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. كيف تضمن نزاهة الجلسات وعدم الانحياز لأي طرف في القضية؟</label><textarea id="just_q7" rows="3" required></textarea></div>
+        <div class="q-group"><label>8. هل سبق لك ممارسة القضاء أو المحاماة في سيرفرات هارد رول بلاي أخرى؟</label><textarea id="just_q8" rows="2" required></textarea></div>
         <button type="submit" class="submit-app">تقديم الطلب القضائي</button>
       </form>
     </div>
@@ -452,16 +499,16 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('gang-form')">تسجيل عصابة رسمية</button>
 
     <div id="gang-form" class="questions-container">
-      <h3>استمارة تسجيل عصابة معتمدة (8 أسئلة)</h3>
-      <form onsubmit="alert('تم إرسال ملف العصابة للإدارة!'); return false;">
-        <div class="q-group"><label>1. اسم العصابة:</label><input type="text" required></div>
-        <div class="q-group"><label>2. اسم القائد (Leader RP Name):</label><input type="text" required></div>
-        <div class="q-group"><label>3. معرف الديسكورد للقائد:</label><input type="text" required></div>
-        <div class="q-group"><label>4. عدد الأعضاء الحاليين (الحد الأدنى 4 أعضاء):</label><input type="number" min="4" required></div>
-        <div class="q-group"><label>5. قصة العصابة ونشاطها الأساسي (Gang Lore & Story):</label><textarea rows="4" required></textarea></div>
-        <div class="q-group"><label>6. ما هي نوعية السيناريوهات التي تخطط العصابة لتقديمها داخل السيرفر؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. كيف تضمن عصابتك عدم خرق قوانين الرول بلاي مثل RDM أو Toxic Behavior؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>8. اذكر مقر العصابة المفضل أو المنطقة الإقليمية المستهدفة داخل الخريطة:</label><input type="text" required></div>
+      <h3>استمارة تسجيل عصابة معتمدة</h3>
+      <form onsubmit="submitApplication(event, 'العصابات')">
+        <div class="q-group"><label>1. اسم العصابة:</label><input type="text" id="gang_name" required></div>
+        <div class="q-group"><label>2. اسم القائد (Leader RP Name):</label><input type="text" id="gang_leader" required></div>
+        <div class="q-group"><label>3. معرف الديسكورد للقائد:</label><input type="text" id="gang_discord" required></div>
+        <div class="q-group"><label>4. عدد الأعضاء الحاليين (الحد الأدنى 4 أعضاء):</label><input type="number" id="gang_members" min="4" required></div>
+        <div class="q-group"><label>5. قصة العصابة ونشاطها الأساسي (Gang Lore & Story):</label><textarea id="gang_q5" rows="4" required></textarea></div>
+        <div class="q-group"><label>6. ما هي نوعية السيناريوهات التي تخطط العصابة لتقديمها داخل السيرفر؟</label><textarea id="gang_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. كيف تضمن عصابتك عدم خرق قوانين الرول بلاي مثل RDM أو Toxic Behavior؟</label><textarea id="gang_q7" rows="3" required></textarea></div>
+        <div class="q-group"><label>8. اذكر مقر العصابة المفضل أو المنطقة الإقليمية المستهدفة داخل الخريطة:</label><input type="text" id="gang_location" required></div>
         <button type="submit" class="submit-app">تسجيل العصابة</button>
       </form>
     </div>
@@ -476,15 +523,15 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('monitor-form')">تقديم طلب انضمام للرقابة</button>
 
     <div id="monitor-form" class="questions-container">
-      <h3>استمارة الانضمام لهيئة الرقابة والإشراف (7 أسئلة)</h3>
-      <form onsubmit="alert('تم إرسال الطلب!'); return false;">
-        <div class="q-group"><label>1. اسمك في الديسكورد واللعبة:</label><input type="text" required></div>
-        <div class="q-group"><label>2. العمر الحقيقي:</label><input type="number" required></div>
-        <div class="q-group"><label>3. خبراتك الإدارية والرقابية السابقة:</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>4. كيف تتعامل مع شكوى ضد أحد الإداريين بنفس السيرفر بمهنية حيادية؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>5. ما هي الأدوات والأساليب التي تعتمدها لتوثيق وتدقيق المخالفات الميدانية؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>6. سيناريو: رأيت رئيساً لقطاع معين يخرق القوانين لصالح أصدقائه، كيف تتصرف؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>7. كم ساعة تستطيع تقديمها يومياً لمتابعة السيرفر وهيئاته؟</label><input type="text" required placeholder="مثال: 4 ساعات يومياً"></div>
+      <h3>استمارة الانضمام لهيئة الرقابة والإشراف</h3>
+      <form onsubmit="submitApplication(event, 'هيئة الرقابة')">
+        <div class="q-group"><label>1. اسمك في الديسكورد واللعبة:</label><input type="text" id="mon_name" required></div>
+        <div class="q-group"><label>2. العمر الحقيقي:</label><input type="number" id="mon_age" required></div>
+        <div class="q-group"><label>3. خبراتك الإدارية والرقابية السابقة:</label><textarea id="mon_exp" rows="3" required></textarea></div>
+        <div class="q-group"><label>4. كيف تتعامل مع شكوى ضد أحد الإداريين بنفس السيرفر بمهنية حيادية؟</label><textarea id="mon_q4" rows="3" required></textarea></div>
+        <div class="q-group"><label>5. ما هي الأدوات والأساليب التي تعتمدها لتوثيق وتدقيق المخالفات الميدانية؟</label><textarea id="mon_q5" rows="3" required></textarea></div>
+        <div class="q-group"><label>6. سيناريو: رأيت رئيساً لقطاع معين يخرق القوانين لصالح أصدقائه، كيف تتصرف؟</label><textarea id="mon_q6" rows="3" required></textarea></div>
+        <div class="q-group"><label>7. كم ساعة تستطيع تقديمها يومياً لمتابعة السيرفر وهيئاته؟</label><input type="text" id="mon_hours" required placeholder="مثال: 4 ساعات يومياً"></div>
         <button type="submit" class="submit-app">إرسال الطلب الرقابي</button>
       </form>
     </div>
@@ -604,11 +651,15 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
-<!-- Host Page -->
+<!-- Host Page (نظام استقبال وإدارة التقديمات) -->
 <div id="host" class="page">
   <div class="page-content">
-    <h2 class="page-title">⚙️ لوحة تحكم الهوست</h2>
-    <p class="page-subtitle">منطقة خاصة بإدارة السيرفر والتحكم بالنظام.</p>
+    <h2 class="page-title">⚙️ لوحة تحكم الهوست والتقديمات</h2>
+    <p class="page-subtitle">مراجعة التقديمات المرسلة من خوادم السيرفر وإدارتها بالقبول أو الرفض.</p>
+    
+    <div id="applications-list">
+      <!-- التطبيقات ستظهر هنا تلقائياً -->
+    </div>
   </div>
 </div>
 
@@ -672,6 +723,9 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 </footer>
 
 <script>
+  // نظام تخزين التقديمات محلياً
+  let applications = JSON.parse(localStorage.getItem('lccity_apps')) || [];
+
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
@@ -681,6 +735,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     
     const activeLink = document.getElementById('link-' + pageId);
     if(activeLink) activeLink.classList.add('active');
+
+    if(pageId === 'host') {
+      renderApplications();
+    }
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -701,6 +759,81 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     } else if (code !== null) {
       alert("الكود خاطئ!");
     }
+  }
+
+  // دالة إرسال الطلبات إلى لوحة الهوست
+  function submitApplication(event, sector) {
+    event.preventDefault();
+    const form = event.target;
+    const inputs = form.querySelectorAll('input, textarea, select');
+    let details = {};
+    
+    inputs.forEach((input, index) => {
+      const label = input.parentElement.querySelector('label') ? input.parentElement.querySelector('label').innerText : `سؤال ${index+1}`;
+      details[label] = input.value;
+    });
+
+    const newApp = {
+      id: Date.now(),
+      sector: sector,
+      applicant: details[Object.keys(details)[0]] || 'مجهول',
+      discord: details[Object.keys(details)[1]] || 'غير محدد',
+      details: details,
+      status: 'pending',
+      date: new Date().toLocaleString('ar-EG')
+    };
+
+    applications.push(newApp);
+    localStorage.setItem('lccity_apps', JSON.stringify(applications));
+    
+    alert(`✅ تم إرسال طلب الانضمام لقطاع (${sector}) بنجاح! سيتم مراجعته من الهوست.`);
+    form.reset();
+    form.parentElement.style.display = 'none';
+  }
+
+  // عرض التقديمات داخل لوحة الهوست
+  function renderApplications() {
+    const container = document.getElementById('applications-list');
+    if (applications.length === 0) {
+      container.innerHTML = '<p style="text-align:center; color:#aaa;">لا توجد تقديمات مقدمة حالياً.</p>';
+      return;
+    }
+
+    container.innerHTML = applications.map(app => {
+      let statusBadge = '';
+      if(app.status === 'pending') statusBadge = '<span class="status-badge status-pending">قيد الانتظار</span>';
+      if(app.status === 'accepted') statusBadge = '<span class="status-badge status-accepted">مقبول ✅</span>';
+      if(app.status === 'rejected') statusBadge = '<span class="status-badge status-rejected">مرفوض ❌</span>';
+
+      let detailsHTML = '';
+      for (let key in app.details) {
+        detailsHTML += `<p><b>${key}:</b> ${app.details[key]}</p>`;
+      }
+
+      return `
+        <div class="app-card">
+          ${statusBadge}
+          <h4>طلب انضمام: ${app.sector}</h4>
+          <p><b>التاريخ:</b> ${app.date}</p>
+          <hr style="border-color: rgba(255,255,255,0.05); margin: 10px 0;">
+          ${detailsHTML}
+          <div class="app-actions">
+            <button class="btn-accept" onclick="updateAppStatus(${app.id}, 'accepted')">قبول الطلب</button>
+            <button class="btn-reject" onclick="updateAppStatus(${app.id}, 'rejected')">رفض الطلب</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // تغيير حالة الطلب (قبول/رفض)
+  function updateAppStatus(id, newStatus) {
+    applications = applications.map(app => {
+      if(app.id === id) app.status = newStatus;
+      return app;
+    });
+    localStorage.setItem('lccity_apps', JSON.stringify(applications));
+    renderApplications();
   }
 </script>
 
