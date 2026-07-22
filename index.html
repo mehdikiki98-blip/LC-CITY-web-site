@@ -12,7 +12,6 @@
   --border-color: rgba(0, 255, 255, 0.15);
 }
 
-/* ضبط حجم الخط العام */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
 body { background-color: var(--bg-color); color: #ffffff; overflow-x: hidden; }
 
@@ -21,7 +20,6 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .logo-area { display: flex; align-items: center; gap: 12px; }
 .logo { font-size: 22px; font-weight: bold; color: var(--primary-color); text-shadow: 0 0 10px var(--primary-color); }
 
-/* Live Views Counter */
 .views-counter { display: flex; align-items: center; gap: 5px; background: rgba(255, 255, 255, 0.05); padding: 5px 12px; border-radius: 20px; font-size: 14px; color: #ccc; border: 1px solid rgba(255, 255, 255, 0.1); }
 .views-counter span { color: var(--primary-color); font-weight: bold; font-size: 14px; }
 
@@ -60,20 +58,14 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .kick-username { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 6px; }
 .kick-badge { display: inline-block; background: rgba(0, 255, 128, 0.15); color: #00ff80; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; border: 1px solid rgba(0, 255, 128, 0.3); }
 .kick-desc { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-.platform-badge-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 15px; }
-.platform-tag { display: flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: bold; }
-.platform-tag.kick { background: rgba(0, 255, 128, 0.2); color: #00ff80; border: 1px solid rgba(0, 255, 128, 0.4); }
 .kick-btn { display: block; background-color: #00ff80; color: #0b0914; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; box-shadow: 0 0 15px rgba(0, 255, 128, 0.4); transition: 0.3s; }
-.kick-btn:hover { background-color: #00cc66; box-shadow: 0 0 20px rgba(0, 255, 128, 0.7); }
 
 .yt-card { background: #131022; border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 16px; padding: 25px; text-align: center; width: 100%; box-shadow: 0 0 30px rgba(255, 0, 0, 0.1); position: relative; }
 .yt-avatar-container { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #ff0000; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; background: rgba(255, 0, 0, 0.05); box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); color: #ff0000; font-size: 32px; }
 .yt-username { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 6px; }
 .yt-badge { display: inline-block; background: rgba(255, 0, 0, 0.15); color: #ff0000; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 12px; border: 1px solid rgba(255, 0, 0, 0.3); }
 .yt-desc { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-.platform-tag.youtube { background: rgba(255, 0, 0, 0.2); color: #ff4d4d; border: 1px solid rgba(255, 0, 0, 0.4); }
 .yt-btn { display: block; background-color: #ff0000; color: #ffffff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: bold; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); transition: 0.3s; }
-.yt-btn:hover { background-color: #cc0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
 
 /* Accordion Style */
 .page-content { max-width: 900px; margin: 0 auto; }
@@ -85,7 +77,6 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .accordion-arrow { color: var(--primary-color); transition: transform 0.3s; font-size: 14px; background: rgba(0,255,255,0.08); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 25px; color: #ccc; font-size: 14px; line-height: 1.8; background: rgba(0,0,0,0.15); }
-
 .accordion.active .accordion-body { max-height: 700px; padding: 20px 25px; border-top: 1px solid rgba(255,255,255,0.05); }
 .accordion.active .accordion-arrow { transform: rotate(180deg); }
 
@@ -99,6 +90,16 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .questions-container input, .questions-container textarea { width: 100%; padding: 10px; margin: 6px 0 12px 0; background: #0b0914; border: 1px solid #444; color: #fff; border-radius: 6px; font-size: 14px; }
 .questions-container textarea { resize: vertical; height: 75px; }
 .submit-app { background-color: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+
+/* Admin Panel Submissions Table */
+.sub-card { background: var(--box-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+.sub-card header { position: static; background: none; padding: 0; border: none; margin-bottom: 10px; }
+.btn-accept { background: #28a745; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 5px; font-weight: bold; }
+.btn-reject { background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+.status-badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+.status-pending { background: #ffc107; color: #000; }
+.status-accepted { background: #28a745; color: #fff; }
+.status-rejected { background: #dc3545; color: #fff; }
 </style>
 </head>
 <body>
@@ -179,10 +180,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <div id="police-form" class="questions-container">
       <h3>استمارة التقديم - الشرطة</h3>
       <p>الاسم الكامل داخل اللعبة:</p>
-      <input type="text" placeholder="اكتب اسمك هنا...">
+      <input type="text" id="police-name" placeholder="اكتب اسمك هنا...">
       <p>سبب الرغبة في الانضمام:</p>
-      <textarea placeholder="اكتب سبب انضمامك..."></textarea>
-      <button class="submit-app">إرسال الطلب</button>
+      <textarea id="police-reason" placeholder="اكتب سبب انضمامك..."></textarea>
+      <button class="submit-app" onclick="submitApplication('الشرطة', 'police-name', 'police-reason')">إرسال الطلب</button>
     </div>
   </div>
 </div>
@@ -204,10 +205,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <div id="ems-form" class="questions-container">
       <h3>استمارة التقديم - وزارة الصحة</h3>
       <p>الاسم الكامل داخل اللعبة:</p>
-      <input type="text" placeholder="اكتب اسمك هنا...">
+      <input type="text" id="ems-name" placeholder="اكتب اسمك هنا...">
       <p>الخبرات السابقة فـ EMS:</p>
-      <textarea placeholder="اذكر خبراتك..."></textarea>
-      <button class="submit-app">إرسال الطلب</button>
+      <textarea id="ems-reason" placeholder="اذكر خبراتك..."></textarea>
+      <button class="submit-app" onclick="submitApplication('وزارة الصحة', 'ems-name', 'ems-reason')">إرسال الطلب</button>
     </div>
   </div>
 </div>
@@ -232,19 +233,11 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 <div id="host" class="page">
   <div class="page-content">
     <h2 style="color: #ff0055; text-shadow: 0 0 10px #ff0055;">⚙️ لوحة تحكم الهوست</h2>
-    <p style="text-align: center; color: #aaa;">مرحباً بك في لوحة الإدارة الخاصة بالسيرفر.</p>
+    <p style="text-align: center; color: #aaa; margin-bottom: 30px;">مرحباً بك في لوحة الإدارة. هنا يمكنك مراجعة وقبول أو رفض طلبات التقديم.</p>
     
-    <div class="features-grid" style="margin-top: 30px;">
-      <div class="feature-card">
-        <div class="feature-icon">📢</div>
-        <h3>إعلان عام</h3>
-        <p>إرسال إعلان جديد لجميع اللاعبين داخل السيرفر.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>إدارة السيرفر</h3>
-        <p>التحكم في حالة السيرفر والإعدادات المتقدمة.</p>
-      </div>
+    <h3 style="color: var(--primary-color); margin-bottom: 15px;">📥 التقديمات الواردة:</h3>
+    <div id="submissions-list">
+      <p style="color: #888;" id="no-subs">لا توجد تقديمات حتى الآن.</p>
     </div>
   </div>
 </div>
@@ -298,8 +291,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
-<!-- JavaScript Script -->
+<!-- JavaScript -->
 <script>
+  let applications = [];
+
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active-page'));
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
@@ -314,6 +309,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   function openHostPanel() {
     const code = prompt("أدخل كود الدخول للوحة الهوست:");
     if (code === "mehdilccity") {
+      renderSubmissions();
       showPage('host');
     } else if (code !== null) {
       alert("الكود خاطئ! غير مصرح لك بالدخول.");
@@ -331,6 +327,63 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
       form.style.display = 'none';
     } else {
       form.style.display = 'block';
+    }
+  }
+
+  function submitApplication(type, nameId, reasonId) {
+    const name = document.getElementById(nameId).value.trim();
+    const reason = document.getElementById(reasonId).value.trim();
+
+    if(!name || !reason) {
+      alert("الرجاء ملء جميع الحقول!");
+      return;
+    }
+
+    applications.push({
+      id: Date.now(),
+      type: type,
+      name: name,
+      reason: reason,
+      status: 'قيد الانتظار'
+    });
+
+    document.getElementById(nameId).value = '';
+    document.getElementById(reasonId).value = '';
+    alert("تم إرسال طلبك بنجاح للهوست!");
+  }
+
+  function renderSubmissions() {
+    const list = document.getElementById('submissions-list');
+    if (applications.length === 0) {
+      list.innerHTML = '<p style="color: #888;" id="no-subs">لا توجد تقديمات حتى الآن.</p>';
+      return;
+    }
+
+    list.innerHTML = applications.map((app) => `
+      <div class="sub-card">
+        <h4 style="color: var(--primary-color);">القسم: ${app.type}</h4>
+        <p><strong>الاسم:</strong> ${app.name}</p>
+        <p><strong>التفاصيل:</strong> ${app.reason}</p>
+        <p style="margin-top: 8px;"><strong>الحالة:</strong> 
+          <span class="status-badge ${app.status === 'مقبول' ? 'status-accepted' : app.status === 'مرفوض' ? 'status-rejected' : 'status-pending'}">
+            ${app.status}
+          </span>
+        </p>
+        ${app.status === 'قيد الانتظار' ? `
+          <div style="margin-top: 10px;">
+            <button class="btn-accept" onclick="updateStatus(${app.id}, 'مقبول')">قبول</button>
+            <button class="btn-reject" onclick="updateStatus(${app.id}, 'مرفوض')">رفض</button>
+          </div>
+        ` : ''}
+      </div>
+    `).join('');
+  }
+
+  function updateStatus(id, newStatus) {
+    const app = applications.find(a => a.id === id);
+    if(app) {
+      app.status = newStatus;
+      renderSubmissions();
     }
   }
 </script>
