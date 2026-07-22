@@ -15,6 +15,7 @@
   --accent-pink: #ff0055;
   --accent-purple: #8a2be2;
   --military-color: #708238;
+  --youtube-red: #ff0000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
@@ -45,7 +46,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 }
 
 /* Hero Section */
-.hero { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.hero { height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .hero h1 { font-size: 60px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 30px var(--primary-color); font-weight: 900; }
 .hero p { font-size: 18px; color: #aaa; max-width: 750px; line-height: 1.8; margin-bottom: 30px; }
 .discord-btn { background: #5865F2; color: white; padding: 14px 36px; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 20px rgba(88, 101, 242, 0.5); transition: all 0.3s ease; display: inline-block; }
@@ -80,7 +81,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .accordion:hover .accordion-arrow { background: var(--primary-color); color: #000; }
 .accordion.active .accordion-arrow { transform: rotate(180deg); background: var(--primary-color); color: #000; }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease; padding: 0 25px; color: #ccc; font-size: 15px; line-height: 1.8; background: rgba(0, 0, 0, 0.25); }
-.accordion.active .accordion-body { max-height: 1200px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.accordion.active .accordion-body { max-height: 1500px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
 /* Buttons & Forms */
 .apply-btn { background-color: #00ffff; color: #000000; border: none; padding: 14px 40px; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; margin: 20px auto; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
@@ -91,12 +92,12 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
 .questions-container { display: none; background: var(--card-bg); border: 1px solid var(--primary-color); border-radius: 18px; padding: 35px; text-align: right; margin-top: 25px; box-shadow: 0 0 35px rgba(0, 255, 255, 0.15); animation: fadeIn 0.3s ease; }
 .questions-container h3 { font-size: 22px; color: var(--primary-color); margin-bottom: 20px; border-bottom: 1px solid rgba(0, 255, 255, 0.2); padding-bottom: 12px; text-shadow: 0 0 10px rgba(0, 255, 255, 0.3); }
-.q-group { margin-bottom: 18px; }
+.q-group { margin-bottom: 20px; }
 .q-group label { display: block; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
 .q-group input, .q-group textarea, .q-group select { width: 100%; padding: 12px 16px; background: #0b0914; border: 1px solid #2d284a; color: #fff; border-radius: 10px; font-size: 14px; transition: all 0.3s ease; }
 .q-group input:focus, .q-group textarea:focus, .q-group select:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); background: #0f0c1d; }
 
-.submit-app { background: linear-gradient(135deg, #00ff88, #00b359); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; margin-top: 15px; transition: all 0.3s ease; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
+.submit-app { background: linear-gradient(135deg, #00ff88, #00b359); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; margin-top: 20px; transition: all 0.3s ease; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
 .submit-app:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); }
 
 /* Staff / Management Cards */
@@ -111,22 +112,29 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .staff-role-badge { background: rgba(0, 255, 255, 0.06); border: 1px solid rgba(0, 255, 255, 0.4); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; display: block; width: 100%; transition: all 0.3s ease; }
 
 /* Streamer Cards */
-.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 25px; }
+.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 25px; }
 .streamer-card { background: var(--card-bg); border-radius: 18px; padding: 30px 22px; text-align: center; position: relative; transition: all 0.3s ease; }
 .kick-card { border: 1px solid #53fc18; box-shadow: 0 0 20px rgba(83, 252, 24, 0.15); }
 .kick-card:hover { box-shadow: 0 0 35px rgba(83, 252, 24, 0.35); transform: translateY(-6px); }
 
+.yt-card { border: 1px solid #ff0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.15); }
+.yt-card:hover { box-shadow: 0 0 35px rgba(255, 0, 0, 0.35); transform: translateY(-6px); }
+
 .avatar-container { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; }
 .kick-avatar { border: 2px solid #53fc18; background: rgba(83, 252, 24, 0.05); }
+.yt-avatar { border: 2px solid #ff0000; background: rgba(255, 0, 0, 0.05); }
 
 .streamer-name { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 8px; }
-.action-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: bold; transition: all 0.3s ease; }
+.action-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: bold; transition: all 0.3s ease; margin-top: 15px; }
 .kick-btn { background-color: #53fc18; color: #0b0914; box-shadow: 0 0 15px rgba(83, 252, 24, 0.4); }
 .kick-btn:hover { background-color: #45d612; transform: translateY(-3px); box-shadow: 0 0 25px rgba(83, 252, 24, 0.7); }
 
+.yt-btn { background-color: #ff0000; color: #ffffff; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+.yt-btn:hover { background-color: #cc0000; transform: translateY(-3px); box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
+
 /* Quiz Styles */
-.quiz-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 18px; padding: 30px; margin-top: 20px; }
-.quiz-q { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 15px; }
+.quiz-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 18px; padding: 30px; margin-bottom: 25px; text-align: right; }
+.quiz-q { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 15px; border-bottom: 1px solid rgba(0, 255, 255, 0.1); padding-bottom: 10px; }
 .quiz-options button { display: block; width: 100%; padding: 12px 18px; margin-bottom: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 10px; color: #fff; text-align: right; cursor: pointer; transition: all 0.3s ease; }
 .quiz-options button:hover { background: rgba(0, 255, 255, 0.15); border-color: var(--primary-color); }
 
@@ -149,6 +157,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 .social-icons { display: flex; gap: 12px; }
 .social-icon-btn { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #a0a0b5; text-decoration: none; transition: all 0.3s ease; }
 .social-icon-btn:hover { background: rgba(0, 255, 255, 0.1); border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); }
+.social-icon-btn.yt:hover { border-color: var(--youtube-red); color: var(--youtube-red); box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); }
 </style>
 </head>
 <body>
@@ -173,7 +182,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
       <li><a onclick="showPage('staff')" class="nav-link" id="link-staff">الإدارة العليا</a></li>
       <li><a onclick="showPage('monitoring')" class="nav-link" id="link-monitoring">هيئة الرقابة</a></li>
       <li><a onclick="showPage('quiz')" class="nav-link" id="link-quiz">الاختبار الشخصي</a></li>
-      <li><a onclick="showPage('streamer')" class="nav-link" id="link-streamer">البث المباشر</a></li>
+      <li><a onclick="showPage('streamer')" class="nav-link" id="link-streamer">البث المباشر و YouTube</a></li>
     </ul>
   </nav>
   <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="support-btn">دعم السيرفر</a>
@@ -230,6 +239,8 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
         <p>3. <b>VDM (Vehicle Deathmatch):</b> يمنع دهس اللاعبين بالمركبات باستعمالها كسلاح.</p>
         <p>4. <b>NLR (New Life Rule):</b> عند موتك وإسعافك في المستشفى، تنسى تفاصيل السيناريو الذي أدى لموتك.</p>
         <p>5. <b>Fear RP:</b> يجب عليك إظهار الخوف على حياتك عند التهديد بالسلاح من قبل كثرة عددية.</p>
+        <p>6. <b>Powergaming:</b> يمنع القيام بأفعال غير منطقية أو غير واقعية في الحياة الحقيقية.</p>
+        <p>7. <b>Metagaming:</b> يمنع استخدام معلومات حصلت عليها خارج اللعبة (من بث المباشر أو الديسكورد) داخل اللعبة.</p>
       </div>
     </div>
 
@@ -242,6 +253,7 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
         <p>1. التزام تام بالتسلسل القيادي والأوامر الصادرة من الرتب العليا.</p>
         <p>2. يمنع استعمال الأسلحة الثقيلة إلا بإذن رسمي من قيادة العمليات.</p>
         <p>3. احترام المدنيين وعدم استغلال السلطة خارج نطاق القانون.</p>
+        <p>4. يمنع منعا باتا تسريب معلومات الشرطة أو الجيش لأي أطراف خارجية.</p>
       </div>
     </div>
   </div>
@@ -253,17 +265,20 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <h2 class="page-title">وزارة الداخلية والشرطة</h2>
     <p class="page-subtitle">انضم للقطاع الأمني لحفظ السلام وحماية المواطنين وتنفيذ القانون داخل المدينة.</p>
     <button class="apply-btn" onclick="toggleForm('police-form')">تقديم طلب انضمام للشرطة</button>
-    
+
     <div id="police-form" class="questions-container">
-      <h3>استمارة التقديم على سلك الشرطة</h3>
+      <h3>استمارة التقديم الشاملة على سلك الشرطة</h3>
       <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
-        <div class="q-group"><label>الاسم الكامل داخل اللعبة (RP Name):</label><input type="text" required placeholder="مثال: Ahmed_Mansour"></div>
-        <div class="q-group"><label>اسم حسابك في الديسكورد (Discord Username):</label><input type="text" required placeholder="مثال: user#0000"></div>
-        <div class="q-group"><label>العمر الحقيقي:</label><input type="number" required placeholder="مثال: 18"></div>
-        <div class="q-group"><label>عدد ساعات لعبك في سيرفرات الـ RP بشكل عام:</label><input type="text" required placeholder="مثال: 500 ساعة"></div>
-        <div class="q-group"><label>ما هي الرتبة أو الخبرات السابقة لك في قطاعات الشرطة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>سيناريو: رأيت زميلاً لك في الشرطة يأخذ رشوة من مجرم، كيف تتصرف؟</label><textarea rows="3" required></textarea></div>
-        <button type="submit" class="submit-app">إرسال الاستمارة</button>
+        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة (RP Name):</label><input type="text" required placeholder="مثال: Ahmed_Mansour"></div>
+        <div class="q-group"><label>2. اسم حسابك في الديسكورد (Discord Username):</label><input type="text" required placeholder="مثال: user#0000"></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required placeholder="مثال: 18"></div>
+        <div class="q-group"><label>4. عدد ساعات لعبك في سيرفرات الـ RP بشكل عام:</label><input type="text" required placeholder="مثال: 500 ساعة"></div>
+        <div class="q-group"><label>5. ما هي خبراتك السابقة في قطاعات الشرطة أو الأمن؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>6. اشرح مفهوم الـ 10-Codes الأساسية وكيف توظفها في التردد الصوتي (Radio):</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>7. سيناريو: رأيت زميلاً لك في الشرطة يأخذ رشوة من مجرم، كيف تتصرف طبقاً للنظام؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>8. سيناريو: مطاردة عالية السرعة دخلت منطقة مدنية مزدحمة، ما هي الإجراءات والتدابير المتبعة؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>9. ما هي القواعد الأساسية لإستخدام السلاح الناري واستخدام الصاعق الكهربائي (Taser)؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">إرسال استمارة الشرطة</button>
       </form>
     </div>
   </div>
@@ -279,10 +294,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <div id="defense-form" class="questions-container" style="border-color: #708238;">
       <h3 style="color: #8ba446;">استمارة التجنيد العسكري - وزارة الدفاع</h3>
       <form onsubmit="alert('تم إرسال طلب التجنيد بنجاح!'); return false;">
-        <div class="q-group"><label>الاسم الثلاثي للشخصية (In-Game Name):</label><input type="text" required placeholder="مثال: Youssef_Al_Otaibi"></div>
-        <div class="q-group"><label>معرف الديسكورد (Discord ID / Username):</label><input type="text" required placeholder="مثال: soldier_01"></div>
-        <div class="q-group"><label>العمر الحقيقي (شرط +16):</label><input type="number" min="16" required></div>
-        <div class="q-group"><label>ما هو التخصص العسكري الذي ترغب في الانضمام إليه؟</label>
+        <div class="q-group"><label>1. الاسم الثلاثي للشخصية (In-Game Name):</label><input type="text" required placeholder="مثال: Youssef_Al_Otaibi"></div>
+        <div class="q-group"><label>2. معرف الديسكورد (Discord Username / ID):</label><input type="text" required placeholder="مثال: soldier_01"></div>
+        <div class="q-group"><label>3. العمر الحقيقي (شرط +16):</label><input type="number" min="16" required></div>
+        <div class="q-group"><label>4. ما هو التخصص العسكري الذي ترغب في الانضمام إليه؟</label>
           <select required>
             <option value="">اختر التخصص...</option>
             <option value="infantry">المشاة والقوات البرية</option>
@@ -291,10 +306,15 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
             <option value="logistics">الدعم اللوجستي والإمداد</option>
           </select>
         </div>
-        <div class="q-group"><label>ما الفرق بين التعامل العسكري (وزارة الدفاع) والتعامل الشرطي (الشرطة) فسيناريوهات الـ RP؟</label><textarea rows="3" required placeholder="اشرح مفهوم الضوابط العسكرية مقارنة بالقوانين المدنية..."></textarea></div>
-        <div class="q-group"><label>ما هي مدى جديتك والتزامك بالأوامر العسكرية الصارمة وتسلسل القيادة؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>سيناريو: تلقيت أمراً من ضابطك المباشر بالانسحاب، لكن زميلك مصاب تحت النار، كيف تتصرف طبقاً للرول بلاي العسكري؟</label><textarea rows="4" required></textarea></div>
-        <div class="q-group"><label>هل لديك أي سوابق إجرامية أو عقوبات إدارية سابقة بالسيرفر؟</label><textarea rows="2" required></textarea></div>
+        <div class="q-group"><label>5. ما الفرق بين التعامل العسكري (وزارة الدفاع) والتعامل الشرطي (الشرطة) في سيناريوهات الـ RP؟</label><textarea rows="3" required placeholder="اشرح مفهوم الضوابط العسكرية مقارنة بالقوانين المدنية..."></textarea></div>
+        <div class="q-group"><label>6. كيف تتصرف في حالة إعلان حالة الطوارئ القصوى (DEFCON 1) في المدينة؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>7. سيناريو: تلقيت أمراً من ضابطك المباشر بالانسحاب، لكن زميلك مصاب تحت النار، كيف تتصرف طبقاً للرول بلاي العسكري؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>8. هل تتعهد بالالتزام الصارم بالأوامر وعدم الانضباط يُعرّضك للمحاكمة العسكرية؟</label>
+          <select required>
+            <option value="yes">نعم، أتعهد بالتزام تام بالدستور العسكري</option>
+            <option value="no">لا</option>
+          </select>
+        </div>
         <button type="submit" class="submit-app" style="background: linear-gradient(135deg, #708238, #4b5320); color: white;">تقديم طلب التجنيد</button>
       </form>
     </div>
@@ -309,14 +329,15 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('ems-form')">تقديم طلب انضمام لـ EMS</button>
 
     <div id="ems-form" class="questions-container">
-      <h3>استمارة التقديم على القطاع الطبي</h3>
+      <h3>استمارة التقديم على القطاع الطبي الشاملة</h3>
       <form onsubmit="alert('تم إرسال الطلب بنجاح!'); return false;">
-        <div class="q-group"><label>الاسم الكامل داخل اللعبة:</label><input type="text" required></div>
-        <div class="q-group"><label>اسم حسابك في الديسكورد:</label><input type="text" required></div>
-        <div class="q-group"><label>العمر الحقيقي:</label><input type="number" required></div>
-        <div class="q-group"><label>هل لديك مصطلحات طبية أساسية للرول بلاي (مثل CPR / الضغط / الإسعافات)؟</label><textarea rows="3" required></textarea></div>
-        <div class="q-group"><label>سيناريو: وصلك بلاغ عن إطلاق نار محتدم، هل تتدخل فوراً أم تنتظر تأمين الشرطة؟ ولماذا؟</label><textarea rows="3" required></textarea></div>
-        <button type="submit" class="submit-app">إرسال الاستمارة</button>
+        <div class="q-group"><label>1. الاسم الكامل داخل اللعبة:</label><input type="text" required></div>
+        <div class="q-group"><label>2. اسم حسابك في الديسكورد:</label><input type="text" required></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required></div>
+        <div class="q-group"><label>4. أذكر 3 مصطلحات طبية أساسية تستخدمها أثناء التشخيص الإسعافي (مثل CPR / الضغط / الصدمات الكهربائية):</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: وصلك بلاغ عن إطلاق نار محتدم، هل تتدخل فوراً أم تنتظر تأمين الشرطة؟ ولماذا؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>6. سيناريو: لديك مصابان واحد من الشرطة وواحد من العصابة، كلاهما حرج، كيف تحدد الأولوية في العلاج؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">إرسال الاستمارة الطبية</button>
       </form>
     </div>
   </div>
@@ -330,11 +351,13 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('intel-form')">تقديم طلب انضمام للاستخبارات</button>
 
     <div id="intel-form" class="questions-container">
-      <h3>استمارة التقديم على جهاز الاستخبارات</h3>
+      <h3>استمارة التقديم الخاصة بجهاز الاستخبارات</h3>
       <form onsubmit="alert('تم إرسال طلبك بنجاح للجهات المختصة!'); return false;">
-        <div class="q-group"><label>الاسم السري للشخصية:</label><input type="text" required></div>
-        <div class="q-group"><label>حساب الديسكورد:</label><input type="text" required></div>
-        <div class="q-group"><label>كيف تتعامل مع جمع المعلومات السرية بدون كشف هويتك؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>1. الاسم السري للشخصية:</label><input type="text" required></div>
+        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" required></div>
+        <div class="q-group"><label>3. العمر الحقيقي:</label><input type="number" required></div>
+        <div class="q-group"><label>4. كيف تتعامل مع جمع المعلومات السرية بدون كشف هويتك أو اختراق الـ RP؟</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: تم انكشاف أمرك أثناء عملية اختراق لمنظمة إجرامية، كيف تتصرف لحماية حياتك والمعلومات؟</label><textarea rows="3" required></textarea></div>
         <button type="submit" class="submit-app">إرسال الاستمارة السرية</button>
       </form>
     </div>
@@ -351,10 +374,19 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <div id="justice-form" class="questions-container">
       <h3>استمارة انضمام لوزارة العدل</h3>
       <form onsubmit="alert('تم تقديم طلبك بنجاح!'); return false;">
-        <div class="q-group"><label>الاسم الثلاثي:</label><input type="text" required></div>
-        <div class="q-group"><label>الوظيفة المطلوبة (قاضي / محامي / مدعي عام):</label><input type="text" required></div>
-        <div class="q-group"><label>شرح مختصر لمدى معرفتك بالدستور وقوانين المدينة:</label><textarea rows="3" required></textarea></div>
-        <button type="submit" class="submit-app">تقديم الطلب</button>
+        <div class="q-group"><label>1. الاسم الثلاثي لشخصيتك:</label><input type="text" required></div>
+        <div class="q-group"><label>2. حساب الديسكورد:</label><input type="text" required></div>
+        <div class="q-group"><label>3. الوظيفة المطلوبة:</label>
+          <select required>
+            <option value="">اختر المسمى الوظيفي...</option>
+            <option value="judge">قاضي محكمة</option>
+            <option value="prosecutor">مدعي عام</option>
+            <option value="lawyer">محامي دفاع معتمد</option>
+          </select>
+        </div>
+        <div class="q-group"><label>4. شرح مختصر لمدى معرفتك بالقوانين والدستور الخاص بالسيرفر:</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>5. سيناريو: قدم محامي أدلة ثبوتية تم الحصول عليها بطريقة غير قانونية، كيف يتعامل القضاء معها؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">تقديم الطلب القضائي</button>
       </form>
     </div>
   </div>
@@ -370,10 +402,12 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <div id="gang-form" class="questions-container">
       <h3>استمارة تسجيل عصابة معتمدة</h3>
       <form onsubmit="alert('تم إرسال ملف العصابة للإدارة!'); return false;">
-        <div class="q-group"><label>اسم العصابة:</label><input type="text" required></div>
-        <div class="q-group"><label>اسم القائد (Leader RP Name):</label><input type="text" required></div>
-        <div class="q-group"><label>عدد الأعضاء الحاليين:</label><input type="number" required></div>
-        <div class="q-group"><label>قصة العصابة ونشاطها الأساسي (Lore):</label><textarea rows="4" required></textarea></div>
+        <div class="q-group"><label>1. اسم العصابة:</label><input type="text" required></div>
+        <div class="q-group"><label>2. اسم القائد (Leader RP Name):</label><input type="text" required></div>
+        <div class="q-group"><label>3. معرف الديسكورد للقائد:</label><input type="text" required></div>
+        <div class="q-group"><label>4. عدد الأعضاء الحاليين (الحد الأدنى 4 أعضاء):</label><input type="number" min="4" required></div>
+        <div class="q-group"><label>5. قصة العصابة ونشاطها الأساسي (Gang Lore & Story):</label><textarea rows="4" required></textarea></div>
+        <div class="q-group"><label>6. ما هي نوعية السيناريوهات التي تخطط العصابة لتقديمها داخل السيرفر؟</label><textarea rows="3" required></textarea></div>
         <button type="submit" class="submit-app">تسجيل العصابة</button>
       </form>
     </div>
@@ -388,11 +422,13 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     <button class="apply-btn" onclick="toggleForm('monitor-form')">تقديم طلب انضمام للرقابة</button>
 
     <div id="monitor-form" class="questions-container">
-      <h3>استمارة الانضمام لهيئة الرقابة</h3>
+      <h3>استمارة الانضمام لهيئة الرقابة والإشراف</h3>
       <form onsubmit="alert('تم إرسال الطلب!'); return false;">
-        <div class="q-group"><label>اسمك في الديسكورد واللعبة:</label><input type="text" required></div>
-        <div class="q-group"><label>خبراتك الإدارية السابقة:</label><textarea rows="3" required></textarea></div>
-        <button type="submit" class="submit-app">إرسال الطلب</button>
+        <div class="q-group"><label>1. اسمك في الديسكورد واللعبة:</label><input type="text" required></div>
+        <div class="q-group"><label>2. العمر الحقيقي:</label><input type="number" required></div>
+        <div class="q-group"><label>3. خبراتك الإدارية والرقابية السابقة:</label><textarea rows="3" required></textarea></div>
+        <div class="q-group"><label>4. كيف تتعامل مع شكوى ضد أحد الإداريين بنفس السيرفر بمهنية حيادية؟</label><textarea rows="3" required></textarea></div>
+        <button type="submit" class="submit-app">إرسال الطلب الرقابي</button>
       </form>
     </div>
   </div>
@@ -401,30 +437,68 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 <!-- Quiz Page -->
 <div id="quiz" class="page">
   <div class="page-content">
-    <h2 class="page-title">الاختبار الشخصي (Roleplay Quiz)</h2>
-    <p class="page-subtitle">اختبر معرفتك بقوانين الرول بلاي والسيناريوهات المتقدمة.</p>
+    <h2 class="page-title">الاختبار الشخصي الشامل (Roleplay Quiz)</h2>
+    <p class="page-subtitle">اختبر معرفتك بقوانين الرول بلاي والسيناريوهات المتقدمة من خلال الأسئلة التفاعلية الآتية:</p>
     
     <div class="quiz-box">
-      <div class="quiz-q">السؤال 1: ماذا تفعل إذا قام شخص بدهسك بسيارته عمداً وبدون أي سبب؟</div>
+      <div class="quiz-q">السؤال 1: ماذا تفعل إذا قام شخص بدهسك بسيارته عمداً وبدون أي سبب (VDM)؟</div>
       <div class="quiz-options">
-        <button onclick="alert('إجابة خاطئة! لا تقم بسبه داخل اللعبة بل افتح تذكرة ديسكورد.')">أقيل قتله وتوجيه الشتم له مباشرة في الشات</button>
-        <button onclick="alert('إجابة صحيحة! قم بتصوير الموقف وفتح تذكرة إدارة (Ticket).')">أتفادى الرد، وأقوم بفتح تذكرة دعم فني مع الدليل</button>
+        <button onclick="alert('❌ إجابة خاطئة! السب والشتم مخالف للقوانين.')">أقوم بسبه في الشات العام وملاحقته لقتله</button>
+        <button onclick="alert('✅ إجابة صحيحة! قم بتوثيق الموقف بـ Clipping وفتح تذكرة دعم.')">أتفادى الرد، وأقوم بتصوير الموقف وفتح تذكرة لدى الإدارة</button>
+      </div>
+    </div>
+
+    <div class="quiz-box">
+      <div class="quiz-q">السؤال 2: ما هو التصرف الصحيح عند سقوطك مصاباً ودخول الإسعاف (EMS) لنقلك للمستشفى؟</div>
+      <div class="quiz-options">
+        <button onclick="alert('✅ إجابة صحيحة! قانون NLR ينص على نسيان أحداث السيناريو المسبب للموت.')">أنسى تفاصيل السيناريو الذي تسبب بموتي وأبدأ حياة جديدة (NLR)</button>
+        <button onclick="alert('❌ إجابة خاطئة! هذا يعتبر خرقاً لقانون NLR.')">أعود فوراً لنفس المكان للانتقام من الأشخاص الذين قتلوني</button>
+      </div>
+    </div>
+
+    <div class="quiz-box">
+      <div class="quiz-q">السؤال 3: إذا تمت محاصرتك من قبل 4 مسلحين وأنت بمفردك، ما الواجب عليك فعله؟</div>
+      <div class="quiz-options">
+        <button onclick="alert('❌ إجابة خاطئة! هذا خرق لقانون Fear RP وPowergaming.')">أسحب سلاحي فوراً وأحاول إطلاق النار عليهم جميعاً</button>
+        <button onclick="alert('✅ إجابة صحيحة! تطبيق قانون Fear RP بالخوف على حياتك والاستجابة للأوامر.')">أستسلم وأرفع يدي خوفاً على حياتي وأنفذ تعليماتهم (Fear RP)</button>
+      </div>
+    </div>
+
+    <div class="quiz-box">
+      <div class="quiz-q">السؤال 4: ماذا يعني مصطلح Metagaming؟</div>
+      <div class="quiz-options">
+        <button onclick="alert('✅ إجابة صحيحة! استعمال معلومات خارج اللعبة يعتبر Metagaming.')">استخدام معلومات عرفتها من البث المباشر أو الديسكورد داخل اللعبة</button>
+        <button onclick="alert('❌ إجابة خاطئة! دهس اللاعبين يسمى VDM.')">دهس اللاعبين باستعمال المركبة</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Streamers Page -->
+<!-- Streamers & YouTube Page -->
 <div id="streamer" class="page">
   <div class="page-content">
-    <h2 class="page-title">البث المباشر وصناع المحتوى</h2>
+    <h2 class="page-title">🎥 البث المباشر وقنوات YouTube</h2>
+    <p class="page-subtitle">تابع أحدث البثوث المقامة ومقاطع الفيديو الخاصة بصناع المحتوى في سيرفرنا:</p>
+    
     <div class="streamers-grid">
+      <!-- Kick Streamer -->
       <div class="streamer-card kick-card">
         <div class="avatar-container kick-avatar">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="#53fc18"><path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/></svg>
         </div>
         <div class="streamer-name">mehdicfw</div>
+        <p style="color: #aaa; font-size: 13px;">بث مباشر يومي وسيناريوهات حصريّة على منصة Kick</p>
         <a href="https://kick.com/cfwmehdi" target="_blank" class="action-btn kick-btn">مشاهدة البث على Kick ➔</a>
+      </div>
+
+      <!-- YouTube Channel -->
+      <div class="streamer-card yt-card">
+        <div class="avatar-container yt-avatar">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="streamer-name">LC CITY Official</div>
+        <p style="color: #aaa; font-size: 13px;">مقاطع وتلخيص أفضل سيناريوهات السيرفر على YouTube</p>
+        <a href="https://youtube.com" target="_blank" class="action-btn yt-btn">زيارة قناة YouTube ➔</a>
       </div>
     </div>
   </div>
@@ -495,6 +569,9 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
       <div class="social-icons">
         <a href="https://kick.com/cfwmehdi" target="_blank" class="social-icon-btn" title="Kick Stream">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon-btn yt" title="YouTube Channel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
         <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="social-icon-btn" title="Discord Community">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.009c.12.098.245.195.372.288a.077.077 0 0 1-.006.128c-.598.344-1.22.642-1.873.891a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
