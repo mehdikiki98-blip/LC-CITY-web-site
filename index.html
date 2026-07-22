@@ -14,8 +14,7 @@
   --border-color: rgba(0, 255, 255, 0.2);
   --accent-pink: #ff0055;
   --accent-purple: #8a2be2;
-  --military-color: #4b5320;
-  --military-glow: #708238;
+  --military-color: #708238;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; }
@@ -45,10 +44,43 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Hero Section */
+.hero { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.hero h1 { font-size: 60px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 30px var(--primary-color); font-weight: 900; }
+.hero p { font-size: 18px; color: #aaa; max-width: 750px; line-height: 1.8; margin-bottom: 30px; }
+.discord-btn { background: #5865F2; color: white; padding: 14px 36px; border-radius: 12px; text-decoration: none; font-size: 16px; font-weight: bold; box-shadow: 0 0 20px rgba(88, 101, 242, 0.5); transition: all 0.3s ease; display: inline-block; }
+.discord-btn:hover { background: #4752c4; transform: translateY(-4px) scale(1.03); box-shadow: 0 0 30px rgba(88, 101, 242, 0.8); }
+
+/* About Us Card */
+.about-card { background: rgba(18, 16, 38, 0.8); border: 1px solid var(--border-color); border-radius: 18px; padding: 40px; max-width: 1100px; margin: 20px auto 40px auto; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; }
+.about-card h2 { font-size: 30px; color: var(--primary-color); margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 10px; text-shadow: 0 0 15px var(--primary-color); font-weight: 800; }
+.about-card p { color: #d0d0e0; font-size: 16px; line-height: 1.9; margin-bottom: 20px; max-width: 950px; margin-left: auto; margin-right: auto; }
+.about-footer { color: var(--primary-color); font-weight: 800; font-size: 18px; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0, 255, 255, 0.1); text-shadow: 0 0 10px var(--primary-color); }
+
+/* Feature Cards Grid */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1100px; margin: 30px auto; }
+.feature-card { background: rgba(18, 16, 38, 0.7); border: 1px solid var(--border-color); border-radius: 18px; padding: 30px; text-align: right; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: flex-start; }
+.feature-card:hover { border-color: var(--primary-color); transform: translateY(-6px); box-shadow: 0 0 25px rgba(0, 255, 255, 0.25); background: rgba(22, 19, 48, 0.9); }
+.feature-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.feature-icon { background: rgba(0, 255, 255, 0.08); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--primary-color); border: 1px solid rgba(0, 255, 255, 0.2); }
+.feature-card h3 { font-size: 20px; color: #fff; font-weight: 800; margin-top: 10px; }
+.feature-card p { color: #aaa; line-height: 1.7; font-size: 14px; }
+
 /* Page Content Formatting */
 .page-content { max-width: 950px; margin: 0 auto; }
 .page-title { color: var(--primary-color); font-size: 32px; margin-bottom: 10px; text-shadow: 0 0 15px var(--primary-color); font-weight: 800; text-align: center; }
 .page-subtitle { color: #bbb; font-size: 15px; line-height: 1.7; margin-bottom: 35px; text-align: center; }
+
+/* Accordions */
+.accordion { background: rgba(18, 16, 36, 0.85); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; margin-bottom: 15px; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.accordion:hover { border-color: rgba(0, 255, 255, 0.4); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 255, 255, 0.1); }
+.accordion-header { padding: 22px 25px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; }
+.accordion-header h3 { font-size: 18px; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 12px; }
+.accordion-arrow { color: #fff; background: rgba(255, 255, 255, 0.08); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: transform 0.3s ease, background 0.3s ease; }
+.accordion:hover .accordion-arrow { background: var(--primary-color); color: #000; }
+.accordion.active .accordion-arrow { transform: rotate(180deg); background: var(--primary-color); color: #000; }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease; padding: 0 25px; color: #ccc; font-size: 15px; line-height: 1.8; background: rgba(0, 0, 0, 0.25); }
+.accordion.active .accordion-body { max-height: 1200px; padding: 20px 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
 /* Buttons & Forms */
 .apply-btn { background-color: #00ffff; color: #000000; border: none; padding: 14px 40px; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: block; margin: 20px auto; box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
@@ -66,6 +98,31 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
 .submit-app { background: linear-gradient(135deg, #00ff88, #00b359); color: #000; border: none; padding: 14px 35px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; margin-top: 15px; transition: all 0.3s ease; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
 .submit-app:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); }
+
+/* Staff / Management Cards */
+.staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 30px; justify-content: center; }
+.staff-card { background: #0e0c1f; border: 1px solid rgba(0, 255, 255, 0.25); border-radius: 18px; padding: 35px 20px 25px 20px; text-align: center; position: relative; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+.staff-card:hover { border-color: var(--primary-color); transform: translateY(-6px); box-shadow: 0 0 30px rgba(0, 255, 255, 0.25); }
+
+.crown-circle { width: 85px; height: 85px; border-radius: 50%; border: 2px solid var(--primary-color); margin: 0 auto 20px auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 255, 255, 0.03); box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.1); }
+.crown-icon { font-size: 38px; color: var(--primary-color); filter: drop-shadow(0 0 8px var(--primary-color)); }
+
+.staff-name { font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 20px; letter-spacing: 0.5px; }
+.staff-role-badge { background: rgba(0, 255, 255, 0.06); border: 1px solid rgba(0, 255, 255, 0.4); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; display: block; width: 100%; transition: all 0.3s ease; }
+
+/* Streamer Cards */
+.streamers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 25px; }
+.streamer-card { background: var(--card-bg); border-radius: 18px; padding: 30px 22px; text-align: center; position: relative; transition: all 0.3s ease; }
+.kick-card { border: 1px solid #53fc18; box-shadow: 0 0 20px rgba(83, 252, 24, 0.15); }
+.kick-card:hover { box-shadow: 0 0 35px rgba(83, 252, 24, 0.35); transform: translateY(-6px); }
+
+.avatar-container { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; }
+.kick-avatar { border: 2px solid #53fc18; background: rgba(83, 252, 24, 0.05); }
+
+.streamer-name { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 8px; }
+.action-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border-radius: 10px; text-decoration: none; font-size: 15px; font-weight: bold; transition: all 0.3s ease; }
+.kick-btn { background-color: #53fc18; color: #0b0914; box-shadow: 0 0 15px rgba(83, 252, 24, 0.4); }
+.kick-btn:hover { background-color: #45d612; transform: translateY(-3px); box-shadow: 0 0 25px rgba(83, 252, 24, 0.7); }
 
 /* FOOTER STYLES */
 .site-footer { background-color: #040308; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 50px 30px 30px 30px; color: #ffffff; margin-top: 80px; width: 100%; }
@@ -118,9 +175,54 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
 
 <!-- Home Page -->
 <div id="home" class="page active-page">
+  <section class="hero">
+    <h1>LC CITY</h1>
+    <p>حيث نصنع الواقعية الكاملة بمحاكاة متطورة، مدعومة بأنظمة أمنية وقضائية وعسكرية تضمن لك بيئة لعب قوية ومستقرة.</p>
+    <a href="https://discord.gg/dnfwBDHxE" target="_blank" class="discord-btn">دخول عبر ديسكورد</a>
+  </section>
+
+  <div class="about-card">
+    <h2>من نحن؟ <span>★</span></h2>
+    <p>تأسس السيرفر برؤية واضحة وهدف أساسي: تقديم بيئة تفاعلية حقيقية تجمع عشاق الـ Roleplay. لم يكن التطور بالنسبة لنا مجرد إضافة سكربتات، بل بناء مجتمع متكامل يعتمد على القيادة المنظمة، والعدالة المشتركة، والسيناريوهات الملحمية.</p>
+    <p>نفتح أمامك اليوم تجربة مغايرة تماماً، بإدارة محترفة تسهر على تطبيق النظام، وتضمن لكل لاعب أخذ حقه الكامل للاستمتاع بلعب أدوار حقيقي وخالٍ من العشوائية.</p>
+    <div class="about-footer">مرحباً بك في عالمك الجديد هنا تبدأ قصتك</div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-header"><div class="feature-icon">🎧</div></div>
+      <h3>طاقم دعم متواجد دائماً</h3>
+      <p>راحتك وحل مشاكلك هي أولويتنا. إدارتنا متواجدة على مدار الساعة عبر نظام تذاكر سريع لضمان إنهاء أي عائق يواجهك في اللعب.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-header"><div class="feature-icon">💻</div></div>
+      <h3>سكربتات حصرية وخاصة</h3>
+      <p>نأخذ محاكاة الواقعية إلى مستوى آخر تماماً بأكواد مخصصة ومطورة داخلياً، مما يضمن لك سلاسة تقنية وأعلى معدل إطارات (FPS).</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-header"><div class="feature-icon">💼</div></div>
+      <h3>منظومة وظائف عميقة</h3>
+      <p>سواء كنت ترغب في ملاحقة الجريمة، إنقاذ المصابين، أو حتى إدارة منشأتك الإجرامية الخاصة، وفرنا لك كافة الأدوات لسيناريو متكامل.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Rules Page -->
+<div id="rules" class="page">
   <div class="page-content">
-    <h1 class="page-title">مرحباً بك في LC CITY</h1>
-    <p class="page-subtitle">اختر القسم الذي تريد التصفح أو التقديم عليه من القائمة العلوية.</p>
+    <h2 class="page-title">قوانين سيرفر LC CITY</h2>
+    <p class="page-subtitle">يرجى قراءة كافة القوانين بعناية لتجنب العقوبات والمحافظة على جودة الرول بلاي.</p>
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3><span>🔨</span> القوانين العامة والأساسية في السيرفر</h3>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <p>1. يمنع الخروج عن نطاق الشخصية (OOC) داخل اللعبة بتاتاً.</p>
+        <p>2. يمنع استعمال الثغرات أو البرامج المساعدة (Hacks/Glitches).</p>
+        <p>3. يمنع القتل العشوائي (RDM) أو الدهس العشوائي (VDM).</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -199,16 +301,80 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
   </div>
 </div>
 
-<!-- Rest of pages (Other pages) -->
-<div id="rules" class="page"><div class="page-content"><h2 class="page-title">قوانين السيرفر</h2></div></div>
-<div id="intelligence" class="page"><div class="page-content"><h2 class="page-title">جهاز الاستخبارات</h2></div></div>
-<div id="justice" class="page"><div class="page-content"><h2 class="page-title">وزارة العدل</h2></div></div>
-<div id="gangs" class="page"><div class="page-content"><h2 class="page-title">العصابات</h2></div></div>
-<div id="monitoring" class="page"><div class="page-content"><h2 class="page-title">هيئة الرقابة</h2></div></div>
-<div id="quiz" class="page"><div class="page-content"><h2 class="page-title">الاختبار الشخصي</h2></div></div>
-<div id="streamer" class="page"><div class="page-content"><h2 class="page-title">البث المباشر</h2></div></div>
-<div id="staff" class="page"><div class="page-content"><h2 class="page-title">الإدارة العليا</h2></div></div>
-<div id="host" class="page"><div class="page-content"><h2 class="page-title">⚙️ لوحة الهوست</h2></div></div>
+<!-- Intelligence Page -->
+<div id="intelligence" class="page">
+  <div class="page-content">
+    <h2 class="page-title">جهاز الاستخبارات والأمن الوطني</h2>
+    <p class="page-subtitle">العمليات السرية، جمع المعلومات، وحماية أمن المدينة من التهديدات الحساسة.</p>
+  </div>
+</div>
+
+<!-- Justice Page -->
+<div id="justice" class="page">
+  <div class="page-content">
+    <h2 class="page-title">وزارة العدل والقضاء</h2>
+    <p class="page-subtitle">إرساء العدالة، المحاكمات العادلة، والدفاع عن حقوق المواطنين والمؤسسات.</p>
+  </div>
+</div>
+
+<!-- Gangs Page -->
+<div id="gangs" class="page">
+  <div class="page-content">
+    <h2 class="page-title">العصابات والأنشطة الإجرامية</h2>
+    <p class="page-subtitle">صناعة السيناريوهات الإجرامية المنظمة والمنافسة على النفوذ والسيطرة.</p>
+  </div>
+</div>
+
+<!-- Monitoring Page -->
+<div id="monitoring" class="page">
+  <div class="page-content">
+    <h2 class="page-title">هيئة الرقابة والتدقيق</h2>
+    <p class="page-subtitle">متابعة سير العمل في جميع القطاعات لضمان عدم وجود تجاوزات أو مخالفات.</p>
+  </div>
+</div>
+
+<!-- Quiz Page -->
+<div id="quiz" class="page">
+  <div class="page-content">
+    <h2 class="page-title">الاختبار الشخصي (Roleplay Quiz)</h2>
+    <p class="page-subtitle">اختبر معرفتك بقوانين الرول بلاي والسيناريوهات المتقدمة.</p>
+  </div>
+</div>
+
+<!-- Streamers Page -->
+<div id="streamer" class="page">
+  <div class="page-content">
+    <h2 class="page-title">البث المباشر وصناع المحتوى</h2>
+    <div class="streamers-grid">
+      <div class="streamer-card kick-card">
+        <div class="avatar-container kick-avatar">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#53fc18"><path d="M3 2H8V8H11V5H14V2H21V8H18V11H15V13H18V16H21V22H14V19H11V16H8V22H3V2Z"/></svg>
+        </div>
+        <div class="streamer-name">mehdicfw</div>
+        <a href="https://kick.com/cfwmehdi" target="_blank" class="action-btn kick-btn">مشاهدة البث على Kick ➔</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Staff Page -->
+<div id="staff" class="page">
+  <div class="page-content">
+    <h2 class="page-title">👑 طاقم الإدارة العليا</h2>
+    <div class="staff-grid">
+      <div class="staff-card"><div class="crown-circle"><span class="crown-icon">👑</span></div><div class="staff-name">ahmed</div><div class="staff-role-badge">Owner</div></div>
+      <div class="staff-card"><div class="crown-circle"><span class="crown-icon">👑</span></div><div class="staff-name">mehdi</div><div class="staff-role-badge">Co-Owner</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Host Page -->
+<div id="host" class="page">
+  <div class="page-content">
+    <h2 class="page-title">⚙️ لوحة تحكم الهوست</h2>
+    <p class="page-subtitle">منطقة خاصة بإدارة السيرفر والتحكم بالنظام.</p>
+  </div>
+</div>
 
 <!-- FOOTER SECTION -->
 <footer class="site-footer">
@@ -278,6 +444,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--primary-color); text-shadow
     if(activeLink) activeLink.classList.add('active');
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleAccordion(header) {
+    header.parentElement.classList.toggle('active');
   }
 
   function toggleForm(formId) {
